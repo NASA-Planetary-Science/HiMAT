@@ -1,5 +1,4 @@
-<img src = "img/HiMAT.jpg" width="200">
-
+<img src = "img/HiMAT.jpg" width="150" align = "left">
 # High Mountain Asia Team (HiMAT)
 
 This repository contains general project information for HiMAT:

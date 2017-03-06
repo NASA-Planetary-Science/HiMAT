@@ -44,6 +44,7 @@ endDate - Product end date (YYYYMMDD)
 [ GT1, GT2, GT3, GT4, GT5, GT6]
 [-3510000.0, 4450.0, 0.0, 525000.0, 0.0, -4450.0]
 ```
+
 #### Spatial Coverage
 Latitude bounds : N 19.125, N 44.683 (DDeg)
 Longitude bounds: E 63.427, E 105.577 (DDeg)

@@ -1,0 +1,10 @@
+name: rasterenv
+dependencies:
+- python=2.7 
+- rasterio 
+- numpy
+- cython
+- shapely
+- pip:
+	- gdal
+	- pygeoprocessing

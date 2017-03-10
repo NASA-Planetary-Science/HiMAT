@@ -1,0 +1,12 @@
+name: vizenv
+channels:
+- conda-forge
+- defaults
+dependencies:
+- python=2.7 
+- ipyleaflet 
+- lxml
+- pip:
+	- cesiumpy
+	- pykml
+	

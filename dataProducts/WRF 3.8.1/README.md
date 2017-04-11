@@ -1,4 +1,4 @@
-# SWE Reanalysis
+# WRF 3.8.1
 
 ## Model information
 

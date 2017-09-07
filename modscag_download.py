@@ -18,7 +18,9 @@ bar = progressbar.ProgressBar()
 
 
 def make_parser():
-    parser = argparse.ArgumentParser(description='Process some integers.')
+    parser = argparse.ArgumentParser(description='Process some integers. '
+                                                 'Example: python modscag_download.py .cred.json '
+                                                 'snow_fraction 20000224 --enddate 20000225 /Users/lsetiawan/Desktop/Himatstuff/')
     parser.add_argument('credential', metavar='CRED', type=str,
                         help='''Credential file name, full path is better. 
                         Should be json and follow this pattern: {"user": "username","password": "password"}''')

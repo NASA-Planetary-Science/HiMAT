@@ -16,3 +16,4 @@ dependencies:
 - xarray
 - sqlalchemy
 - psycopg2
+- progressbar2

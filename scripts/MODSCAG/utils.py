@@ -107,5 +107,9 @@ def merge_tiles(alldirs, desired_dir, file_patterns):
             with rio.open(os.path.join(desired_dir, output), 'w', **profile) as dst:
                 dst.write(data)
 
+        if os.path.exists(os.path.join(desired_dir, d)):
+            shutil.rmtree(os.path.join(desired_dir, d))
+
         shutil.copytree(d, os.path.join(desired_dir, d))
-        shutil.rmtree(os.path.dirname(os.path.dirname(d)))
+    # Cleanup..
+    shutil.rmtree(os.path.dirname(os.path.dirname(alldirs[0])))

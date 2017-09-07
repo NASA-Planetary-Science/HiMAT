@@ -24,9 +24,9 @@ def make_parser():
                         Should be json and follow this pattern: {"user": "username","password": "password"}''')
     parser.add_argument('varnames', metavar='VARS', type=str,
                         help='Variables desidered, comma separated if multiple')
-    parser.add_argument('--startdate', type=str, help='Start Date yyyymmdd')
+    parser.add_argument('startdate', metavar='STARTDATE', type=str, help='Start Date yyyymmdd')
     parser.add_argument('--enddate', type=str, help='End Date yyyymmdd or if blank it will be today')
-    parser.add_argument('--outpath', type=str, help='File output path, this is where merged tiff and raw dataset will be stored')
+    parser.add_argument('outpath', metavar='OUTPATH', type=str, help='File output path, this is where merged tiff and raw dataset will be stored')
 
 
     return parser

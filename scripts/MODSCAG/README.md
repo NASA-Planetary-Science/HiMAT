@@ -33,3 +33,11 @@ optional arguments:
 ```bash
 python modscag_download.py .cred.json snow_fraction 20000224 --enddate 20000308 /att/nobackup/aarendt/modscag/
 ```
+
+### Output:
+
+The script will download only those tiles that overlap with the HMA region already defined by the HiMAT team. It will output one geotiff per day that contains all the tiles mosaicked together. The output format is:
+
+```bash
+MOD09GA_VAR_YYYY_MM_DD_HMA.tif
+```

@@ -12,7 +12,9 @@ Users must first require a username and password from the JPL [snow data portal]
 modscag_download.py [-h] [--enddate ENDDATE] CRED VARS STARTDATE OUTPATH
 ```
 
-positional arguments:
+Note that we have put `modscag_download.py` in the root directory of this GitHub repository.
+
+### positional arguments:
 
 | arguments | description |
 |:----|:----|

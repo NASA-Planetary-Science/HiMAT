@@ -13,6 +13,8 @@ import progressbar
 
 import rasterio as rio
 from rasterio.merge import merge as merge_tool
+from rasterio import crs
+from rasterio.warp import calculate_default_transform, reproject, Resampling
 
 from scripts.tools.snow_download_by_tile import (daterange, fetch_doys,
                                                  generate_filepaths, TYPES)
@@ -81,8 +83,8 @@ def make_filepaths(start_date, end_date,
     return filepaths
 
 
-def merge_tiles(alldirs, desired_dir, file_patterns):
-    out_name = 'MOD09GA_{varname}_{date}_HMA.tif'.format
+def merge_tiles(alldirs, desired_dir, file_patterns, epsg=None):
+    out_name = 'MOD09GA_{varname}_{date}_HMA{epsg}.tif'.format
     print('Merging tiles ...')
 
     for d in bar(alldirs):
@@ -91,7 +93,7 @@ def merge_tiles(alldirs, desired_dir, file_patterns):
 
         with rio.Env():
             output = out_name(varname=file_patterns.replace('*', '').replace('.tif', ''),
-                              date='{:%Y_%m_%d}'.format(date))
+                              date='{:%Y_%m_%d}'.format(date), epsg='')
             sources = [rio.open(f) for f in gtiffs]
             data, output_transform = merge_tool(sources)
 
@@ -102,10 +104,21 @@ def merge_tiles(alldirs, desired_dir, file_patterns):
             profile['width'] = data.shape[2]
             profile['driver'] = 'GTiff'
             profile['nodata'] = 255
+            print('Merged Profile:')
             print(profile)
 
             with rio.open(os.path.join(desired_dir, output), 'w', **profile) as dst:
                 dst.write(data)
+
+            if epsg:
+                try:
+                    reproj_out = out_name(varname=file_patterns.replace('*', '').replace('.tif', ''),
+                              date='{:%Y_%m_%d}'.format(date), epsg='_{}'.format(epsg))
+                    print(output)
+                    reproj_tiff(os.path.join(desired_dir, output),
+                                os.path.join(desired_dir, reproj_out), epsg)
+                except:
+                    print('Invalid EPSG Code. Go to http://epsg.io/')
 
         if os.path.exists(os.path.join(desired_dir, d)):
             shutil.rmtree(os.path.join(desired_dir, d))
@@ -113,3 +126,39 @@ def merge_tiles(alldirs, desired_dir, file_patterns):
         shutil.copytree(d, os.path.join(desired_dir, d))
     # Cleanup..
     shutil.rmtree(os.path.dirname(os.path.dirname(alldirs[0])))
+
+
+def reproj_tiff(gtiff, output, epsg):
+    dst_crs = crs.CRS.from_epsg(epsg)
+
+    with rio.Env(CHECK_WITH_INVERT_PROJ=True):
+        with rio.open(gtiff) as src:
+            profile = src.profile
+
+            # Calculate the ideal dimensions and transformation in the new crs
+            dst_affine, dst_width, dst_height = calculate_default_transform(
+                src.crs, dst_crs, src.width, src.height, *src.bounds)
+
+            # update the relevant parts of the profile
+            profile.update({
+                'crs': dst_crs,
+                'transform': dst_affine,
+                'width': dst_width,
+                'height': dst_height
+            })
+            print('Reprojected profile:')
+            print(profile)
+
+            with rio.open(output, 'w', **profile) as dst:
+                reproject(
+                    # Source parameters
+                    source=rio.band(src, 1),
+                    src_crs=src.crs,
+                    src_transform=src.transform,
+                    # Destination paramaters
+                    destination=rio.band(dst, 1),
+                    dst_transform=dst_affine,
+                    dst_crs=dst_crs,
+                    # Configuration
+                    resampling=Resampling.nearest,
+                    num_threads=2)

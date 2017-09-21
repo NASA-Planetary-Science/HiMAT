@@ -28,6 +28,7 @@ def make_parser():
                         help='Variables desidered, comma separated if multiple')
     parser.add_argument('startdate', metavar='STARTDATE', type=str, help='Start Date yyyymmdd')
     parser.add_argument('--enddate', type=str, help='End Date yyyymmdd or if blank it will be today')
+    parser.add_argument('--reproj', type=int, help='EPSG CODE to reproject merged tile to. You can find epsg code in http://epsg.io/')
     parser.add_argument('outpath', metavar='OUTPATH', type=str, help='File output path, this is where merged tiff and raw dataset will be stored')
 
 
@@ -83,4 +84,4 @@ if __name__ == '__main__':
 
     alldirs = list(set(dirlist))
 
-    merge_tiles(alldirs, args.outpath, options['file_patterns'])
+    merge_tiles(alldirs, args.outpath, options['file_patterns'], args.reproj)

@@ -51,3 +51,7 @@ For reprojected tiles it would be:
 ```bash
 MOD09GA_VAR_YYYY_MM_DD_HMA_EPSGCODE.tif
 ```
+
+## Other tools
+
+Visit David Shean's [GitHub page](https://github.com/dshean/snowtools) to access additional tools for retrieval and processing of MODSCAG products.

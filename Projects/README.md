@@ -1,4 +1,4 @@
-# HiMAT Models
+# HiMAT Project Atlas
 
 This folder contains additional information on each of individual HiMAT projects, including model metadata and scripts to process outputs. Most datasets are currently not for public distribution and are only available to team members on the NASA ADAPT resources.
 

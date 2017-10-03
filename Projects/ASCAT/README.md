@@ -55,18 +55,7 @@ Longitude bounds: E 63.427, E 105.577 (DDeg)
 
 ## Sample Data
 
-<a href="http://himat.org/wp-content/uploads/2017/03/radcwt_1r4_China-Japan_hma_ascat_mafa_20100525_20100525_cwt.png"><img src="http://himat.org/wp-content/uploads/2017/03/radcwt_1r4_China-Japan_hma_ascat_mafa_20100525_20100525_cwt.png" alt="" width="2016" height="1008" class="alignnone size-full wp-image-602" /></a>
-
-## Data Access
-
-### NASA ADAPT
-
-* [details on pathway to access the data on ADAPT]
-
-### geoserver
-
-### cloud storage
-* [possibly link to cloud storage Nick provided]
+<a href="http://himat.org/wp-content/uploads/2017/03/radcwt_1r4_China-Japan_hma_ascat_mafa_20100525_20100525_cwt.png">sample image</a>
 
 ## Usage constraints
 

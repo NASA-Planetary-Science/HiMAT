@@ -6,4 +6,10 @@ High Mountain Asia (HMA), extending from the Hindu Kush and Tien Shan in the wes
 
 The goal of the NASA High Mountain Asia Team (HiMAT) is to use satellite remote sensing observations to characterize these changes, gain insight into the Earth system processes that control them, and inform decisions, management actions, and policy development. Additional information can be found on our [project page](http://himat.org). 
 
-This repository includes scripts to process HiMAT products as well as metadata on data products from each [project](https://github.com/NASA-Planetary-Science/HiMAT/tree/master/Projects).  
+# Contents
+
+This repository contains:
+
+* [scripts](https://github.com/NASA-Planetary-Science/HiMAT/tree/master/scripts) to process HiMAT products, as well as Jupyter Notebooks in individual project folders
+* [metadata](https://github.com/NASA-Planetary-Science/HiMAT/tree/master/Projects) on products from each project
+* a [list](https://github.com/NASA-Planetary-Science/HiMAT/issues) of ongoing efforts to acquire ground data (posted as GitHub issues)

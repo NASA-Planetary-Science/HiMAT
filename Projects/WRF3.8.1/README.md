@@ -4,13 +4,32 @@
 
 | | |
 |:-----|:-----|
-|MODEL|WRF 3.8.1|
-|POINT OF CONTACT|adam.kochanski@utah.edu|
-|TIME SPAN|TBD|
-|SPATIAL RESOLUTION|36km/12km/4km/(1.33km)|
-|CALIBRATION DATA / BOUNDARY CONDITIONS|CFSR initialization and boundary conditions, snowpack initialization from an external data source (TBD)|
-
-
+|Model Version|WRF 3.8.1|
+|Point of contact |adam.kochanski@utah.edu|
+| MAP AND GRIDS | |
+| Map projection | ? |
+| Number of vertical layers | |
+| Horizontal grid spacing | 36km/12km/4km/(1.33km) |
+| Static geographic fields | |
+| TIMING | |
+| Simulation period |  |
+| Time step | |
+| NESTING STRATEGY | | 
+| Nesting | |
+| FORCING STRATEGY | |
+| Boundary conditions | CFSR |
+| Sea surface temperature | |
+| Initializiation | CFSR | 
+| Runs starting time | |
+| Runs duration | | 
+| Spinup | |
+| PHYSICAL PARAMETERIZATION SCHEMES | | 
+| Shortwave radiation | |
+| Longwave radiation | |
+| Cumulus parameterization | |
+| Microphysics | | 
+| Land surface model | | 
+| PBL | |
 
 ## Model Variables
 

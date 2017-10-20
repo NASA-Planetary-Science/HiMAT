@@ -6,16 +6,20 @@
 |:-----|:-----|
 |Model Version|WRF 3.8.1|
 |Point of contact |adam.kochanski@utah.edu|
+| | |
 | MAP AND GRIDS | |
-| Map projection | ? |
+| Map projection |  |
 | Number of vertical layers | |
 | Horizontal grid spacing | 36km/12km/4km/(1.33km) |
 | Static geographic fields | |
+| | |
 | TIMING | |
 | Simulation period |  |
 | Time step | |
+| | |
 | NESTING STRATEGY | | 
 | Nesting | |
+| | |
 | FORCING STRATEGY | |
 | Boundary conditions | CFSR |
 | Sea surface temperature | |
@@ -23,6 +27,7 @@
 | Runs starting time | |
 | Runs duration | | 
 | Spinup | |
+| | |
 | PHYSICAL PARAMETERIZATION SCHEMES | | 
 | Shortwave radiation | |
 | Longwave radiation | |

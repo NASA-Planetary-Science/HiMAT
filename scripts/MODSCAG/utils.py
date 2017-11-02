@@ -292,8 +292,8 @@ def merge_tiles(alldirs, desired_dir, file_patterns, epsg=None, exportnc=False):
                     print(output)
                     reproj_tiff(os.path.join(desired_dir, output),
                                 os.path.join(desired_dir, reproj_out), epsg)
-                    print('Exporting to netCDF...')
                     if exportnc:
+                        print('Exporting to netCDF...')
                         if epsg == 4326:
                             rasterio_to_xarray(os.path.join(desired_dir, reproj_out), varname)
                         else:

@@ -23,13 +23,8 @@ import re
 from rasterio import windows
 import rasterio as rio
 from rasterio.transform import Affine
-# from rasterio.merge import merge as merge_tool
 from rasterio import crs
 from rasterio.warp import calculate_default_transform, reproject, Resampling
-
-import cartopy.crs as ccrs
-from cartopy.mpl.gridliner import LONGITUDE_FORMATTER, LATITUDE_FORMATTER
-import matplotlib.pyplot as plt
 
 
 logger = logging.getLogger(__name__)

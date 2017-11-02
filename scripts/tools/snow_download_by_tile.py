@@ -1,4 +1,6 @@
-'''
+# -*- coding: utf-8 -*-
+
+"""
   Licensed to the Apache Software Foundation (ASF) under one or more
   contributor license agreements.  See the NOTICE file distributed with
   this work for additional information regarding copyright ownership.
@@ -15,14 +17,33 @@
   limitations under the License.
 
 This script will facilitate downloading of snow products over WEBDAV.
-'''
+
+As of 10/19/2017 This script is Python 3 Compatible.
+Edits were made by Landung Setiawan, UW-APL
+"""
+
+from __future__ import (absolute_import, division, print_function)
 
 from datetime import datetime, timedelta
 import fnmatch
-from HTMLParser import HTMLParser
 from optparse import OptionParser
 import os
-import urllib2
+try:
+    from urllib2 import (urlopen,
+                         build_opener,
+                         HTTPError,
+                         URLError,
+                         HTTPDigestAuthHandler,
+                         install_opener)
+    from HTMLParser import HTMLParser
+except:
+   from urllib.request import (urlopen,
+                               build_opener,
+                               HTTPDigestAuthHandler,
+                               install_opener)
+   from urllib.error import (HTTPError,
+                             URLError)
+   from html.parser import HTMLParser
 
 
 class AnchorTagParser(HTMLParser):
@@ -87,11 +108,11 @@ def setup_cmdline_parser():
             default= None, dest='product_types', help='Product type to download '
             '(List of comma separated values). Choices include %s' % TYPES.keys())
 
-    parser.add_option('-s', '--start', action='store', type='string', 
+    parser.add_option('-s', '--start', action='store', type='string',
             default=None, dest='start', help='REQUIRED - Provide a start date in the format '
             'YYYYDDD, where DDD is a 3-digit Day Of Year')
 
-    parser.add_option('-e', '--end', action='store', type='string', 
+    parser.add_option('-e', '--end', action='store', type='string',
             default=None, dest='end', help='Provide an end date in the format '
             'YYYYDDD, where DDD is a 3-digit Day Of Year. '
             'NOTE: This date is NOT INCLUSIVE for downloading tiles.')
@@ -127,26 +148,27 @@ def download_file(url):
     to the same name as it has on the server and with the same relative pathing.'''
     filepath = url[len(SNOW_DATA_URL) + 1:]
     try:
-        data = urllib2.urlopen(url)
+        data = urlopen(url)
         directory = os.path.dirname(filepath)
         if not os.path.exists(directory):
             os.makedirs(directory)
-        f = open(filepath, 'w')
+        f = open(filepath, 'wb')
         f.write(data.read())
-        print 'Downloaded: %s' % (filepath)
-    except urllib2.HTTPError, ex:
-        print 'Failed Download: %s; (%s)' % (filepath, ex)
-    except urllib2.URLError, ex:
-        print 'Invalid URL: %s; (%s)' % (url, ex)
-    except IOError, ex:
-        print 'Cannot write: %s; (%s)' % (filepath, ex)
+        print('Downloaded: %s' % (filepath))
+    except (HTTPError, URLError, IOError) as ex:
+        if type(ex) == HTTPError:
+            print('Failed Download: %s; (%s)' % (filepath, ex))
+        elif type(ex) == URLError:
+            print('Invalid URL: %s; (%s)' % (url, ex))
+        elif type(ex) == IOError:
+            print('Cannot write: %s; (%s)' % (filepath, ex))
 
 def setup_auth(user, passwd):
     '''Sets up the login for SnowDS WebDAV'''
-    auth_handler = urllib2.HTTPDigestAuthHandler()
+    auth_handler = HTTPDigestAuthHandler()
     auth_handler.add_password(realm=SNOW_REALM, uri=SNOW_DATA_URL, user=user, passwd=passwd)
-    opener = urllib2.build_opener(auth_handler)
-    urllib2.install_opener(opener)
+    opener = build_opener(auth_handler)
+    install_opener(opener)
 
 def daterange(start_date, end_date):
     '''Generates a set of year and doy from start_date up to but not including end_date'''
@@ -172,11 +194,11 @@ def parse_html_for_tile(html, base_url, tile):
     """
     paths = []
     for line in html:
-        if tile in line:
-            line_bits = line.split('"')
+        if tile.encode('utf-8') in line:
+            line_bits = line.split('"'.encode('utf-8'))
             for i, val in enumerate(line_bits):
-                if val.startswith("MOD09GA"):
-                    paths.append(os.path.join(base_url, line_bits[i]))
+                if val.startswith('MOD09GA'.encode('utf-8')):
+                    paths.append(os.path.join(base_url.encode('utf-8'), line_bits[i]).decode('utf-8'))
 
     return paths
 
@@ -191,7 +213,6 @@ def filter_urls(urls, patterns):
         filtered_urls <list> URLs that match the given pattern(s)
     '''
     filtered_urls = []
-
     for pattern in patterns:
         good_urls = fnmatch.filter(urls, pattern)
         filtered_urls.extend(good_urls)
@@ -205,12 +226,11 @@ def generate_filepaths(product_type, tiles, year, doy, filename_patterns=None):
     # Fetch the HTML for the Year/DOY in Question
     index_html_url = TYPES[product_type]['url'].format(year=year, doy=doy)
     try:
-        req = urllib2.urlopen(index_html_url)
+        req = urlopen(index_html_url)
         html = req.readlines()
         req.close()
         for tile in tiles:
             filepath_list = parse_html_for_tile(html, index_html_url, tile)
-
             # If filename_patterns (check the filepath using the patterns)
             if filename_patterns:
                 patterns = [p.strip() for p in filename_patterns.split(',')]
@@ -220,9 +240,9 @@ def generate_filepaths(product_type, tiles, year, doy, filename_patterns=None):
             else:
                 filepaths += filepath_list
 
-    except urllib2.HTTPError:
+    except HTTPError:
         msg = "Unable to locate URL: %s" % index_html_url
-        print msg
+        print(msg)
 
     return filepaths
 
@@ -237,10 +257,10 @@ def fetch_doys(product_type, year):
         doys <list> Collection of valid DOYs to be searched further
     """
     base_url = TYPES[product_type]['url'].format(year=year, doy='')
-    req = urllib2.urlopen(base_url)
+    req = urlopen(base_url)
     html = req.read()
     html_parser = AnchorTagParser()
-    html_parser.feed(html)
+    html_parser.feed(str(html))
     req.close()
     doys = html_parser.doys
     return doys
@@ -285,7 +305,7 @@ def main():
 
     elif options.mode == 'curl':
         for filepath in filepaths:
-            print 'curl --user="%s:%s" %s --digest -O' % (options.user, options.passwd, filepath)
+            print('curl --user="%s:%s" %s --digest -O' % (options.user, options.passwd, filepath))
 
 if __name__ == '__main__':
     main()

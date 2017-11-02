@@ -31,7 +31,7 @@ def make_parser():
     parser.add_argument('--enddate', type=str, help='End Date yyyymmdd or if blank it will be today')
     parser.add_argument('--reproj', type=int, help='EPSG CODE to reproject merged tile to. You can find epsg code in http://epsg.io/')
     parser.add_argument('outpath', metavar='OUTPATH', type=str, help='File output path, this is where merged tiff and raw dataset will be stored')
-    parser.add_argument('--exportnc', type=bool, help='Optional to export to netCDF file, needs to reproject to EPSG:4326 to work!')
+    parser.add_argument('--exportnc', action="store_true", default=False, help='Optional to export to netCDF file, needs to reproject to EPSG:4326 to work!')
 
 
     return parser

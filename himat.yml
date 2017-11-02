@@ -1,6 +1,7 @@
 name: himat
 channels:
 - conda-forge
+- digitalglobe
 dependencies:
 - python=3.6
 - jupyter
@@ -12,7 +13,7 @@ dependencies:
 - mplleaflet
 - folium
 - cartopy
-- rasterio
+- rasterio=1.0a9
 - xarray
 - sqlalchemy
 - psycopg2

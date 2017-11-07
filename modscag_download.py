@@ -10,7 +10,8 @@ import argparse
 
 import progressbar
 
-from scripts.MODSCAG.utils import (create_tiles, get_credentials, make_filepaths, merge_tiles)
+from scripts.MODSCAG.utils import (create_tiles, get_credentials, make_filepaths, merge_tiles,
+                                   rasterio_to_xarray)
 from scripts.tools.snow_download_by_tile import (setup_auth, download_file, SNOW_DATA_URL)
 
 
@@ -30,6 +31,7 @@ def make_parser():
     parser.add_argument('--enddate', type=str, help='End Date yyyymmdd or if blank it will be today')
     parser.add_argument('--reproj', type=int, help='EPSG CODE to reproject merged tile to. You can find epsg code in http://epsg.io/')
     parser.add_argument('outpath', metavar='OUTPATH', type=str, help='File output path, this is where merged tiff and raw dataset will be stored')
+    parser.add_argument('--exportnc', action="store_true", default=False, help='Optional to export to netCDF file, needs to reproject to EPSG:4326 to work!')
 
 
     return parser
@@ -84,4 +86,4 @@ if __name__ == '__main__':
 
     alldirs = list(set(dirlist))
 
-    merge_tiles(alldirs, args.outpath, options['file_patterns'], args.reproj)
+    merge_tiles(alldirs, args.outpath, options['file_patterns'], args.reproj, args.exportnc)

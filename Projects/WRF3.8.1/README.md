@@ -8,33 +8,33 @@
 |Point of contact |adam.kochanski@utah.edu|
 | | |
 | MAP AND GRIDS | |
-| Map projection |  |
+| Map projection | lambert conformal |
 | Number of vertical layers | |
 | Horizontal grid spacing | 36km/12km/4km/(1.33km) |
-| Static geographic fields | |
+| Static geographic fields | standardr geog 3.8.1 input |
 | | |
 | TIMING | |
-| Simulation period |  |
-| Time step | |
+| Simulation period | 2000, 2001, 2002, 2008 |
+| Time step | 120s / 60s (for summer months with strong convection) |
 | | |
-| NESTING STRATEGY | | 
-| Nesting | |
+| NESTING STRATEGY |  | 
+| Nesting | 1-way, 3:1 ratio  |
 | | |
 | FORCING STRATEGY | |
 | Boundary conditions | CFSR |
-| Sea surface temperature | |
+| Sea surface temperature | CFSR  |
 | Initializiation | CFSR | 
-| Runs starting time | |
-| Runs duration | | 
-| Spinup | |
+| Runs starting time | 2000-01-01:00:00 |
+| Runs duration | 1 month (31 dyas) per 1 run | 
+| Spinup | 1-year  |
 | | |
 | PHYSICAL PARAMETERIZATION SCHEMES | | 
-| Shortwave radiation | |
-| Longwave radiation | |
-| Cumulus parameterization | |
-| Microphysics | | 
-| Land surface model | | 
-| PBL | |
+| Shortwave radiation | MM5 (Dudhia)  |
+| Longwave radiation | RRTM  |
+| Cumulus parameterization | Betts-Miller-Janjic (only 36km and 12km domains) |
+| Microphysics | Thompson / Goddard 6-class  | 
+| Land surface model | Noah MP  | 
+| PBL | YSU  |
 
 ## Model Variables
 

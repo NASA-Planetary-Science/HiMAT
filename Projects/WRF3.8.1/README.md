@@ -25,7 +25,7 @@
 | Sea surface temperature | CFSR  |
 | Initializiation | CFSR | 
 | Runs starting time | 2000-01-01:00:00 |
-| Runs duration | 1 month (31 dyas) per 1 run | 
+| Runs duration | 1 month (31 days) per 1 run | 
 | Spinup | 1-year  |
 | | |
 | PHYSICAL PARAMETERIZATION SCHEMES | | 

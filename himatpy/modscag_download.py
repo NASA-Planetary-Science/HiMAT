@@ -10,9 +10,9 @@ import argparse
 
 import progressbar
 
-from scripts.MODSCAG.utils import (create_tiles, get_credentials, make_filepaths, merge_tiles,
+from himatpy.MODSCAG.utils import (create_tiles, get_credentials, make_filepaths, merge_tiles,
                                    rasterio_to_xarray)
-from scripts.tools.snow_download_by_tile import (setup_auth, download_file, SNOW_DATA_URL)
+from himatpy.tools.snow_download_by_tile import (setup_auth, download_file, SNOW_DATA_URL)
 
 
 bar = progressbar.ProgressBar()

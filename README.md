@@ -10,7 +10,7 @@ The goal of the NASA High Mountain Asia Team (HiMAT) is to use satellite remote 
 
 This repository contains:
 
-* [scripts](https://github.com/NASA-Planetary-Science/HiMAT/tree/master/scripts) to process HiMAT products, as well as Jupyter Notebooks in individual project folders
+* [scripts](https://github.com/NASA-Planetary-Science/HiMAT/tree/master/himatpy) to process HiMAT products, as well as Jupyter Notebooks in individual project folders. `pip install -e .` to install himatpy.
 * [metadata](https://github.com/NASA-Planetary-Science/HiMAT/tree/master/Projects) on products from each project
 * a [list](https://github.com/NASA-Planetary-Science/HiMAT/issues) of ongoing efforts to acquire ground data (posted as GitHub issues)
 * a [wiki page](https://github.com/NASA-Planetary-Science/HiMAT/wiki) with overall project description and summary of each individual team

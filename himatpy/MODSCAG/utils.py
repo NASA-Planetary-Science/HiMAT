@@ -29,7 +29,7 @@ from rasterio.warp import calculate_default_transform, reproject, Resampling
 
 logger = logging.getLogger(__name__)
 
-from scripts.tools.snow_download_by_tile import (daterange, fetch_doys, generate_filepaths, TYPES)
+from himatpy.tools.snow_download_by_tile import (daterange, fetch_doys, generate_filepaths, TYPES)
 
 
 __author__ = ['Landung Setiawan', 'Anthony Arendt']

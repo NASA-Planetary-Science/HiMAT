@@ -9,9 +9,9 @@
 | | |
 | MAP AND GRIDS | |
 | Map projection | lambert conformal |
-| Number of vertical layers | |
+| Number of vertical layers | 45  |
 | Horizontal grid spacing | 36km/12km/4km/(1.33km) |
-| Static geographic fields | standardr geog 3.8.1 input |
+| Static geographic fields | standard geog 3.8.1 input |
 | | |
 | TIMING | |
 | Simulation period | 2000, 2001, 2002, 2008 |

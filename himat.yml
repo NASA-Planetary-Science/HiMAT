@@ -18,3 +18,4 @@ dependencies:
 - sqlalchemy
 - psycopg2
 - progressbar2
+- regionmask

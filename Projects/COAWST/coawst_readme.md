@@ -27,11 +27,11 @@ HiMAT Point of Contact: stephen.d.nicholls@nasa.gov
 |:-----|:-----|
 | **WRF SPECIFIC SETTINGS** | 
 | Model Version | Version 3.7.1 |
+| Model Description | Atmosphere model applying fully-compressible, non-hydrostatic, Eulerian equations in terrain-following coordinates in terrain following (sigma) coordinates |
 | Map Projection | Lambert Conical Conformial | 
 | Model Domains | 2 |
 | Grid Resolution (domain) | 20 km, 5 km | 
 | Vertical Levels | 61 | 
-| Vertical Coordinate System | Sigma (Terrain following) |
 | Model top pressure | 1,000 Pa |
 | Time step | 40 seconds |
 | Historical Input Data | Modern Era Retrospective-analysis for Research and Applications, 2nd Version (MERRA-2) | 
@@ -51,17 +51,18 @@ HiMAT Point of Contact: stephen.d.nicholls@nasa.gov
 |:-----|:-----|
 | **ROMS SPECIFIC SETTINGS** | 
 | Model Version | Subversion 797 |
+| Model Desciption | Ocean model applying 3D Reynolds-averaged Navier–Stokes equations using hydrostatic and Boussinesq approximations in terrain following (sigma) coordinates|
 | Map Projection | Lambert Conical Conformial | 
 | Model Domains | 1 |
 | Grid Resolution (domain) | 20 km | 
 | Vertical Levels | 16 | 
-| Vertical Coordinate System | Sigma (Bathymetry following) |
 | Time step | 10 seconds |
 | Historical Input Data | Hybrid Coordinate Ocean Model (HYCOM) |
 | Future Input Data | Global Climate Model (TBD) | 
 | Data input interval | 1440 minutes (1 day) |
 | Boundary update interval | 1440 minutes (1 day)
 | Data Output Frequency | 6 hr, Daily, Monthly |
+| ROMS Pa
 
 
 

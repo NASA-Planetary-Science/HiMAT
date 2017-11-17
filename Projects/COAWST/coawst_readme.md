@@ -39,6 +39,13 @@ HiMAT Point of Contact: stephen.d.nicholls@nasa.gov
 | Data input interval | 180 minutes |
 | Boundary update interval | 180 minutes |
 | Data Output Frequency | 1 hr, 6 hr, Daily, Monthly |
+| Model Parameterization | Boundary Layer: YSU Scheme |
+|| Cumulus: Multi-scale Kain-Fritsch Scheme 
+|| Land Surface: NOAH-MP |
+|| Microphysics: Goddard Cumulus Ensemble (GCE) - 4ice |
+|| Radiation (Long Wave): RRTM |
+|| Radiation (Short Wave): RRTMG |
+|| Surface Scheme: Revised MM5 Monin-Obukhov |
 
 | | |
 |:-----|:-----|

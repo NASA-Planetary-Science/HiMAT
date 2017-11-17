@@ -13,14 +13,14 @@
 | **ROMS Name** | **Description** | **Units** |
 | f | Coriolis parameter | s<sup>-1</sup>|
 | h | bathymetry | m |
-| lat_psi | latitude for cross-staggered grid (0 = land, 1 = ocean ) | °N | 
-| lat_rho | latitude for unstaggered grid (0 = land, 1 = ocean ) | °N |
-| lat_rho | latitude for u-staggered grid (0 = land, 1 = ocean ) | °N |
-| lat_rho | latitude for v-staggered grid (0 = land, 1 = ocean ) | °N |
-| lon_psi | longitude for cross-staggered grid (0 = land, 1 = ocean ) | °E |
-| lon_rho | longitude for unstaggered grid (0 = land, 1 = ocean ) | °E |
-| lon_rho | longitude for u-staggered grid (0 = land, 1 = ocean ) | °E |
-| lon_rho | longitude for v-staggered grid (0 = land, 1 = ocean ) | °E |
+| lat_psi | latitude for cross-staggered grid | °N | 
+| lat_rho | latitude for unstaggered grid | °N |
+| lat_rho | latitude for u-staggered grid | °N |
+| lat_rho | latitude for v-staggered grid | °N |
+| lon_psi | longitude for cross-staggered grid | °E |
+| lon_rho | longitude for unstaggered grid | °E |
+| lon_rho | longitude for u-staggered grid | °E |
+| lon_rho | longitude for v-staggered grid | °E |
 | mask_psi | land mask for cross-staggered grid (0 = land, 1 = ocean ) | none |
 | mask_rho | land mask for unstaggered grid (0 = land, 1 = ocean ) | none |
 | mask_rho | land mask for u-staggered grid (0 = land, 1 = ocean ) | none |

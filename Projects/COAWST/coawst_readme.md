@@ -10,7 +10,7 @@
 | Sedimentation transport | Community Sediment Transport Modeling System (CSTMS) | N/A |
 | Coupler | Model Coupling Toolkit (MCT) | Version 2.6.0 |
 | Weighted Interpolation | Spherical Coordinate Interpolating Package (SCRIP) |
-| Citation | Warner, J. C., B. Armstrong, R. He, and J. B. Zambon, 2010: Development of a Coupled Ocean-Atmosphere-Wave-Sediment Transport (COAWST) modeling system. Ocean Modelling, 35, 230–244 | |
+| COAWST Citation | Warner, J. C., B. Armstrong, R. He, and J. B. Zambon, 2010: Development of a Coupled Ocean-Atmosphere-Wave-Sediment Transport (COAWST) modeling system. Ocean Modelling, 35, 230–244 | |
 
 ## HiMAT Specific Model Run Configuration
 

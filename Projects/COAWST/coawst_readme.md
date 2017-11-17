@@ -62,7 +62,22 @@ HiMAT Point of Contact: stephen.d.nicholls@nasa.gov
 | Data input interval | 1440 minutes (1 day) |
 | Boundary update interval | 1440 minutes (1 day)
 | Data Output Frequency | 6 hr, Daily, Monthly |
-| ROMS Pa
+| ROMS Paramterization | |
+|| Centered vertical advection: 4th order
+|| Generic length scale mixing: On
+|| Horizonal momentum mixing type: Constant sigma surfaces
+|| Lateral Boundaries (W, S, E, N): Open, Open, Open, Closed |
+|| T & S 3rd order upstream advection: On
+|| T & S Harmonic horizonal mixing: On
+|| Tidal elevation: Imposed
+|| U & V Advection: On
+|| U & V Coriolis: On
+|| U & V Harmonic horizontal mixing: On
+|| U & V Linear Bottom Friction: Off
+
+
+
+
 
 
 

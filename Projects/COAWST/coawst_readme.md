@@ -9,8 +9,8 @@ HiMAT Point of Contact: stephen.d.nicholls@nasa.gov
 | Last Status Update | 17 November 2017 |
 | Water Year (2008) | Complete |
 | Water Year (2015) | Complete |
-| Recent Climate (2000 - 2015) | Input data generation and testing |
-| Future Climate (2050 - 2065) | Not yet started |
+| Historical Simulation (2000 - 2015) | Input data generation and testing |
+| Future Climate Simulation (2050 - 2065) | Not yet started |
 
 ## HiMAT COAWST Configuration
 
@@ -33,9 +33,11 @@ HiMAT Point of Contact: stephen.d.nicholls@nasa.gov
 | Vertical Coordinate System | Sigma (Terrain following) |
 | Model top pressure | 1,000 Pa |
 | Time step | 40 seconds |
-| Input Data | Modern Era Retrospective-analysis for Research and Applications, 2nd Version (MERRA-2) | 
+| Historical Input Data | Modern Era Retrospective-analysis for Research and Applications, 2nd Version (MERRA-2) | 
+| Future Input Data | Global Climate Model (TBD) | 
 | Data input interval | 180 minutes |
 | Boundary update interval | 180 minutes |
+| Data Output Frequency | 1 hr, 6 hr, Daily, Monthly |
 
 | | |
 |:-----|:-----|
@@ -47,9 +49,12 @@ HiMAT Point of Contact: stephen.d.nicholls@nasa.gov
 | Vertical Levels | 16 | 
 | Vertical Coordinate System | Sigma (Bathymetry following) |
 | Time step | 10 seconds |
-| Model input | Hybrid Coordinate Ocean Model (HYCOM) |
+| Historical Input Data | Hybrid Coordinate Ocean Model (HYCOM) |
+| Future Input Data | Global Climate Model (TBD) | 
 | Data input interval | 1440 minutes (1 day) |
 | Boundary update interval | 1440 minutes (1 day)
+| Data Output Frequency | 6 hr, Daily, Monthly |
+
 
 
 

@@ -25,8 +25,8 @@
 | GRAUPELNC* | Liquid-equivalent accumulated graupel (explcit) | mm | X | X |  |  |
 | HAILNC* | Liquid-equivalent accumulated hail (explcit) | mm | X | X |  |  |
 | PRECIP | Liquid-equivalent accumulated precipiation | mm |   |   | X | X |
-| RAINC* | Liquid-equivalent accumulated precipiation (convective parameterization) | mm | X | X |  |  |
-| RAINNC* | Liquid-equivalent accumulated precipiation (explicit) | mm | X | X |  |  |
+| RAINC** | Liquid-equivalent accumulated precipiation (convective parameterization) | mm | X | X |  |  |
+| RAINNC** | Liquid-equivalent accumulated precipiation (explicit) | mm | X | X |  |  |
 | RAIN | Liquid-equivalent accumulated rainfall | mm |   |   | X | X |
 | SNOW | Liquid-equivalent accumulated snowfall | mm |   |   | X | X |
 | SNOWC* | Liquid-equivalent accumulated snowfall (convective parameterization) | mm | X | X |  |  |

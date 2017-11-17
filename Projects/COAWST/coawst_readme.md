@@ -23,10 +23,10 @@
 | WRF SPECIFIC SETTINGS | |
 | Map Projection | Lambert Conical Conformial | |
 | Model Domains | 2 |
-| Model Grid Resolution | 20 km x 5 km | |
-| Model Vertical Levels | 61m | |
-| Model Input | Modern Era Retrospective-analysis for Research and Applications, 2nd Version (MERRA-2) | | 
-
+| Grid Resolution | 20 km x 5 km | |
+| Vertical Levels | 61 | |
+| Input Data | Modern Era Retrospective-analysis for Research and Applications, 2nd Version (MERRA-2) | | 
+| 
 
 
 

@@ -13,7 +13,9 @@ HiMAT Point of Contact: stephen.d.nicholls@nasa.gov
 | Coupling Interval | 1800 seconds (30 minutes) | 
 | Coupler | Model Coupling Toolkit (MCT) Version 2.6.0 |
 | COAWST Citation | Warner, J. C., B. Armstrong, R. He, and J. B. Zambon, 2010: Development of a Coupled Ocean-Atmosphere-Wave-Sediment Transport (COAWST) modeling system. Ocean Modelling, 35, 230–244 | 
-| | 
+
+| | |
+|:-----|:-----|
 | WRF SPECIFIC SETTINGS | 
 | Model Version | Version 3.7.1 |
 | Map Projection | Lambert Conical Conformial | 
@@ -26,7 +28,9 @@ HiMAT Point of Contact: stephen.d.nicholls@nasa.gov
 | Input Data | Modern Era Retrospective-analysis for Research and Applications, 2nd Version (MERRA-2) | 
 | Data input interval | 180 minutes |
 | Boundary update interval | 180 minutes |
-| |
+
+| | |
+|:-----|:-----|
 | ROMS SPECIFIC SETTINGS | 
 | Model Version | Subversion 797 |
 | Map Projection | Lambert Conical Conformial | 
@@ -38,4 +42,9 @@ HiMAT Point of Contact: stephen.d.nicholls@nasa.gov
 | Model input | Hybrid Coordinate Ocean Model (HYCOM) |
 | Data input interval | 1440 minutes (1 day) |
 | Boundary update interval | 1440 minutes (1 day)
+
+
+
+
+
 

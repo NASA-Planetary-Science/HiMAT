@@ -33,8 +33,8 @@
 |:-----|:-----|:-----|:-----|:-----|:-----|
 | **ROMS Name** | **Description** | **Units** |  **6 hr** | **Daily** | **Monthly** |
 | ocean_time | time since ROMS model initialization | s | | | |
-| temp | potential temperature | Celsius | X | X | X |
 | salt | salinity | psu | X | X | X |
+| temp | potential temperature | Celsius | X | X | X |
 | w | upward sea velocity | m s<sup>-1</sup> | X | X | X |
 | u | u-momentum | m s<sup>-1</sup> | X | X | X |
 | ubar | vertically integrated u-momentum | m s<sup>-1</sup> | X | X | X |

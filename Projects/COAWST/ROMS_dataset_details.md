@@ -3,7 +3,7 @@
 | | |
 |:-----|:-----|
 | Purpose of this file | Detail available ROMS model output from COAWST simulations and its temporal availability |
-| NOTE | For currently available time periods, please see "coawst_readme.md"
+| Dataset generation status | Please see "coawst_readme.md" for details |
 | Output data format | NetCDF |
 
 

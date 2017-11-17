@@ -1,7 +1,6 @@
-WRF!!!!
 ## Key Details
 
-| | |
+| | | 
 |:-----|:-----|
 | Purpose of this file | Detail available WRF model output from COAWST simulations and its temporal availability |
 | Dataset generation status | Please see "coawst_readme.md" for details |
@@ -9,8 +8,8 @@ WRF!!!!
 
 ## Variable Descriptions and Time Frequencies
 
-| | | | | | |
-|:-----|:-----|:-----|:-----|:-----|:-----|
+| | | | | | | |
+|:-----|:-----|:-----|:-----|:-----|:-----|:-----|
 | **WRF Name** | **Description** | **Units** |  **1 hr** | **6 hr** | **Daily Avg/Accum** | **Monthly Avg/Accum** |
 | DATE | Date and Time of data | yyyy-mm-dd hh:mm:ss format |   |   | X | X |
 | HGT | Land surface height | m |   |   | X | X |

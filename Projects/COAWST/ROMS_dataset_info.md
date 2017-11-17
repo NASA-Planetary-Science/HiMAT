@@ -1,7 +1,6 @@
-This file details ROMS model output from COAWST that will be achived and in what frequency
-
 | | |
 |:-----|:-----|
+| OPurpose of this file | details ROMS model output from COAWST that will be achived and in what frequency |
 | Output data format | NetCDF |
 
 

@@ -14,6 +14,8 @@
 | T2 | 2-m air temperature | K | X | X | X | X |
 | RH2 | 2-m relative humidity | % |   |   | X | X |
 | Q2 | 2-m specific humidity | Kg Kg<sup>-1</sup> | X | X | X | X |
+| U10 | 10-m zonal wind speed | m s<sup>-1</sup> | X | X | X | X |
+| V10 | 10-m meridional wind speed | m s<sup>-1</sup> | X | X | X | X |
 | CLDFRA | Cloud fraction | none | X  | X |  |  |
 | DATE | Date and Time of data | yyyy-mm-dd hh:mm:ss format |   |   | X | X |
 | HGT | Land surface height | m | X | X | X | X |
@@ -29,6 +31,7 @@
 | SNOW | Liquid-equivalent accumulated snowfall | mm |   |   | X | X |
 | SNOWC* | Liquid-equivalent accumulated snowfall (convective parameterization) | mm | X | X |  |  |
 | SNOWNC* | Liquid-equivalent accumulated snowfall (explicit) | mm | X | X |  |  |
+| PSFC | Surface pressure | Pa | X | X |  |  |
 | LAT | Unstaggered latitude | °N |   |   | X | X |
 | XLAT | Unstaggered latitude | °N | X  | X  |  |  |
 | LON | Unstaggered longitude | °E |   |   | X | X |

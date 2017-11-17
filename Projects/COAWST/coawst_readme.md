@@ -16,18 +16,17 @@
 
 | | | |
 |:-----|:-----|:-----|
-| Coupling Option | WRF-ROMS | Version 3.7.1 |
-| Coupling Interval | 1800 seconds (30 minutes) |
+| OVERALL COAWST SETTINGS | |
+| Coupling Option | WRF-ROMS | |
+| Coupling Interval | 1800 seconds (30 minutes) | 
 | | | 
-| WRF Configuration Details | |
+| WRF SPECIFIC SETTINGS | |
 | Map Projection | Lambert Conical Conformial | |
 | Model Domains | 2 |
-| Model Resolution | D1: 20, D2: 5 | |
+| Model Grid Resolution | 20 km x 5 km | |
+| Model Vertical Levels | 61m | |
+| Model Input | Modern Era Retrospective-analysis for Research and Applications, 2nd Version (MERRA-2) | | 
 
-| Wave | Simulating Waves Nearshore model (SWAN) | Version 41.01AB|
-| Sedimentation transport | Community Sediment Transport Modeling System (CSTMS) | N/A |
-| Coupler | Model Coupling Toolkit (MCT) | Version 2.6.0 |
-| Weighted Interpolation | Spherical Coordinate Interpolating Package (SCRIP) | N/A |
 
 
 

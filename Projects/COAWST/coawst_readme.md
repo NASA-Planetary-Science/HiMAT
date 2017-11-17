@@ -16,7 +16,7 @@ HiMAT Point of Contact: stephen.d.nicholls@nasa.gov
 
 | | |
 |:-----|:-----|
-| OVERALL COAWST SETTINGS | 
+| **OVERALL COAWST SETTINGS** | 
 | Coupling Option | WRF-ROMS | 
 | Coupling Interval | 1800 seconds (30 minutes) | 
 | Coupler | Model Coupling Toolkit (MCT) Version 2.6.0 |
@@ -24,7 +24,7 @@ HiMAT Point of Contact: stephen.d.nicholls@nasa.gov
 
 | | |
 |:-----|:-----|
-| WRF SPECIFIC SETTINGS | 
+| **WRF SPECIFIC SETTINGS** | 
 | Model Version | Version 3.7.1 |
 | Map Projection | Lambert Conical Conformial | 
 | Model Domains | 2 |
@@ -41,7 +41,7 @@ HiMAT Point of Contact: stephen.d.nicholls@nasa.gov
 
 | | |
 |:-----|:-----|
-| ROMS SPECIFIC SETTINGS | 
+| **ROMS SPECIFIC SETTINGS** | 
 | Model Version | Subversion 797 |
 | Map Projection | Lambert Conical Conformial | 
 | Model Domains | 1 |

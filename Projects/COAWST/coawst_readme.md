@@ -14,7 +14,7 @@
 
 
 | | |
-|:-----|:-----|
+|:-----|:-----|:-----|
 |Atmosphere | Weather Research and Forecasting model (WRF) | Version 3.7.1 |
 |Ocean | Regional Ocean Modeling System model (ROMS) | Revision 797 |
 |Wave | Simulating Waves Nearshore model (SWAN) | Version 41.01AB|

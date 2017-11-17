@@ -37,7 +37,7 @@
 | LON | Unstaggered longitude | °E |   |   | X | X |
 | XLONG | Unstaggered longitude | °E |  X | X  |  |  |
 
-"*WRF precipitation type variable. Shown data is accumulated from model initialization. Total model-simulated precipiation adds the explicitly simualted (NC) and convective parameterization (C) components" 
+*WRF precipitation type variable. Shown data is accumulated from model initialization. Total model-simulated precipiation adds the explicitly simualted (NC) and convective parameterization (C) components
 
-"**WRF total precipitation type variable. This variable shows total precipitation from all types of precipitation. To extract rainfall only, please subtract all other types of precipitation from the RAINC+RAINNC" 
+**WRF total precipitation type variable. This variable shows total precipitation from all types of precipitation. To extract rainfall only, please subtract all other types of precipitation from the RAINC+RAINNC 
 

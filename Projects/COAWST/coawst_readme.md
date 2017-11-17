@@ -16,10 +16,11 @@ HiMAT Point of Contact: stephen.d.nicholls@nasa.gov
 
 | | |
 |:-----|:-----|
-| **OVERALL COAWST SETTINGS** | 
+| **COAWST SETTINGS** | 
 | Coupling Option | WRF-ROMS | 
 | Coupling Interval | 1800 seconds (30 minutes) | 
 | Coupler | Model Coupling Toolkit (MCT) Version 2.6.0 |
+| COAWST Model Project Page | https://woodshole.er.usgs.gov/operations/modeling/COAWST/ |
 | COAWST Citation | Warner, J. C., B. Armstrong, R. He, and J. B. Zambon, 2010: Development of a Coupled Ocean-Atmosphere-Wave-Sediment Transport (COAWST) modeling system. Ocean Modelling, 35, 230–244 | 
 
 | | |

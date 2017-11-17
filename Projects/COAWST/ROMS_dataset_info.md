@@ -1,4 +1,4 @@
-## Variable Descriptions and Time Frequencies
+## Key Details
 
 | | |
 |:-----|:-----|

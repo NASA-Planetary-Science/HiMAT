@@ -21,6 +21,7 @@ HiMAT Point of Contact: stephen.d.nicholls@nasa.gov
 | Grid Resolution (domain) | 20 km, 5 km | 
 | Vertical Levels | 61 | 
 | Vertical Coordinate System | Sigma (Terrain following) |
+| Model top pressure | 1,000 Pa |
 | Time step | 40 seconds |
 | Input Data | Modern Era Retrospective-analysis for Research and Applications, 2nd Version (MERRA-2) | 
 | Data input interval | 180 minutes |

@@ -4,13 +4,30 @@
 
 | | | |
 |:-----|:-----|:-----|
-|Atmosphere | Weather Research and Forecasting model (WRF) | Version 3.7.1 |
-|Ocean | Regional Ocean Modeling System model (ROMS) | Revision 797 |
-|Wave | Simulating Waves Nearshore model (SWAN) | Version 41.01AB|
-|Sedimentation transport | Community Sediment Transport Modeling System (CSTMS) | N/A |
-|Coupler | Model Coupling Toolkit (MCT) | Version 2.6.0 |
+| Atmosphere | Weather Research and Forecasting model (WRF) | Version 3.7.1 |
+| Ocean | Regional Ocean Modeling System model (ROMS) | Revision 797 |
+| Wave | Simulating Waves Nearshore model (SWAN) | Version 41.01AB|
+| Sedimentation transport | Community Sediment Transport Modeling System (CSTMS) | N/A |
+| Coupler | Model Coupling Toolkit (MCT) | Version 2.6.0 |
+| Weighted Interpolation | Spherical Coordinate Interpolating Package (SCRIP) |
+| Citation | Warner, J. C., B. Armstrong, R. He, and J. B. Zambon, 2010: Development of a Coupled Ocean-Atmosphere-Wave-Sediment Transport (COAWST) modeling system. Ocean Modelling, 35, 230–244 | |
 
+## HiMAT Specific Model Run Configuration
 
+| | | |
+|:-----|:-----|:-----|
+| Coupling Option | WRF-ROMS | Version 3.7.1 |
+| Coupling Interval | 1800 seconds (30 minutes) |
+| | | 
+| WRF Configuration Details | |
+| Map Projection | Lambert Conical Conformial | |
+| Model Domains | 2 |
+| Model Resolution | D1: 20, D2: 5 | |
+
+| Wave | Simulating Waves Nearshore model (SWAN) | Version 41.01AB|
+| Sedimentation transport | Community Sediment Transport Modeling System (CSTMS) | N/A |
+| Coupler | Model Coupling Toolkit (MCT) | Version 2.6.0 |
+| Weighted Interpolation | Spherical Coordinate Interpolating Package (SCRIP) | N/A |
 
 
 

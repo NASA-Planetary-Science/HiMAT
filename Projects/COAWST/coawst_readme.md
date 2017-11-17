@@ -27,7 +27,7 @@ HiMAT Point of Contact: stephen.d.nicholls@nasa.gov
 |:-----|:-----|
 | **WRF SPECIFIC SETTINGS** | 
 | Model Version | Version 3.7.1 |
-| Model Description | Atmosphere model applying fully-compressible, non-hydrostatic, Eulerian equations in terrain-following coordinates in terrain following (sigma) coordinates |
+| Model Description | Atmosphere model applying fully-compressible, non-hydrostatic, Eulerian equations in terrain following (sigma) coordinates |
 | Map Projection | Lambert Conical Conformial | 
 | Model Domains | 2 |
 | Grid Resolution (domain) | 20 km, 5 km | 

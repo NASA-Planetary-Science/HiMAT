@@ -1,6 +1,6 @@
 | | |
 |:-----|:-----|
-| Purpose of this file | details ROMS model output from COAWST that will be achived and in what frequency |
+| Purpose of this file | Detail available ROMS model output from COAWST simulations and its temporal availability |
 | Output data format | NetCDF |
 
 

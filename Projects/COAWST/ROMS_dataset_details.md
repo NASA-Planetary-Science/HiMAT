@@ -11,8 +11,8 @@
 | | | | 
 |:-----|:-----|:-----|
 | **ROMS Name** | **Description** | **Units** |
-| f | Coriolis parameter | s<sup>-1</sup>|
 | h | bathymetry | m |
+| f | Coriolis parameter | s<sup>-1</sup>|
 | lat_psi | latitude for cross-staggered grid | °N | 
 | lat_rho | latitude for unstaggered grid | °N |
 | lat_rho | latitude for u-staggered grid | °N |

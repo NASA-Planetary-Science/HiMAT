@@ -3,6 +3,7 @@
 ## Component Models
 
 | | |
+|:-----|:-----|
 |Atmosphere | Weather Research and Forecasting model (WRF) version 3.7.1|
 Ocean: Regional Ocean Modeling System model (ROMS) revision 797
 Wave(s): Simulating Waves Nearshore model (SWAN) version 41.01AB

@@ -18,7 +18,7 @@ HiMAT Point of Contact: stephen.d.nicholls@nasa.gov
 | Model Version | Version 3.7.1 |
 | Map Projection | Lambert Conical Conformial | 
 | Model Domains | 2 |
-| Grid Resolution | 20 km x 5 km | 
+| Grid Resolution (domain) | 20 km, 5 km | 
 | Vertical Levels | 61 | 
 | Vertical Coordinate System | Sigma (Terrain following) |
 | Time step | 40 seconds |

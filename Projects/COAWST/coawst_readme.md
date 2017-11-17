@@ -23,7 +23,6 @@ HiMAT Point of Contact: stephen.d.nicholls@nasa.gov
 | Time step | 40 seconds |
 | Input Data | Modern Era Retrospective-analysis for Research and Applications, 2nd Version (MERRA-2) | 
 | Data input interval | 180 minutes |
-| 
 | |
 | ROMS SPECIFIC SETTINGS | 
 | Model Version | Subversion 797 |

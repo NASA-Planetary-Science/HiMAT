@@ -24,6 +24,7 @@ HiMAT Point of Contact: stephen.d.nicholls@nasa.gov
 | Time step | 40 seconds |
 | Input Data | Modern Era Retrospective-analysis for Research and Applications, 2nd Version (MERRA-2) | 
 | Data input interval | 180 minutes |
+| Boundary update interval | 180 minutes |
 | |
 | ROMS SPECIFIC SETTINGS | 
 | Model Version | Subversion 797 |
@@ -34,6 +35,6 @@ HiMAT Point of Contact: stephen.d.nicholls@nasa.gov
 | Vertical Coordinate System | Sigma (Bathymetry following) |
 | Time step | 10 seconds |
 | Model input | Hybrid Coordinate Ocean Model (HYCOM) |
-| Data input interval | 180 minutes |
-
+| Data input interval | 1440 minutes (1 day) |
+| Boundary update interval | 1440 minutes (1 day)
 

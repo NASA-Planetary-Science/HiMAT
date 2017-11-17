@@ -6,24 +6,31 @@
 | Dataset generation status | Please see "coawst_readme.md" for details |
 | Output data format | NetCDF |
 
+## Time Invariant Variable Descriptions
 
-## Variable Descriptions and Time Frequencies
+| | | | 
+|:-----|:-----|:-----|
+| **ROMS Name** | **Description** | **Units** |
+| lat_psi | land mask for cross-staggered grid (0 = land, 1 = ocean ) | °N |
+| lat_psi | land mask for cross-staggered grid (0 = land, 1 = ocean ) | °N | 
+| lat_rho | land mask for unstaggered grid (0 = land, 1 = ocean ) | °N |
+| lat_rho | land mask for u-staggered grid (0 = land, 1 = ocean ) | °N |
+| lat_rho | land mask for v-staggered grid (0 = land, 1 = ocean ) | °N |
+| lon_psi | land mask for cross-staggered grid (0 = land, 1 = ocean ) | °E |
+| lon_rho | land mask for unstaggered grid (0 = land, 1 = ocean ) | °E |
+| lon_rho | land mask for u-staggered grid (0 = land, 1 = ocean ) | °E |
+| lon_rho | land mask for v-staggered grid (0 = land, 1 = ocean ) | °E |
+| mask_psi | land mask for cross-staggered grid (0 = land, 1 = ocean ) | none |
+| mask_rho | land mask for unstaggered grid (0 = land, 1 = ocean ) | none |
+| mask_rho | land mask for u-staggered grid (0 = land, 1 = ocean ) | none |
+| mask_rho | land mask for v-staggered grid (0 = land, 1 = ocean ) | none |
+
+
+## Time Varying Variable Descriptions and Time Frequencies
 
 | | | | | | |
 |:-----|:-----|:-----|:-----|:-----|:-----|
 | **ROMS Name** | **Description** | **Units** |  **6 hr** | **Daily** | **Monthly** |
-| lat_psi | land mask for cross-staggered grid (0 = land, 1 = ocean ) | °N | | | |
-| lat_rho | land mask for unstaggered grid (0 = land, 1 = ocean ) | °N | | | |
-| lat_rho | land mask for u-staggered grid (0 = land, 1 = ocean ) | °N | | | |
-| lat_rho | land mask for v-staggered grid (0 = land, 1 = ocean ) | °N | | | |
-| lon_psi | land mask for cross-staggered grid (0 = land, 1 = ocean ) | °E | | | |
-| lon_rho | land mask for unstaggered grid (0 = land, 1 = ocean ) | °E | | | |
-| lon_rho | land mask for u-staggered grid (0 = land, 1 = ocean ) | °E | | | |
-| lon_rho | land mask for v-staggered grid (0 = land, 1 = ocean ) | °E | | | |
-| mask_psi | land mask for cross-staggered grid (0 = land, 1 = ocean ) | none | | | |
-| mask_rho | land mask for unstaggered grid (0 = land, 1 = ocean ) | none | | | |
-| mask_rho | land mask for u-staggered grid (0 = land, 1 = ocean ) | none | | | |
-| mask_rho | land mask for v-staggered grid (0 = land, 1 = ocean ) | none | | | |
 | ocean_time | time since ROMS model initialization | s | | | |
 | salt | salinity | psu | X | X | X |
 | temp | potential temperature | Celsius | X | X | X |
@@ -33,3 +40,5 @@
 | vbar | vertically integrated v-momentum | m s<sup>-1</sup> | X | X | X |
 | w | upward sea velocity | m s<sup>-1</sup> | X | X | X |
 | zeta | sea surface height | m | X | X | X |
+| zob | bottom roughtness | m | X | X | X |
+| zos | surface roughness | m | X | X | X |

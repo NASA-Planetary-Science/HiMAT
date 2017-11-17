@@ -2,6 +2,16 @@
 
 HiMAT Point of Contact: stephen.d.nicholls@nasa.gov
 
+## HiMAT COAWST Simualtion Status 
+
+| | |
+|:-----|:-----|
+| Last Status Update | 17 November 2017 |
+| Water Year (2008) | Complete |
+| Water Year (2015) | Complete |
+| Recent Climate (2000 - 2015) | Input data generation and testing |
+| Future Climate (2050 - 2065) | Not yet started |
+
 ## HiMAT COAWST Configuration
 
 | | |
@@ -33,16 +43,13 @@ HiMAT Point of Contact: stephen.d.nicholls@nasa.gov
 | Model Version | Subversion 797 |
 | Map Projection | Lambert Conical Conformial | 
 | Model Domains | 1 |
-| Grid Resolution | 20 km | 
+| Grid Resolution (domain) | 20 km | 
 | Vertical Levels | 16 | 
 | Vertical Coordinate System | Sigma (Bathymetry following) |
 | Time step | 10 seconds |
 | Model input | Hybrid Coordinate Ocean Model (HYCOM) |
 | Data input interval | 1440 minutes (1 day) |
 | Boundary update interval | 1440 minutes (1 day)
-
-
-
 
 
 

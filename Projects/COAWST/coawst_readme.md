@@ -1,6 +1,6 @@
 # Coupled-Ocean-Wave-Sedimentation Transport Modeling System (COAWST) Version 3.2 (Revision 1147, March 2017)
 
-## Component Models
+## COAWST Component Model Details 
 
 | | |
 |:-----|:-----|
@@ -9,6 +9,20 @@
 |Wave| Simulating Waves Nearshore model (SWAN) version 41.01AB|
 |Sedimentation transport|Community Sediment Transport Modeling System (CSTMS)|
 |Coupler|Model Coupling Toolkit (MCT) version 2.6.0|
+
+## Model Configuration
+
+
+| | |
+|:-----|:-----|
+|Atmosphere | Weather Research and Forecasting model (WRF) | Version 3.7.1 |
+|Ocean | Regional Ocean Modeling System model (ROMS) | Revision 797 |
+|Wave | Simulating Waves Nearshore model (SWAN) | Version 41.01AB|
+|Sedimentation transport | Community Sediment Transport Modeling System (CSTMS) | N/A |
+|Coupler | Model Coupling Toolkit (MCT) | Version 2.6.0 |
+
+
+
 
 
 | | |

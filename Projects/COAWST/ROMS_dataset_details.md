@@ -12,14 +12,14 @@
 | | | | | | |
 |:-----|:-----|:-----|:-----|:-----|:-----|
 | **ROMS Name** | **Description** | **Units** |  **6 hr** | **Daily** | **Monthly** |
-| lat_psi | land mask for cross-staggered grid (0 = land, 1 = ocean ) | none | | | |
-| lat_rho | land mask for unstaggered grid (0 = land, 1 = ocean ) | none | | | |
-| lat_rho | land mask for u-staggered grid (0 = land, 1 = ocean ) | none | | | |
-| lat_rho | land mask for v-staggered grid (0 = land, 1 = ocean ) | none | | | |
-| lon_psi | land mask for cross-staggered grid (0 = land, 1 = ocean ) | E | | | |
-| lon_rho | land mask for unstaggered grid (0 = land, 1 = ocean ) | E | | | |
-| lon_rho | land mask for u-staggered grid (0 = land, 1 = ocean ) | none | | | |
-| lon_rho | land mask for v-staggered grid (0 = land, 1 = ocean ) | none | | | |
+| lat_psi | land mask for cross-staggered grid (0 = land, 1 = ocean ) | °N | | | |
+| lat_rho | land mask for unstaggered grid (0 = land, 1 = ocean ) | °N | | | |
+| lat_rho | land mask for u-staggered grid (0 = land, 1 = ocean ) | °N | | | |
+| lat_rho | land mask for v-staggered grid (0 = land, 1 = ocean ) | °N | | | |
+| lon_psi | land mask for cross-staggered grid (0 = land, 1 = ocean ) | °E | | | |
+| lon_rho | land mask for unstaggered grid (0 = land, 1 = ocean ) | °E | | | |
+| lon_rho | land mask for u-staggered grid (0 = land, 1 = ocean ) | °E | | | |
+| lon_rho | land mask for v-staggered grid (0 = land, 1 = ocean ) | °E | | | |
 | mask_psi | land mask for cross-staggered grid (0 = land, 1 = ocean ) | none | | | |
 | mask_rho | land mask for unstaggered grid (0 = land, 1 = ocean ) | none | | | |
 | mask_rho | land mask for u-staggered grid (0 = land, 1 = ocean ) | none | | | |

@@ -13,7 +13,7 @@
 ## Model Configuration
 
 
-| | |
+| | | |
 |:-----|:-----|:-----|
 |Atmosphere | Weather Research and Forecasting model (WRF) | Version 3.7.1 |
 |Ocean | Regional Ocean Modeling System model (ROMS) | Revision 797 |
@@ -25,7 +25,7 @@
 
 
 
-| | |
+| | | 
 |:-----|:-----|
 |Model Version|WRF 3.8.1|
 |Point of contact |adam.kochanski@utah.edu|

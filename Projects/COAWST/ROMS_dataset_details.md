@@ -11,6 +11,8 @@
 | | | | 
 |:-----|:-----|:-----|
 | **ROMS Name** | **Description** | **Units** |
+| f | Coriolis parameter | s<sup>-1</sup>|
+| h | bathymetry | m |
 | lat_psi | land mask for cross-staggered grid (0 = land, 1 = ocean ) | °N |
 | lat_psi | land mask for cross-staggered grid (0 = land, 1 = ocean ) | °N | 
 | lat_rho | land mask for unstaggered grid (0 = land, 1 = ocean ) | °N |

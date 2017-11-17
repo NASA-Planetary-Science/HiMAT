@@ -1,3 +1,5 @@
+## Variable Descriptions and Time Frequencies
+
 | | |
 |:-----|:-----|
 | Purpose of this file | Detail available ROMS model output from COAWST simulations and its temporal availability |

@@ -2,7 +2,7 @@
 
 HiMAT Point of Contact: stephen.d.nicholls@nasa.gov
 
-## HiMAT COAWST Simualtion Status 
+## HiMAT COAWST Simulation Status 
 
 | | |
 |:-----|:-----|
@@ -30,7 +30,7 @@ HiMAT Point of Contact: stephen.d.nicholls@nasa.gov
 | Model Description | Atmosphere model applying fully-compressible, non-hydrostatic, Eulerian equations in terrain following (sigma) coordinates |
 | Map Projection | Lambert Conical Conformial | 
 | Model Domains | 2 |
-| Grid Resolution (domain) | 20 km, 5 km | 
+| Grid Resolution (domain) | 20 km, 4 km | 
 | Vertical Levels | 61 | 
 | Model top pressure | 1,000 Pa |
 | Time step | 40 seconds |

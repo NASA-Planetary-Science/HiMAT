@@ -6,7 +6,7 @@ HiMAT Point of Contact: stephen.d.nicholls@nasa.gov
 
 | | |
 |:-----|:-----|
-| Last Status Update | 17 November 2017 |
+| Last Status Update | 30 November 2017 |
 | Water Year (2008) | Complete |
 | Water Year (2015) | Complete |
 | Historical Simulation (2000 - 2015) | Input data generation and testing |

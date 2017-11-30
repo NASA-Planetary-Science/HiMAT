@@ -13,9 +13,8 @@ HiMAT Point of Contact: stephen.d.nicholls@nasa.gov
 | Future Climate Simulation (2050 - 2065) | Not yet started |
 
 ## HiMAT COAWST Configuration
-
 ![alt text](https://github.com/NASA-Planetary-Science/HiMAT/blob/master/Projects/COAWST/WRF_1-2_Model_Domain_Map.png)
-**Model domain configration used for COAWST simulations. The 20-km grid spacing WRF and ROMS model grids encompass the entire shown area and the area within the black box denotes the nest WRF model grid (4-km grid spacing). Elevation data is in meters above mean sea level.**
+**Model domain configration used for COAWST simulations. The 20-km grid spacing WRF and ROMS model grids encompass the entire shown area and the area within the black box denotes the nested WRF model grid (4-km grid spacing). Elevation data is in meters above mean sea level.**
 
 
 | | |

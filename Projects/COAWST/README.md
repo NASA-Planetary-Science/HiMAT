@@ -14,7 +14,7 @@ HiMAT Point of Contact: stephen.d.nicholls@nasa.gov
 
 ## HiMAT COAWST Configuration
 ![alt text](https://github.com/NASA-Planetary-Science/HiMAT/blob/master/Projects/COAWST/WRF_1-2_Model_Domain_Map.png)
-**Model domain configration used for COAWST simulations. The 20-km grid spacing WRF and ROMS model grids encompass the entire shown area and the area within the black box denotes the nested WRF model grid (4-km grid spacing). Elevation data is in meters above mean sea level.**
+**COAWST domain configration used for ocean-atmosphere coupled simulations. WRF (atmosphere) and ROMS (ocean) are run over the entire region at 20-km grid spacing, but WRF also contains a nested grid (black box) with 4-km grid spacing. Elevation data is in meters above mean sea level.**
 
 
 | | |

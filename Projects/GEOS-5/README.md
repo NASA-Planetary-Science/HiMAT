@@ -1,5 +1,5 @@
-# GEOS-5 Simulation Results Over HMA
-====================================
+GEOS-5 Simulation Results Over HMA
+==================================
 
 # Overview
 

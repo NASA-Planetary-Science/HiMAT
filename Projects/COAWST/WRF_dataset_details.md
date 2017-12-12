@@ -41,15 +41,14 @@
 | SWUPB | Upward shortwave flux at bottom | W m<sup>2</sup> | x, y, t | X | X | X | X |
 | SWUPT | Upward shortwave flux at top | W m<sup>2</sup> | x, y, t | X | X | X | X |
 | SNOW | Liquid-equivalent accumulated snowfall | mm | x, y, t |  |   | X | X |
-| SNOWC* | Liquid-equivalent accumulated snowfall (convective parameterization) | mm | x, y, t | X | X |  |  |
-| SNOWNC* | Liquid-equivalent accumulated snowfall (explicit) | mm | x, y, t | X | X |  |  |
+| SNOWNC* | Liquid-equivalent accumulated snowfall | mm | x, y, t | X | X |  |  |
 | T2 | 2-m air temperature | K | x, y, t | X | X | X | X |
 | U10 | 10-m zonal wind speed | m s<sup>-1</sup> | x, y, t | X | X | X | X |
 | V10 | 10-m meridional wind speed | m s<sup>-1</sup> | x, y, t | X | X | X | X |
 | XLAT | Unstaggered latitude | °N | x, y | X  | X  |  |  |
 | XLONG | Unstaggered longitude | °E | x, y | X | X  |  |  |
 
-*WRF precipitation type variable. Shown data is accumulated from model initialization. Total model-simulated precipiation adds the explicitly simualted (NC) and convective parameterization (C) components
+*WRF precipitation type variable. Shown data is accumulated from model initialization. Total model-simulated precipiation adds the explicitly simulated (NC) and convective parameterization (C) components
 
 **WRF total precipitation type variable. This variable shows total precipitation from all types of precipitation. To extract rainfall only, please subtract all other types of precipitation from the RAINC+RAINNC 
 

@@ -10,7 +10,7 @@
 
 | | | | | | | | |
 |:-----|:-----|:-----|:-----|:-----|:-----|:-----|:-----|
-| **WRF Name** | **Description** | **Units** | **Dims** |  **1 hr** | **6 hr** | **Daily Avg/Accum** | **Monthly Avg/Accum** |
+| **WRF Name** | **Description** | **Units** | **Dims** |  **1 hr** | **6 hr** | **Daily** | **Monthly** |
 | T2 | 2-m air temperature | K | x, y, t | X | X | X | X |
 | RH2 | 2-m relative humidity | % | x, y, t |   |   | X | X |
 | Q2 | 2-m specific humidity | Kg Kg<sup>-1</sup> | x, y, t | X | X | X | X |

@@ -20,3 +20,4 @@ dependencies:
 - progressbar2
 - pip:
   - regionmask
+  - pyastronomy

@@ -68,10 +68,10 @@ def get_cmwe_trend_analysis(mascon_gdf, f):
     solution = f['solution']
     cmwe = solution['cmwe']
     time = f['time']
-
     avg_mass = []
+
     for idx, mascon in mascon_gdf.iterrows():
-        avg_mass.append(perform_trend_analysis_cmwe(idx, cmwe, time))
+        avg_mass.append(trend_analysis(cmwe[mascon, :], time['yyyy_doy_yrplot_middle'][2, :]))
 
     mascon_gdf['avg_mass_change_cm'] = avg_mass
 
@@ -116,3 +116,40 @@ def perform_trend_analysis_cmwe(mascon_idx, cmwe, time):
     # solved guess
     p1, success = scipy.optimize.leastsq(errfunc, p0[:], args=(year,mass))
     return p1[1]
+
+def trend_analysis(dec_year, series=None, optimization=False, pvalues = None):
+    """
+    Fits a second order sinusoidal polynomial equation to a time series using least-squares optimization
+
+    Parameters
+    ----------
+    series : an array representing the data 
+    dec_year: an array of decimal years
+    optimization: TRUE if being used to generate a least squares fit
+    Returns
+    -------
+    CASE optimization = TRUE
+       fitted_coefficients: a list of the 7 coefficients derived from the least-squares fit
+    CASE optimization = FALSE
+       series_fit: a new series generated from the user-provided pvalues 
+    """
+
+    # Trend Analysis Equation
+    fitfunc = lambda p, x: p[0] + p[1]*x + p[2]*np.cos(2.0*np.pi*x) + p[3]*np.sin(2.0*np.pi*x) + \
+                    p[4]*np.cos(4.0*np.pi*x) + p[5]*np.sin(4.0*np.pi*x) + p[6]*np.cos(2.267*np.pi*x) + \
+                    p[7]*np.sin(2.267*np.pi*x)
+
+    if optimization:
+        errfunc = lambda p, x, y: fitfunc(p,x) - y
+        # initial guess
+        p0 = np.array([0.0, -5.0, 0.0, 0.0, 0.0, 0.0,0.0,0.0])
+        # solved guess
+        fitted_coefficients, success = scipy.optimize.leastsq(errfunc, p0[:], args=(dec_year,series))
+        return fitted_coefficients
+    try:
+        series_fit = fitfunc(pvalues, dec_year)
+        return series_fit
+    except:
+        print("no pvalues!") 
+        
+    

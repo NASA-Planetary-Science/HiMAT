@@ -9,23 +9,25 @@ from dask.diagnostics import ProgressBar
 __author__ = ['Anthony Arendt', 'Landung Setiawan']
 
 
-def get_xr_dataset(datadir, fname=None, multiple_nc=False):
+def get_xr_dataset(datadir, fname=None, multiple_nc=False, **kwargs):
     """
     Returns a "cleaned" xarray dataset for LIS data
 
     :param datadir: path to data ex. '/Users/lsetiawan/Downloads/200101/' or r'C:\work\datadrive\LIS\'
     :param fname: file name if using to open only one netCDF file
     :param multiple_nc: True if using to read multiple netCDF Files
+     **kwargs
+        Arbitrary keyword arguments related to xarray open_dataset or open_mfdataset.
     :return: xarray dataset
     """
     if multiple_nc is False:
         try:
-            ds = xr.open_dataset(os.path.join(datadir, fname))
+            ds = xr.open_dataset(os.path.join(datadir, fname), **kwargs)
         except:
             print("Please provide filename!")
             sys.exit("Exiting...")
     else:
-        ds = xr.open_mfdataset(os.path.join(datadir, '*.nc'))
+        ds = xr.open_mfdataset(os.path.join(datadir, '*.nc'), **kwargs)
 
     xmn = ds.attrs['SOUTH_WEST_CORNER_LON']
     ymn = ds.attrs['SOUTH_WEST_CORNER_LAT']
@@ -45,15 +47,12 @@ def get_xr_dataset(datadir, fname=None, multiple_nc=False):
 
 
 def get_monthly_avg(ds, des_vars, export_nc=False, out_pth=None):
-    new_ds = None
+    ds_list = []
     for idx, var in enumerate(des_vars):
         with ProgressBar():
             da = ds[var].resample('MS', 'time', how = 'sum')
-        if idx == 0:
-            new_ds = da.to_dataset()
-        else:
-            new_ds[var] = da
-
+            new_ds.append(da)
+    new_ds = xr.merge(ds_list)
     if export_nc:
         try:
             new_ds.to_netcdf(os.path.join(out_pth, 'LISMonthly.nc'))

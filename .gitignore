@@ -4,3 +4,5 @@ __pycache__/
 *.pyc
 .cred.*
 *.egg-info/
+*.h5
+*.pkl

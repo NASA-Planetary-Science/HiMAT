@@ -65,6 +65,21 @@ def get_mascon_gdf(mascon_ds):
 
 
 def get_cmwe_trend_analysis(mascon_gdf, f):
+    """
+    calculates the linear trend in mass change at each mascon.
+
+    Parameters
+    ----------
+    mascon_gdf : geodataframe.
+        geodataframe containing the GRACE time series data
+    f : h5py file object 
+        points to the GRACE input file; instantiated in 'extract_grace' function above
+
+    Returns
+    -------
+    mascon_gdf : geodataframe.
+        modified with a new column containing the linear trend in mass    
+    """
     solution = f['solution']
     cmwe = solution['cmwe']
     time = f['time']
@@ -100,22 +115,6 @@ def polygeom(mascon_s):
     miny = mascon_s['lat_center'] - (mascon_s['lat_span'] / 2)
     maxy = mascon_s['lat_center'] + (mascon_s['lat_span'] / 2)
     return box(minx, miny, maxx, maxy)
-
-
-def perform_trend_analysis_cmwe(mascon_idx, cmwe, time):
-    mass = cmwe[mascon_idx, :]
-    timeds = time['yyyy_doy_yrplot_middle']
-    year = timeds[2, :]
-    # Trend Analysis Equation
-    fitfunc = lambda p, x: p[0] + p[1]*x + p[2]*np.cos(2.0*np.pi*x) + p[3]*np.sin(2.0*np.pi*x) + \
-                    p[4]*np.cos(4.0*np.pi*x) + p[5]*np.sin(4.0*np.pi*x) + p[6]*np.cos(2.267*np.pi*x) + \
-                    p[7]*np.sin(2.267*np.pi*x)
-    errfunc = lambda p, x, y: fitfunc(p,x) - y
-    # initial guess
-    p0 = np.array([0.0, -5.0, 0.0, 0.0, 0.0, 0.0,0.0,0.0])
-    # solved guess
-    p1, success = scipy.optimize.leastsq(errfunc, p0[:], args=(year,mass))
-    return p1[1]
 
 def trend_analysis(dec_year, series=None, optimization=False, pvalues = None):
     """

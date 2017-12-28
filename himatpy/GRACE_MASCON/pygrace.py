@@ -8,9 +8,6 @@ from __future__ import division
 import os
 import sys
 
-from branca.colormap import linear
-import folium
-
 import geopandas as gpd
 from geopandas import GeoDataFrame
 
@@ -25,6 +22,18 @@ from shapely.geometry import (Point, box)
 CRS = pyepsg.get(4326).as_proj4()
 
 def extract_grace(fpath):
+    """
+    Creates a file object for extracting GRACE data from NASA GSFC mascon product.
+
+    Parameters
+    ----------
+    fpath : string
+       path to the GRACE hdf5 file
+    Returns
+    -------
+    f : file object
+        h5py file object
+    """
     try:
         f = h5py.File(fpath)
     except:
@@ -44,6 +53,19 @@ def extract_grace(fpath):
 
 
 def get_mascon_gdf(mascon_ds):
+    """
+    converts the mascon group in the hdf5 file to a geodataframe
+
+    Parameters
+    ----------
+    mascon_ds : HDF5 group
+       the HDF5 group labeled "mascon"
+    
+    Returns
+    -------
+    mascon_gdf : geodataframe
+       a geodataframe with the same data as in the HDF5 group
+    """
     mascon_dct = {}
     poly_geom = []
 

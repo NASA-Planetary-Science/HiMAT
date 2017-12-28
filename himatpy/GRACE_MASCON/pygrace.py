@@ -107,9 +107,10 @@ def get_cmwe_trend_analysis(mascon_gdf, f):
     time = f['time']
     avg_mass = []
 
+  # trend analysis returns the full parameter set. Parameter [1] is the linear slope
     for idx, mascon in mascon_gdf.iterrows():
-        avg_mass.append(trend_analysis(cmwe[mascon, :], time['yyyy_doy_yrplot_middle'][2, :]))
-
+        avg_mass.append(trend_analysis(time['yyyy_doy_yrplot_middle'][2, :], cmwe[mascon.mascon, :], optimization = True)[1])
+  
     mascon_gdf['avg_mass_change_cm'] = avg_mass
 
     return mascon_gdf

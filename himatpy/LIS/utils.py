@@ -88,7 +88,7 @@ def process_da(da):
     return multda
 
 
-def process_lis_data(data_dir, nc_path, **kwargs):
+def process_lis_data(data_dir, ncpath, **kwargs):
     """
     This function process LIS Data by breaking it up into yearly netcdf. Only certain variables are exported.
     

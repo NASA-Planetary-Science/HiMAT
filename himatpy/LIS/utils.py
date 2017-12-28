@@ -2,8 +2,11 @@
 import os
 import sys
 
+import pandas as pd
 import numpy as np
 import xarray as xr
+import progressbar
+from collections import OrderedDict
 from dask.diagnostics import ProgressBar
 
 __author__ = ['Anthony Arendt', 'Landung Setiawan']
@@ -60,3 +63,67 @@ def get_monthly_avg(ds, des_vars, export_nc=False, out_pth=None):
             print('Folder not found.')
 
     return new_ds
+
+
+def process_da(da):
+    # attributes for the first 6 variables:
+    text = 'Daily {variable} in units of mm we'.format
+
+    # attributes for the TWS:
+    
+    new_attrs = OrderedDict()
+    for k, v in da.attrs.items():
+        new_attrs.update({k:v})
+    new_attrs.update({'units': 'mm we'})
+    
+    if da.attrs['standard_name'] == 'terrestrial_water_storage':
+        new_attrs.update({'long_name': 'Daily change in water storage'})
+        multda = da
+    else:
+        new_attrs.update({'long_name': text(variable=da.attrs['standard_name'])})
+        multda = da * 86400
+    
+    multda.attrs = new_attrs
+    
+    return multda
+
+
+def process_lis_data(data_dir, ncpath, **kwargs):
+    """
+    This function process LIS Data by breaking it up into yearly netcdf. Only certain variables are exported.
+    
+    Parameters
+    ----------
+    data_dir : String.
+        The location of the Raw LIS NetCDF Data
+    nc_path : String.
+        The location of the output NetCDF.
+    **kwargs: Other keyword arguments that works with get_xr_dataset
+    
+    Returns
+    -------
+    None
+    """
+    # Open all files into a single xarray dataset
+    print('Reading in all LIS data...')
+    ds = get_xr_dataset(data_dir, fname=None, multiple_nc=True, chunks={'time': 1})
+    print('Subsetting data...')
+    desiredds = ds[['Qsm_tavg','Rainf_tavg','Qs_tavg','Snowf_tavg','Qsb_tavg','Evap_tavg','TWS_tavg']]
+    
+    dt = pd.DatetimeIndex(desiredds.coords['time'].values)
+    year_starts = dt[dt.is_year_start]
+    year_ends = dt[dt.is_year_end]
+    yearslices = [(x,y) for x,y in zip(year_starts, year_ends)]
+    
+    if not os.path.exists(ncpath):
+        os.mkdir(ncpath)
+    
+    bar = progressbar.ProgressBar()
+    for ys, ye in bar(yearslices):
+        print('Processing {}...'.format(ys.year))
+        slicedds = desiredds.sel(time = slice(ys, ye))
+        procds = slicedds.apply(lambda x: process_da(x))
+        procds.to_netcdf(os.path.join(ncpath, 'LIS_{}.nc'.format(ys.year)))
+        print('Clearing out memory...')
+        slicedds = None
+        procds = None

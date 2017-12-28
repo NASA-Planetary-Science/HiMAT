@@ -8,9 +8,6 @@ from __future__ import division
 import os
 import sys
 
-from branca.colormap import linear
-import folium
-
 import geopandas as gpd
 from geopandas import GeoDataFrame
 
@@ -25,6 +22,18 @@ from shapely.geometry import (Point, box)
 CRS = pyepsg.get(4326).as_proj4()
 
 def extract_grace(fpath):
+    """
+    Creates a file object for extracting GRACE data from NASA GSFC mascon product.
+
+    Parameters
+    ----------
+    fpath : string
+       path to the GRACE hdf5 file
+    Returns
+    -------
+    f : file object
+        h5py file object
+    """
     try:
         f = h5py.File(fpath)
     except:
@@ -44,6 +53,19 @@ def extract_grace(fpath):
 
 
 def get_mascon_gdf(mascon_ds):
+    """
+    converts the mascon group in the hdf5 file to a geodataframe
+
+    Parameters
+    ----------
+    mascon_ds : HDF5 group
+       the HDF5 group labeled "mascon"
+    
+    Returns
+    -------
+    mascon_gdf : geodataframe
+       a geodataframe with the same data as in the HDF5 group
+    """
     mascon_dct = {}
     poly_geom = []
 
@@ -65,14 +87,30 @@ def get_mascon_gdf(mascon_ds):
 
 
 def get_cmwe_trend_analysis(mascon_gdf, f):
+    """
+    calculates the linear trend in mass change at each mascon.
+
+    Parameters
+    ----------
+    mascon_gdf : geodataframe.
+        geodataframe containing the GRACE time series data
+    f : h5py file object 
+        points to the GRACE input file; instantiated in 'extract_grace' function above
+
+    Returns
+    -------
+    mascon_gdf : geodataframe.
+        modified with a new column containing the linear trend in mass    
+    """
     solution = f['solution']
     cmwe = solution['cmwe']
     time = f['time']
     avg_mass = []
 
+  # trend analysis returns the full parameter set. Parameter [1] is the linear slope
     for idx, mascon in mascon_gdf.iterrows():
-        avg_mass.append(trend_analysis(cmwe[mascon, :], time['yyyy_doy_yrplot_middle'][2, :]))
-
+        avg_mass.append(trend_analysis(time['yyyy_doy_yrplot_middle'][2, :], cmwe[mascon.mascon, :], optimization = True)[1])
+  
     mascon_gdf['avg_mass_change_cm'] = avg_mass
 
     return mascon_gdf
@@ -100,22 +138,6 @@ def polygeom(mascon_s):
     miny = mascon_s['lat_center'] - (mascon_s['lat_span'] / 2)
     maxy = mascon_s['lat_center'] + (mascon_s['lat_span'] / 2)
     return box(minx, miny, maxx, maxy)
-
-
-def perform_trend_analysis_cmwe(mascon_idx, cmwe, time):
-    mass = cmwe[mascon_idx, :]
-    timeds = time['yyyy_doy_yrplot_middle']
-    year = timeds[2, :]
-    # Trend Analysis Equation
-    fitfunc = lambda p, x: p[0] + p[1]*x + p[2]*np.cos(2.0*np.pi*x) + p[3]*np.sin(2.0*np.pi*x) + \
-                    p[4]*np.cos(4.0*np.pi*x) + p[5]*np.sin(4.0*np.pi*x) + p[6]*np.cos(2.267*np.pi*x) + \
-                    p[7]*np.sin(2.267*np.pi*x)
-    errfunc = lambda p, x, y: fitfunc(p,x) - y
-    # initial guess
-    p0 = np.array([0.0, -5.0, 0.0, 0.0, 0.0, 0.0,0.0,0.0])
-    # solved guess
-    p1, success = scipy.optimize.leastsq(errfunc, p0[:], args=(year,mass))
-    return p1[1]
 
 def trend_analysis(dec_year, series=None, optimization=False, pvalues = None):
     """

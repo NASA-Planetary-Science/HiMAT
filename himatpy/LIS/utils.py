@@ -14,11 +14,12 @@ __author__ = ['Anthony Arendt', 'Landung Setiawan']
 
 def get_xr_dataset(datadir, fname=None, multiple_nc=False, **kwargs):
     """
-    Returns a "cleaned" xarray dataset for LIS data
+    Reads in output from the NASA Land Information System (LIS) model.
+    Returns a "cleaned" xarray dataset. Users can read a single or multiple NetCDF file(s). 
 
-    :param datadir: path to data ex. '/Users/lsetiawan/Downloads/200101/' or r'C:\work\datadrive\LIS\'
-    :param fname: file name if using to open only one netCDF file
-    :param multiple_nc: True if using to read multiple netCDF Files
+    :param datadir: path to directory containing the data, e.g. '/Users/lsetiawan/Downloads/200101/' or r'C:\work\datadrive\LIS\'
+    :param fname: file name if only opening one NetCDF file
+    :param multiple_nc: True if using to read multiple NetCDF Files
      **kwargs
         Arbitrary keyword arguments related to xarray open_dataset or open_mfdataset.
     :return: xarray dataset
@@ -32,6 +33,7 @@ def get_xr_dataset(datadir, fname=None, multiple_nc=False, **kwargs):
     else:
         ds = xr.open_mfdataset(os.path.join(datadir, '*.nc'), **kwargs)
 
+    # some reformatting is necessary since LIS output does not follow CF conventions
     xmn = ds.attrs['SOUTH_WEST_CORNER_LON']
     ymn = ds.attrs['SOUTH_WEST_CORNER_LAT']
     dx = ds.attrs['DX']
@@ -66,7 +68,18 @@ def get_monthly_avg(ds, des_vars, export_nc=False, out_pth=None):
 
 
 def process_da(da):
-    # attributes for the first 6 variables:
+    """
+    Assigns attributes and carries out unit conversions for variables selected from the LIS data.
+    TODO: generalize for other variables / units. 
+
+    Parameters
+    ----------
+    da : xarray data array
+    Returns
+    -------
+    multda : xarray data array, with attributes and units modified
+    """ 
+
     text = 'Daily {variable} in units of mm we'.format
 
     # attributes for the TWS:
@@ -90,15 +103,16 @@ def process_da(da):
 
 def process_lis_data(data_dir, ncpath, **kwargs):
     """
-    This function process LIS Data by breaking it up into yearly netcdf. Only certain variables are exported.
+    This function reads daily LIS output, selects a subset of variables, and serializes to NetCDF files 
+    with daily resolution and yearly span.
     
     Parameters
     ----------
     data_dir : String.
-        The location of the Raw LIS NetCDF Data
+        The location of the Raw LIS NetCDF data
     nc_path : String.
         The location of the output NetCDF.
-    **kwargs: Other keyword arguments that works with get_xr_dataset
+    **kwargs: Other keyword arguments associated with get_xr_dataset
     
     Returns
     -------

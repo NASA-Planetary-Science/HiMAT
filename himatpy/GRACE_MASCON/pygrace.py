@@ -120,7 +120,7 @@ def get_cmwe_trend_analysis(mascon_gdf, f):
 # Function to create polygon from bounding coordinates
 def polygeom(mascon_s):
     """
-    Get polygon of a mascon.
+    Generates a polygon feature from GRACE mascon coordinates.
 
     Parameters
     ----------
@@ -131,8 +131,6 @@ def polygeom(mascon_s):
     Shapely Polygon
         Polygon contructed from mascon bounding coordinates.
     """
-    #     minx = (((mascon_s['lon_center'] - (mascon_s['lon_span'] / 2)) + 180) % 360) - 180
-    #     maxx = (((mascon_s['lon_center'] + (mascon_s['lon_span'] / 2)) + 180) % 360) - 180
     minx = mascon_s['lon_center'] - (mascon_s['lon_span'] / 2)
     maxx = mascon_s['lon_center'] + (mascon_s['lon_span'] / 2)
     miny = mascon_s['lat_center'] - (mascon_s['lat_span'] / 2)
@@ -141,13 +139,14 @@ def polygeom(mascon_s):
 
 def trend_analysis(dec_year, series=None, optimization=False, pvalues = None):
     """
-    Fits a second order sinusoidal polynomial equation to a time series using least-squares optimization
+    Fits a second order sinusoidal polynomial equation to a time series using least-squares optimization.
 
     Parameters
     ----------
     series : an array representing the data 
     dec_year: an array of decimal years
     optimization: TRUE if being used to generate a least squares fit
+    
     Returns
     -------
     CASE optimization = TRUE

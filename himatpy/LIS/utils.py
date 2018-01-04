@@ -1,6 +1,8 @@
 #!/usr/bin/env python
 import os
 import sys
+import glob
+import re
 
 import pandas as pd
 import numpy as np
@@ -12,7 +14,7 @@ from dask.diagnostics import ProgressBar
 __author__ = ['Anthony Arendt', 'Landung Setiawan']
 
 
-def get_xr_dataset(datadir, fname=None, multiple_nc=False, **kwargs):
+def get_xr_dataset(datadir=None, fname=None, multiple_nc=False, files=[], **kwargs):
     """
     Reads in output from the NASA Land Information System (LIS) model.
     Returns a "cleaned" xarray dataset. Users can read a single or multiple NetCDF file(s). 
@@ -24,14 +26,19 @@ def get_xr_dataset(datadir, fname=None, multiple_nc=False, **kwargs):
         Arbitrary keyword arguments related to xarray open_dataset or open_mfdataset.
     :return: xarray dataset
     """
-    if multiple_nc is False:
+    if not multiple_nc:
         try:
             ds = xr.open_dataset(os.path.join(datadir, fname), **kwargs)
         except:
             print("Please provide filename!")
             sys.exit("Exiting...")
     else:
-        ds = xr.open_mfdataset(os.path.join(datadir, '*.nc'), **kwargs)
+        if datadir:
+            ds = xr.open_mfdataset(os.path.join(datadir, '*.nc'), **kwargs)
+        elif files:
+            ds = xr.open_mfdataset(files, **kwargs)
+        else:
+            print('Need either datadir or files for opening multiple netCDF')
 
     # some reformatting is necessary since LIS output does not follow CF conventions
     xmn = ds.attrs['SOUTH_WEST_CORNER_LON']
@@ -118,15 +125,17 @@ def process_lis_data(data_dir, ncpath, **kwargs):
     -------
     None
     """
-    # Open all files into a single xarray dataset
-    print('Reading in all LIS data...')
-    ds = get_xr_dataset(data_dir, fname=None, multiple_nc=True, chunks={'time': 1})
-    print('Subsetting data...')
-    desiredds = ds[['Qsm_tavg','Rainf_tavg','Qs_tavg','Snowf_tavg','Qsb_tavg','Evap_tavg','TWS_tavg']]
     
-    dt = pd.DatetimeIndex(desiredds.coords['time'].values)
-    year_starts = dt[dt.is_year_start]
-    year_ends = dt[dt.is_year_end]
+    # Get years
+    all_nc = glob.glob(os.path.join(data_dir, '*.nc'))
+    ncdf = pd.DataFrame({
+        'files': all_nc,
+    })
+    
+    ncdf['time'] = ncdf.apply(lambda x: pd.to_datetime(re.search(r'(\d)+', x['files']).group(0)), axis=1)
+    dt = pd.DatetimeIndex(ncdf['time'].values)
+    year_starts = dt[dt.is_year_start].sort_values()
+    year_ends = dt[dt.is_year_end].sort_values()
     yearslices = [(x,y) for x,y in zip(year_starts, year_ends)]
     
     if not os.path.exists(ncpath):
@@ -135,7 +144,11 @@ def process_lis_data(data_dir, ncpath, **kwargs):
     bar = progressbar.ProgressBar()
     for ys, ye in bar(yearslices):
         print('Processing {}...'.format(ys.year))
-        slicedds = desiredds.sel(time = slice(ys, ye))
+        yearfiles = ncdf[(ncdf['time'] > ys) & (ncdf['time'] < ye)]['files'].values
+        # Open all files into a single xarray dataset
+        ds = get_xr_dataset(files=list(yearfiles), multiple_nc=True, chunks={'time': 1})
+        print('Subsetting data...')
+        slicedds = ds[['Qsm_tavg','Rainf_tavg','Qs_tavg','Snowf_tavg','Qsb_tavg','Evap_tavg','TWS_tavg']]
         procds = slicedds.apply(lambda x: process_da(x))
         procds.to_netcdf(os.path.join(ncpath, 'LIS_{}.nc'.format(ys.year)))
         print('Clearing out memory...')

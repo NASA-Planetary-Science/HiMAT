@@ -3,11 +3,11 @@ import os
 import sys
 import glob
 import re
+import datetime
 
 import pandas as pd
 import numpy as np
 import xarray as xr
-import progressbar
 from collections import OrderedDict
 from dask.diagnostics import ProgressBar
 
@@ -108,7 +108,20 @@ def process_da(da):
     return multda
 
 
-def process_lis_data(data_dir, ncpath, **kwargs):
+def _filter_ncdf(ncdf, startyear=None, endyear=None):
+    if startyear:
+        ncdf = ncdf[(ncdf['time'] >= datetime.datetime(startyear, 1, 1))]
+    if endyear:
+        ncdf = ncdf[(ncdf['time'] <= datetime.datetime(endyear, 12, 31))]
+    
+    if startyear and endyear:
+        ncdf = ncdf[(ncdf['time'] >= datetime.datetime(startyear, 1, 1)) & 
+                    (ncdf['time'] <= datetime.datetime(endyear, 12, 31))]
+        
+    return ncdf
+
+
+def process_lis_data(data_dir, ncpath, startyear=None, endyear=None, **kwargs):
     """
     This function reads daily LIS output, selects a subset of variables, and serializes to NetCDF files 
     with daily resolution and yearly span.
@@ -119,6 +132,10 @@ def process_lis_data(data_dir, ncpath, **kwargs):
         The location of the Raw LIS NetCDF data
     nc_path : String.
         The location of the output NetCDF.
+    startyear: Integer.
+        The year to start processing.
+    endyear: Integer.
+        The year to end processing.
     **kwargs: Other keyword arguments associated with get_xr_dataset
     
     Returns
@@ -133,24 +150,29 @@ def process_lis_data(data_dir, ncpath, **kwargs):
     })
     
     ncdf['time'] = ncdf.apply(lambda x: pd.to_datetime(re.search(r'(\d)+', x['files']).group(0)), axis=1)
+    ncdf = _filter_ncdf(ncdf, startyear, endyear)
+        
     dt = pd.DatetimeIndex(ncdf['time'].values)
     year_starts = dt[dt.is_year_start].sort_values()
     year_ends = dt[dt.is_year_end].sort_values()
     yearslices = [(x,y) for x,y in zip(year_starts, year_ends)]
-    
+    print(yearslices)
+        
     if not os.path.exists(ncpath):
         os.mkdir(ncpath)
     
-    bar = progressbar.ProgressBar()
-    for ys, ye in bar(yearslices):
+    for ys, ye in yearslices:
         print('Processing {}...'.format(ys.year))
         yearfiles = ncdf[(ncdf['time'] > ys) & (ncdf['time'] < ye)]['files'].values
         # Open all files into a single xarray dataset
-        ds = get_xr_dataset(files=list(yearfiles), multiple_nc=True, chunks={'time': 1})
+        ds = get_xr_dataset(files=sorted(yearfiles), multiple_nc=True, chunks={'time': 1})
         print('Subsetting data...')
         slicedds = ds[['Qsm_tavg','Rainf_tavg','Qs_tavg','Snowf_tavg','Qsb_tavg','Evap_tavg','TWS_tavg']]
         procds = slicedds.apply(lambda x: process_da(x))
-        procds.to_netcdf(os.path.join(ncpath, 'LIS_{}.nc'.format(ys.year)))
+        outname = os.path.join(ncpath, 'LIS_{}.nc'.format(ys.year))
+        print('Exporting {}'.format(outname))
+        with ProgressBar():
+            procds.to_netcdf(outname)
         print('Clearing out memory...')
         slicedds = None
         procds = None

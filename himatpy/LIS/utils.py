@@ -58,20 +58,49 @@ def get_xr_dataset(datadir=None, fname=None, multiple_nc=False, files=[], **kwar
     return ds
 
 
-def get_monthly_avg(ds, des_vars, export_nc=False, out_pth=None):
-    ds_list = []
-    for idx, var in enumerate(des_vars):
-        with ProgressBar():
-            da = ds[var].resample('MS', 'time', how = 'sum')
-            new_ds.append(da)
-    new_ds = xr.merge(ds_list)
-    if export_nc:
+def resample_da(da):
+    """
+    Resample data array and assigns attributes for variables selected from the LIS data.
+    TODO: generalize for other variables / units. 
+
+    Parameters
+    ----------
+    da : xarray data array
+    Returns
+    -------
+    da_monthly : xarray data array, with attributes and units modified
+    """ 
+    da_monthly = da.resample('MS', 'time', how = 'sum')
+    text = 'Cumulative monthly {variable} in units of mm we'.format
+    
+    new_attrs = OrderedDict()
+    for k, v in da.attrs.items():
+        new_attrs.update({k:v})
+    new_attrs.update({'units': 'mm we'})
+    
+    if da.attrs['standard_name'] == 'terrestrial_water_storage':
+        new_attrs.update({'long_name': 'Cumulative in monthly water storage'})
+    else:
+        new_attrs.update({'long_name': text(variable=da.attrs['standard_name'])})
+    
+    da_monthly.attrs = new_attrs
+    
+    return da_monthly
+
+
+def get_monthly_avg(ds, export_nc=False, out_pth=None):
+    monthlyds = ds.apply(lambda x: resample_da(x))
+    
+    if export_nc and out_pth:
         try:
-            new_ds.to_netcdf(os.path.join(out_pth, 'LISMonthly.nc'))
+            fname = os.path.join(out_pth, 'LISMonthly.nc')
+            print('Exporting {}'.format(fname))
+            with ProgressBar():
+                monthlyds.to_netcdf(fname)
         except IOError:
             print('Folder not found.')
 
-    return new_ds
+    return monthlyds
 
 
 def process_da(da):

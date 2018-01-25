@@ -8,6 +8,8 @@ from __future__ import division
 import os
 import sys
 
+from dask.diagnostics import ProgressBar
+
 import geopandas as gpd
 from geopandas import GeoDataFrame
 
@@ -15,8 +17,9 @@ import h5py
 import numpy as np
 import pandas as pd
 import pyepsg
+import regionmask
 import scipy.optimize
-from shapely.geometry import (Point, box)
+from shapely.geometry import (Point, Polygon, box)
 
 
 CRS = pyepsg.get(4326).as_proj4()
@@ -201,7 +204,10 @@ def build_mask(dsbbox, mascon_gdf, dacoords, serialize=False, datadir=None):
     
     if serialize:
         if datadir:
-            gracemsk.to_netcdf(os.path.join(datadir, 'gracemsk.nc'))
+            fname = os.path.join(datadir, 'gracemsk.nc')
+            with ProgressBar():
+                print('Exporting {}'.format(fname))
+                gracemsk.to_netcdf(fname)
         else:
             print('Need datadir to be specified.')
     return gracemsk

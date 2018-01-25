@@ -3,11 +3,11 @@ import os
 import sys
 import glob
 import re
+import datetime
 
 import pandas as pd
 import numpy as np
 import xarray as xr
-import progressbar
 from collections import OrderedDict
 from dask.diagnostics import ProgressBar
 
@@ -58,20 +58,49 @@ def get_xr_dataset(datadir=None, fname=None, multiple_nc=False, files=[], **kwar
     return ds
 
 
-def get_monthly_avg(ds, des_vars, export_nc=False, out_pth=None):
-    ds_list = []
-    for idx, var in enumerate(des_vars):
-        with ProgressBar():
-            da = ds[var].resample('MS', 'time', how = 'sum')
-            new_ds.append(da)
-    new_ds = xr.merge(ds_list)
-    if export_nc:
+def resample_da(da):
+    """
+    Resample data array and assigns attributes for variables selected from the LIS data.
+    TODO: generalize for other variables / units. 
+
+    Parameters
+    ----------
+    da : xarray data array
+    Returns
+    -------
+    da_monthly : xarray data array, with attributes and units modified
+    """ 
+    da_monthly = da.resample('MS', 'time', how = 'sum')
+    text = 'Cumulative monthly {variable} in units of mm we'.format
+    
+    new_attrs = OrderedDict()
+    for k, v in da.attrs.items():
+        new_attrs.update({k:v})
+    new_attrs.update({'units': 'mm we'})
+    
+    if da.attrs['standard_name'] == 'terrestrial_water_storage':
+        new_attrs.update({'long_name': 'Cumulative in monthly water storage'})
+    else:
+        new_attrs.update({'long_name': text(variable=da.attrs['standard_name'])})
+    
+    da_monthly.attrs = new_attrs
+    
+    return da_monthly
+
+
+def get_monthly_avg(ds, export_nc=False, out_pth=None):
+    monthlyds = ds.apply(lambda x: resample_da(x))
+    
+    if export_nc and out_pth:
         try:
-            new_ds.to_netcdf(os.path.join(out_pth, 'LISMonthly.nc'))
+            fname = os.path.join(out_pth, 'LISMonthly.nc')
+            print('Exporting {}'.format(fname))
+            with ProgressBar():
+                monthlyds.to_netcdf(fname)
         except IOError:
             print('Folder not found.')
 
-    return new_ds
+    return monthlyds
 
 
 def process_da(da):
@@ -108,7 +137,20 @@ def process_da(da):
     return multda
 
 
-def process_lis_data(data_dir, ncpath, **kwargs):
+def _filter_ncdf(ncdf, startyear=None, endyear=None):
+    if startyear:
+        ncdf = ncdf[(ncdf['time'] >= datetime.datetime(startyear, 1, 1))]
+    if endyear:
+        ncdf = ncdf[(ncdf['time'] <= datetime.datetime(endyear, 12, 31))]
+    
+    if startyear and endyear:
+        ncdf = ncdf[(ncdf['time'] >= datetime.datetime(startyear, 1, 1)) & 
+                    (ncdf['time'] <= datetime.datetime(endyear, 12, 31))]
+        
+    return ncdf
+
+
+def process_lis_data(data_dir, ncpath, startyear=None, endyear=None, **kwargs):
     """
     This function reads daily LIS output, selects a subset of variables, and serializes to NetCDF files 
     with daily resolution and yearly span.
@@ -119,6 +161,10 @@ def process_lis_data(data_dir, ncpath, **kwargs):
         The location of the Raw LIS NetCDF data
     nc_path : String.
         The location of the output NetCDF.
+    startyear: Integer.
+        The year to start processing.
+    endyear: Integer.
+        The year to end processing.
     **kwargs: Other keyword arguments associated with get_xr_dataset
     
     Returns
@@ -133,24 +179,29 @@ def process_lis_data(data_dir, ncpath, **kwargs):
     })
     
     ncdf['time'] = ncdf.apply(lambda x: pd.to_datetime(re.search(r'(\d)+', x['files']).group(0)), axis=1)
+    ncdf = _filter_ncdf(ncdf, startyear, endyear)
+        
     dt = pd.DatetimeIndex(ncdf['time'].values)
     year_starts = dt[dt.is_year_start].sort_values()
     year_ends = dt[dt.is_year_end].sort_values()
     yearslices = [(x,y) for x,y in zip(year_starts, year_ends)]
-    
+    print(yearslices)
+        
     if not os.path.exists(ncpath):
         os.mkdir(ncpath)
     
-    bar = progressbar.ProgressBar()
-    for ys, ye in bar(yearslices):
+    for ys, ye in yearslices:
         print('Processing {}...'.format(ys.year))
         yearfiles = ncdf[(ncdf['time'] > ys) & (ncdf['time'] < ye)]['files'].values
         # Open all files into a single xarray dataset
-        ds = get_xr_dataset(files=list(yearfiles), multiple_nc=True, chunks={'time': 1})
+        ds = get_xr_dataset(files=sorted(yearfiles), multiple_nc=True, chunks={'time': 1})
         print('Subsetting data...')
         slicedds = ds[['Qsm_tavg','Rainf_tavg','Qs_tavg','Snowf_tavg','Qsb_tavg','Evap_tavg','TWS_tavg']]
         procds = slicedds.apply(lambda x: process_da(x))
-        procds.to_netcdf(os.path.join(ncpath, 'LIS_{}.nc'.format(ys.year)))
+        outname = os.path.join(ncpath, 'LIS_{}.nc'.format(ys.year))
+        print('Exporting {}'.format(outname))
+        with ProgressBar():
+            procds.to_netcdf(outname)
         print('Clearing out memory...')
         slicedds = None
         procds = None

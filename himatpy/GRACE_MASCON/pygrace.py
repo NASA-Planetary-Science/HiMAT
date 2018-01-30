@@ -210,4 +210,4 @@ def build_mask(dsbbox, mascon_gdf, dacoords, serialize=False, datadir=None):
                 gracemsk.to_netcdf(fname)
         else:
             print('Need datadir to be specified.')
-    return gracemsk
+    return gracemsk, gpd_intersect

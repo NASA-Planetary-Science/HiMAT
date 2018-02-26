@@ -8,10 +8,8 @@
 
 ## Variable Descriptions and Time Frequencies
 
-| | | | | | | | |
-|:-----|:-----|:-----|:-----|:-----|:-----|:-----|:-----|
-| **Variable Name** | **WRF Variable Name** | **Units** | **Dims** |  **1 hr** | **6 hr** | **Daily** | **Monthly** |
-| CLDFRA | Cloud fraction | none | x, y, z, t | X  | X |  |  |
+| | | | | | | | | |
+|:-----|:-----|:-----|:-----|:-----|:-----|:-----|:-----|:-----|
+| **Variable Name** | **WRF Variable Name** | **Units** | **Dims** | **Staggered** | **1 hr** | **6 hr** | **Daily** | **Monthly** 
+| Latitude | XLAT | none | x, y, z, t | NO | X | X |  |  |  |
 
-
-| CLDFRA | Cloud fraction | none | x, y, z, t | X  | X |  |  |

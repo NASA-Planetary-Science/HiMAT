@@ -6,7 +6,7 @@ HiMAT Point of Contact: stephen.d.nicholls@nasa.gov
 
 | | | | | |
 |:-----|:-----|:-----|:-----|:-----|
-| Last Status Update | 26 February 2018 17:44 EST | | | |
+| **Last Status Update** | **26 February 2018 17:44 EST** | | | |
 | Model Simulation Name | Model Run Period | Run Status | Latest completed time | Latest file uploaded to ADAPT |
 | Water Year (2008) | 1 Oct. 2007 - 1 Oct. 2008 | FINISHED | 00 UTC 1 Oct. 2007 | 00 UTC 1 Oct. 2008 |
 | Water Year (2015) | 1 Oct. 2014 - 1 Oct. 2015 | FINISHED | 00 UTC 1 Oct. 2015 | 00 UTC 1 Oct. 2015 |

@@ -20,7 +20,7 @@ HiMAT Point of Contact: stephen.d.nicholls@nasa.gov
 
 | | |
 |:-----|:-----|
-| **COAWST SETTINGS** | 
+| **COUPLED OCEAN-ATMOSPHERE-WAVE-SEDIMENTION-TRANSPORT (COAWST) MODELLING SYSTEM SPECFIC SETTINGS** | 
 | Model Version | Version 3.2, Revision 1147 (March 2017) |
 | Coupling Option | WRF-ROMS | 
 | Coupling Interval | 1800 seconds (30 minutes) | 
@@ -30,7 +30,7 @@ HiMAT Point of Contact: stephen.d.nicholls@nasa.gov
 
 | | |
 |:-----|:-----|
-| **Weather Research and Forecasing model (WRF) SPECIFIC SETTINGS** | 
+| **WEATHER RESEARCH AND FORECASTING (WRF) MODEL SPECIFIC SETTINGS** | 
 | Model Version | Version 3.7.1 |
 | Model Description | Atmosphere model applying fully-compressible, non-hydrostatic, Eulerian equations in terrain following (sigma) coordinates |
 | Map Projection | Lambert Conical Conformial | 
@@ -54,7 +54,7 @@ HiMAT Point of Contact: stephen.d.nicholls@nasa.gov
 
 | | |
 |:-----|:-----|
-| **Regional Ocean Modeling System (ROMS) SPECIFIC SETTINGS** | 
+| **REGIONAL OCEAN MODELING SYSTEM (ROMS) SPECIFIC SETTINGS** | 
 | Model Version | Subversion 797 |
 | Model Desciption | Ocean model applying 3D Reynolds-averaged Navier–Stokes equations using hydrostatic and Boussinesq approximations in terrain following (sigma) coordinates|
 | Map Projection | Lambert Conical Conformial | 

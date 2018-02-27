@@ -11,6 +11,11 @@
 | | | | | | | | | |
 |:-----|:-----|:-----|:-----|:-----|:-----|:-----|:-----|:-----|
 | **Variable Name** | **WRF Variable Name** | **Units** | **Dims** | **Staggered** | **1 hr** | **6 hr** | **Daily** | **Monthly** 
+| Accumulated Graupel (Liq Eq.) | ACCGRAUPEL | mm | x, y, t | no |  |  | X | X |
+| Accumulated Hail (Liq Eq.) | ACCHAIL | mm | x, y, t | no |  |  | X | X |
+| Accumulated Precipitation (Liq Eq.) | ACCPRECIP | mm | x, y, t | no |  |  | X | X |
+| Accumulated Rainfall | ACCRAIN | mm | x, y, t | no |  |  | X | X |
+| Accumulated Snowfall (Liq Eq.) | ACCSNOW | mm | x, y, t | no |  |  | X | X |
 | Air Temperature | T | K | x, y, z, t | no |  | X |  |  |
 | Air Temperature at 2m | T2 | K | x, y, t | no | X | X | X | X |
 | Air Pressure | P | Pa | x, y, z, t | no |  | X |  |  |
@@ -23,11 +28,6 @@
 | Coriolis Sine Latitude Term | F | s<sup>-1</sup> | x, y, t | no |  | X |  |  |
 | Cosine of Local Map Rotation | COSALPHA | unitless | x, y, t | no |  | X |  |  |
 | Cosine of Local Solar zenith Angle | COSZEN | unitless | x, y, t | no |  | X |  |  |
-| Daily Accumulated Graupel (Liq Eq.) | DAYGRAUPEL | mm | x, y, t | no |  |  | X |  |
-| Daily Accumulated Hail (Liq Eq.) | DAYHAIL | mm | x, y, t | no |  |  | X |  |
-| Daily Accumulated Precipitation (Liq Eq.) | DAYPRECIP | mm | x, y, t | no |  |  | X |  |
-| Daily Accumulated Rainfall | DAYRAIN | mm | x, y, t | no |  |  | X |  |
-| Daily Accumulated Snowfall (Liq Eq.) | DAYSNOW | mm | x, y, t | no |  |  | X |  |
 | <sup>2</sup> Daily Averaged Winds (X-dir) at 10m | DAYU10 | m s<sup>-1</sup> | x, y, t | no |  |  | X |  |
 | <sup>2</sup> Daily Averaged Winds (Y-dir) at 10m | DAYV10 | m s<sup>-1</sup> | x, y, t | no |  |  | X |  |
 | Depth Centers of Soil Levels | ZS | m | z, t | no |  | X |  |  |
@@ -64,11 +64,6 @@
 | Mixing Ratio (Ice) | QICE | kg kg<sup>-1</sup> | x, y, t | no |  | X |  |  | 
 | Mixing Ratio (Rain) | QRAIN | kg kg<sup>-1</sup> | x, y, z, t | no |  | X |  |  | 
 | Mixing Ratio (Snow) | QSNOW | kg kg<sup>-1</sup> | x, y, z, t | no |  | X |  |  | 
-| Monthly Accumulated Graupel (Liq Eq.) | MONGRAUPEL | mm | x, y, t | no |  |  | X |  |
-| Monthly Accumulated Hail (Liq Eq.) | MONHAIL | mm | x, y, t | no |  |  | X |  |
-| Monthly Accumulated Precipitation (Liq Eq.) | MONPRECIP | mm | x, y, t | no |  |  | X |  |
-| Monthly Accumulated Rainfall | MONRAIN | mm | x, y, t | no |  |  | X |  |
-| Monthly Accumulated Snowfall (Liq Eq.) | MONSNOW | mm | x, y, t | no |  |  | X |  |
 | <sup>2</sup> Monthly Averaged Winds (X-dir) at 10m | MONU10 | m s<sup>-1</sup> | x, y, t | no |  |  |  | X |
 | <sup>2</sup> Monthly Averaged Winds (Y-dir) at 10m | MONV10 | m s<sup>-1</sup> | x, y, t | no |  |  |  | X |
 | Monthly Averaged Water Vapor Mixing Ratio at 2m | MONQ2 | K | x, y, t | no |  |  |  | X |

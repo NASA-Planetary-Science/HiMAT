@@ -6,7 +6,7 @@ HiMAT Point of Contact: stephen.d.nicholls@nasa.gov
 ## HiMAT COAWST Simulation Status 
 
 | | | | | |
-|:-----|:-----|:-----|:-----|:-----|
+|:-----:|:-----:|:-----:|:-----:|:-----:|
 | **Last Status Update** | **27 February 2018 16:15 EST** | | | |
 | Model Simulation Name | Model Run Period | Run Status | Latest completed time | Latest file uploaded to ADAPT |
 | Water Year (2008) | 00 UTC 1 Oct. 2007 - 00 UTC 1 Oct. 2008 | FINISHED | 00 UTC 1 Oct. 2007 | 00 UTC 1 Oct. 2008 |
@@ -20,7 +20,7 @@ HiMAT Point of Contact: stephen.d.nicholls@nasa.gov
 
 
 | | |
-|:-----|:-----|
+|:-----:|:-----:|
 | **COUPLED OCEAN-ATMOSPHERE-WAVE-SEDIMENTION-TRANSPORT (COAWST) MODELLING SYSTEM SPECFIC SETTINGS** | 
 | Model Version | Version 3.2, Revision 1147 (March 2017) |
 | Coupling Option | WRF-ROMS | 
@@ -30,7 +30,7 @@ HiMAT Point of Contact: stephen.d.nicholls@nasa.gov
 | COAWST Citation | Warner, J. C., B. Armstrong, R. He, and J. B. Zambon, 2010: Development of a Coupled Ocean-Atmosphere-Wave-Sediment Transport (COAWST) modeling system. Ocean Modelling, 35, 230–244 | 
 
 | | |
-|:-----|:-----|
+|:-----:|:-----:|
 | **WEATHER RESEARCH AND FORECASTING (WRF) MODEL SPECIFIC SETTINGS** | 
 | Model Version | Version 3.7.1 |
 | Model Description | Atmosphere model applying fully-compressible, non-hydrostatic, Eulerian equations in terrain following (sigma) coordinates |
@@ -54,7 +54,7 @@ HiMAT Point of Contact: stephen.d.nicholls@nasa.gov
 || Surface Scheme: Revised MM5 Monin-Obukhov |
 
 | | |
-|:-----|:-----|
+|:-----:|:-----:|
 | **REGIONAL OCEAN MODELING SYSTEM (ROMS) SPECIFIC SETTINGS** | 
 | Model Version | Subversion 797 |
 | Model Desciption | Ocean model applying 3D Reynolds-averaged Navier–Stokes equations using hydrostatic and Boussinesq approximations in terrain following (sigma) coordinates|

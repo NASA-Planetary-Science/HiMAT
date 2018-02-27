@@ -28,8 +28,6 @@
 | Coriolis Sine Latitude Term | F | s<sup>-1</sup> | x, y, t | no |  | X |  |  |
 | Cosine of Local Map Rotation | COSALPHA | unitless | x, y, t | no |  | X |  |  |
 | Cosine of Local Solar zenith Angle | COSZEN | unitless | x, y, t | no |  | X |  |  |
-| <sup>2</sup> Daily Averaged Winds (X-dir) at 10m | DAYU10 | m s<sup>-1</sup> | x, y, t | no |  |  | X |  |
-| <sup>2</sup> Daily Averaged Winds (Y-dir) at 10m | DAYV10 | m s<sup>-1</sup> | x, y, t | no |  |  | X |  |
 | Depth Centers of Soil Levels | ZS | m | z, t | no |  | X |  |  |
 | Downward Longwave Flux at Ground | SWDOWN | W m<sup>-2</sup> | x, y, t | no | X | X | X | X |
 | Downward Shortwave Flux at Ground | GLW | W m<sup>-2</sup> | x, y, t | no | X | X | X | X |

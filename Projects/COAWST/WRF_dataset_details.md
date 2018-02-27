@@ -91,13 +91,15 @@
 | Water Table Depth | ZWT | m | x, y, t | no |  | X |  |  |
 | Water Vapor Mixing Ratio at 2m | Q2 | kg kg-1 | x, y, z, t | no |  | X |  |  |
 | Water Vapor Mixing Ratio | QVAPOR | kg kg-1 | x, y, t | no | X | X | X | X |
-| Wind (Meridional) at 10 m | V10 | m s-1 | x, y, t | no | X | X | X | X |
-| Wind (Meridional) | V | m s-1 | x, y, z, t | yes, v |  | X |  |  |
+| Wind (Y-dir) at 10 m <sup>2</sup> | V10 | m s-1 | x, y, t | no | X | X | X | X |
+| Wind (Y-dir) <sup>2</sup> | V | m s-1 | x, y, z, t | yes, v |  | X |  |  |
 | Wind (Vertical) | W | m s-1 | x, y, z, t | yes, z |  | X |  |  |
-| Wind (Zonal) at 10 m | U10 | m s-1 | x, y, t | no | X | X | X | X |
-| Wind (Zonal) | U | m s-1 | x, y, z, t | yes, u |  | X |  |  |
+| Wind (X-dir) at 10 m <sup>2</sup> | U10 | m s-1 | x, y, t | no | X | X | X | X |
+| Wind (X-dir) <sup>2</sup> | U | m s-1 | x, y, z, t | yes, u |  | X |  |  |
 
-*NOTE 1: All total accumulations are relative to the model simulation initalization time (see COAWST readme for date)
+<sup>2</sup> All total accumulations are relative to the model simulation initalization time (see COAWST readme for date)
 
-**NOTE 2: Please note that all winds are grid relative, Uearth = Umodel x COSALPHA + Vmodel x SINALPHA, Vearth = Vmodel x COSALPHA + Umodel x SINAPLHA 
+<sup>2</sup> Winds stored in WRF output are grid-relative. To calculate Earth-relative winds apply the following conversion formula: Uearth = Umodel x COSALPHA + Vmodel x SINALPHA; Vearth = Vmodel x COSALPHA + Umodel x SINAPLHA 
+
+*
 

@@ -43,3 +43,5 @@
 | Time Since ROMS Model Initialization | ocean_time | s | t | no | X | X | X | 
 | Vertically Integrated Water Velocity (Meridional) | vbar | m s-1 | x, y, t | no | X | X | X |
 | Vertically Integrated Water Velocity (Zonal) | ubar | m s-1 | x, y, t | no | X | X | X |
+
+*NOTE1: Time variables in ROMS are in second from model initialization, please see COAWST readme for initialization date.

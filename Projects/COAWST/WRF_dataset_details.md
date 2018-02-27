@@ -16,7 +16,7 @@
 | Air Pressure | P | Pa | x, y, z, t | no |  | X |  |  |
 | Albedo | ALBEDO | unitless | x, y, t | no |  | X |  |  |
 | Background Albedo | ALBBCK | unitless | x, y, t | no |  | X |  |  |
-| Cloud fraction | CLDFRA | unitless| x, y, z, t | no |  | X |  |  |
+| Cloud Fraction | CLDFRA | unitless| x, y, z, t | no |  | X |  |  |
 | Composite Radar Reflectivity | COMDBZ | dBZ | x, y, t | no | X | X |  |  |
 | Canopy Fraction Wetted or Snowed | FWET | unitless | x, y, t | no |  | X |  |  |
 | Coriolis Cosine Latitude Term | E | s<sup>-1</sup> | x, y, t | no |  | X |  |  |

@@ -100,7 +100,7 @@
 | Water in Aquifer | WA | mm | x, y, t | no |  | X |  |  |
 | Water Table Depth | ZWT | m | x, y, t | no |  | X |  |  |
 | Water Vapor Mixing Ratio at 2m | Q2 | kg kg<sup>-1</sup> | x, y, z, t | no | X | X | X | X |
-| Water Vapor Mixing Ratio | QVAPOR | kg kg<sup>-1</sup> | x, y, t | no |  | X | X | X |
+| Water Vapor Mixing Ratio | QVAPOR | kg kg<sup>-1</sup> | x, y, t | no |  | X |  |  |
 | <sup>2</sup> Wind (Y-dir) at 10 m | V10 | m s<sup>-1</sup> | x, y, t | no | X | X | X | X |
 | <sup>2</sup> Wind (Y-dir) | V |m s<sup>-1</sup> | x, y, z, t | yes, v |  | X |  |  |
 | Wind (Vertical) | W | m s<sup>-1</sup> | x, y, z, t | yes, z |  | X |  |  |

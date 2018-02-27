@@ -7,11 +7,33 @@
 | Output data format | NetCDF |
 
 
+
+## Time Invariant Variable Descriptions
+
+| | | | 
+|:-----|:-----|:-----|
+| **ROMS Name** | **Description** | **Units** |
+| bathymetry | h | m |
+| Coriolis Parameter | f | s-1|
+| Latitude for cross-staggered grid | lat_psi | °N | 
+| Latitude for unstaggered grid | lat_rho | °N |
+| Latitude for u-staggered grid | lat_u | °N |
+| Latitude for v-staggered grid | lat_v | °N |
+| Longitude for cross-staggered grid | lon_psi |  °E |
+| Longitude for unstaggered grid | lon_rho | °E |
+| Longitude for u-staggered grid | lon_u | °E |
+| Longitude for v-staggered grid | lon_v | °E |
+| Land Mask for Cross-staggered grid (0 = land, 1 = ocean ) | mask_psi |  none |
+| Land Mask for Unstaggered Grid (0 = land, 1 = ocean ) | mask_rho | none |
+| Land Mask for U-staggered Grid (0 = land, 1 = ocean ) | mask_u | none |
+| Land Mask for V-staggered Grid (0 = land, 1 = ocean ) | mask_v | none |
+
+
 ## Time Varying Variable Descriptions and Time Frequencies
 
 | | | | | | | | |
 |:-----|:-----|:-----|:-----|:-----|:-----|:-----|:-----|
-| **Variable Name** | **WRF Variable Name** | **Units** | **Dims** | **Staggered** | **6 hr** | **Daily** | **Monthly** |
+| **Variable Name** | **ROMS Variable Name** | **Units** | **Dims** | **Staggered** | **6 hr** | **Daily** | **Monthly** |
 | Ocean Water Velocity (Meridional) | v | m s-1 | x, y, z, t | yes, v | X | X | X |
 | Ocean Water Velocity (Vertical) | w | m s-1 | x, y, z, t | yes, z | X | X | X |
 | Ocean Water Velocity (Zonal) | u | m s-1 | x, y, z, t | yes, u | X | X | X |
@@ -21,32 +43,3 @@
 | Time Since ROMS Model Initialization | ocean_time | s | t | no | X | X | X | 
 | Vertically Integrated Water Velocity (Meridional) | vbar | m s-1 | x, y, t | no | X | X | X |
 | Vertically Integrated Water Velocity (Zonal) | ubar | m s-1 | x, y, t | no | X | X | X |
-
-
-## Time Invariant Variable Descriptions
-
-| | | | 
-|:-----|:-----|:-----|
-| **ROMS Name** | **Description** | **Units** |
-| h | bathymetry | m |
-| f | Coriolis parameter | s<sup>-1</sup>|
-| lat_psi | latitude for cross-staggered grid | °N | 
-| lat_rho | latitude for unstaggered grid | °N |
-| lat_rho | latitude for u-staggered grid | °N |
-| lat_rho | latitude for v-staggered grid | °N |
-| lon_psi | longitude for cross-staggered grid | °E |
-| lon_rho | longitude for unstaggered grid | °E |
-| lon_rho | longitude for u-staggered grid | °E |
-| lon_rho | longitude for v-staggered grid | °E |
-| mask_psi | land mask for cross-staggered grid (0 = land, 1 = ocean ) | none |
-| mask_rho | land mask for unstaggered grid (0 = land, 1 = ocean ) | none |
-| mask_rho | land mask for u-staggered grid (0 = land, 1 = ocean ) | none |
-| mask_rho | land mask for v-staggered grid (0 = land, 1 = ocean ) | none |
-
-
-
-
-| | | | | | |
-|:-----|:-----|:-----|:-----|:-----|:-----|
-| **ROMS Name** | **Description** | **Units** |  **6 hr** | **Daily** | **Monthly** |
-

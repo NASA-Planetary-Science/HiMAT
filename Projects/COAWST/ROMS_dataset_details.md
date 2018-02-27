@@ -41,8 +41,8 @@
 | Salinity | salt | PSU | x, y, z, t | no | X | X | X |
 | Sea Surface Height | zeta | m | x, y, t | no | X | X | X |
 | Temperature | temp | Celsius | x, y, z, t | no | X | X | X |
-| Time Since ROMS Model Initialization | ocean_time | s | t | no | X | X | X | 
+| <sup>1</sup> Time Since ROMS Model Initialization | ocean_time | s | t | no | X | X | X | 
 | Vertically Integrated Water Velocity (Meridional) | vbar | m s<sup>-1</sup> | x, y, t | no | X | X | X |
 | Vertically Integrated Water Velocity (Zonal) | ubar | m s<sup>-1</sup> | x, y, t | no | X | X | X |
 
-*NOTE1: Time variables in ROMS are in seconds after model initialization, please see COAWST readme for initialization date.
+<sup>1</sup> Time is defines in seconds since model initialization, please see COAWST readme for initialization date.

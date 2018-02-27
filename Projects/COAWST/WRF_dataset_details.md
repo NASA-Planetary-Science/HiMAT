@@ -12,7 +12,7 @@
 |:-----|:-----|:-----|:-----|:-----|:-----|:-----|:-----|:-----|
 | **Variable Name** | **WRF Variable Name** | **Units** | **Dims** | **Staggered** | **1 hr** | **6 hr** | **Daily** | **Monthly** 
 | Air Temperature | T | K | x, y, z, t | no |  | X |  |  |
-| Air Temperature at 2m | T2 | K | x, y, t | no | X | X | X | X |
+| Air Temperature at 2m | T2 | K | x, y, t | no | X | X |  |  |
 | Air Pressure | P | Pa | x, y, z, t | no |  | X |  |  |
 | Albedo | ALBEDO | unitless | x, y, t | no |  | X |  |  |
 | Background Albedo | ALBBCK | unitless | x, y, t | no |  | X |  |  |
@@ -23,6 +23,16 @@
 | Coriolis Sine Latitude Term | F | s<sup>-1</sup> | x, y, t | no |  | X |  |  |
 | Cosine of Local Map Rotation | COSALPHA | unitless | x, y, t | no |  | X |  |  |
 | Cosine of Local Solar zenith Angle | COSZEN | unitless | x, y, t | no |  | X |  |  |
+| Daily Accumulated Graupel (Liq Eq.) | DAYGRAUPEL | mm | x, y, t | no |  |  | X |  |
+| Daily Accumulated Hail (Liq Eq.) | DAYHAIL | mm | x, y, t | no |  |  | X |  |
+| Daily Accumulated Precipitation (Liq Eq.) | DAYPRECIP | mm | x, y, t | no |  |  | X |  |
+| Daily Accumulated Rainfall | DAYRAIN | mm | x, y, t | no |  |  | X |  |
+| Daily Accumulated Snowfall (Liq Eq.) | DAYSNOW | mm | x, y, t | no |  |  | X |  |
+| Daily Averaged Air Temperature at 2m | DAYT2 |  kg kg<sup>-1</sup> | x, y, t | no |  |  |  | X |
+| Daily Averaged Relative Humidity at 2m | DAYRH2 | % | x, y, t | no |  |  |  | X |
+| Daily Averaged Water Vapor Mixing Ratio at 2m | DAYQ2 | K | x, y, t | no |  |  |  | X |
+| <sup>2</sup> Daily Averaged Winds (X-dir) at 10m | DAYU10 | m s<sup>-1</sup> | x, y, t | no |  |  |  | X |
+| <sup>2</sup> Daily Averaged Winds (Y-dir) at 10m | DAYV10 | m s<sup>-1</sup> | x, y, t | no |  |  |  | X |
 | Depth Centers of Soil Levels | ZS | m | z, t | no |  | X |  |  |
 | Downward Longwave Flux at Ground | SWDOWN | W m<sup>-2</sup> | x, y, t | no | X | X | X | X |
 | Downward Shortwave Flux at Ground | GLW | W m<sup>-2</sup> | x, y, t | no | X | X | X | X |
@@ -57,6 +67,17 @@
 | Mixing Ratio (Ice) | QICE | kg kg<sup>-1</sup> | x, y, t | no |  | X |  |  | 
 | Mixing Ratio (Rain) | QRAIN | kg kg<sup>-1</sup> | x, y, z, t | no |  | X |  |  | 
 | Mixing Ratio (Snow) | QSNOW | kg kg<sup>-1</sup> | x, y, z, t | no |  | X |  |  | 
+| Monthly Accumulated Graupel (Liq Eq.) | MONGRAUPEL | mm | x, y, t | no |  |  | X |  |
+| Monthly Accumulated Hail (Liq Eq.) | MONHAIL | mm | x, y, t | no |  |  | X |  |
+| Monthly Accumulated Precipitation (Liq Eq.) | MONPRECIP | mm | x, y, t | no |  |  | X |  |
+| Monthly Accumulated Rainfall | MONRAIN | mm | x, y, t | no |  |  | X |  |
+| Monthly Accumulated Snowfall (Liq Eq.) | MONSNOW | mm | x, y, t | no |  |  | X |  |
+| Monthly Averaged Air Temperature at 2m | MONT2 |  kg kg<sup>-1</sup> | x, y, t | no |  |  |  | X |
+| Monthly Averaged Relative Humidity at 2m | MONRH2 | % | x, y, t | no |  |  |  | X |
+| Monthly Averaged Water Vapor Mixing Ratio at 2m | MONQ2 | K | x, y, t | no |  |  |  | X |
+| <sup>2</sup> Monthly Averaged Winds (X-dir) at 10m | MONU10 | m s<sup>-1</sup> | x, y, t | no |  |  |  | X |
+| <sup>2</sup> Monthly Averaged Winds (Y-dir) at 10m | MONV10 | m s<sup>-1</sup> | x, y, t | no |  |  |  | X |
+| Monthly Averaged Water Vapor Mixing Ratio at 2m | MONQ2 | K | x, y, t | no |  |  |  | X |
 | Net Shortwave at Surface | GSW | W m<sup>-2</sup> | x, y, t | no | X | X | X | X |
 | Outgoing Longwave Radition (TOA) | OLR | W m<sup>-2</sup> | x, y, t | no | X | X | X | X |
 | Planetary Boundary Layer Height | PBLH | m | x, y, t | no | X | X | X | X |

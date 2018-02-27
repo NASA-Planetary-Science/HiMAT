@@ -19,23 +19,24 @@
 | Cloud fraction | CLDFRA | unitless| x, y, z, t | no |  | X |  |  |
 | Composite Radar Reflectivity | COMDBZ | dBZ | x, y, t | no | X | X |  |  |
 | Canopy Fraction Wetted or Snowed | FWET | unitless | x, y, t | no |  | X |  |  |
-| Coriolis Cosine Latitude Term | E | s-1 | x, y, t | no |  | X |  |  |
-| Coriolis Sine Latitude Term | F | s-1 | x, y, t | no |  | X |  |  |
+| Coriolis Cosine Latitude Term | E | s<sup>-1</sup> | x, y, t | no |  | X |  |  |
+| Coriolis Sine Latitude Term | F | s<sup>-1</sup> | x, y, t | no |  | X |  |  |
 | Cosine of Local Map Rotation | COSALPHA | unitless | x, y, t | no |  | X |  |  |
 | Cosine of Local Solar zenith Angle | COSZEN | unitless | x, y, t | no |  | X |  |  |
 | Depth Centers of Soil Levels | ZS | m | z, t | no |  | X |  |  |
-| Downward Longwave Flux at Ground | SWDOWN | W m-2 | x, y, t | no | X | X | X | X |
-| Downward Shortwave Flux at Ground | GLW | W m-2 | x, y, t | no | X | X | X | X |
+| Downward Longwave Flux at Ground | SWDOWN | W m<sup>-2</sup> | x, y, t | no | X | X | X | X |
+| Downward Shortwave Flux at Ground | GLW | W m<sup>-2</sup> | x, y, t | no | X | X | X | X |
 | Dry Air Mass (Perturbation) in Column | MU | Pa | x, y, t | no |  | X |  |  |
 | Dry Air Mass (Base) in Column | MUB | Pa | x, y, t | no |  | X |  |  |
 | Eta Model Grid Values on Half Levels | ZNU | unitless | z, t | no |  | X |  |  |
 | Eta Model Grid Values on Full Levels | ZNW | unitless | z, t | yes, z |  | X |  |  |
 | Fraction Frozen Precipitation | SR | unitless | x, y, t | no |  | X |  |  |
-| Geopotential | PH | m2 s-2 | x, y, z, t | yes, z |  | X |  |  |
-| Ground Heat Flux | GRDFLX | W m-2 | x, y, t | no |  | X |  |  |
+| Geopotential | PH | m<sup>2 </sup> s<sup>-2</sup> | x, y, z, t | yes, z |  | X |  |  |
+| Ground Heat Flux | GRDFLX | W m<sup>-2</sup> | x, y, t | no |  | X |  |  |
 | Ground Water Storage | WT | mm | x, y, t | no |  | X |  |  |
 | Landmask | LANDMASK | unitless | x, y, t | no | X | X | X | X |
 | Landuse Use Category | LU_INDEX | unitless | x, y, t | no |  | X |  |  |
+| Latent Heat Flux at Surface | LH | W m<sup>-2</sup> | x, y, t | no | X | X | X | X |
 | Latitude | XLAT | °N | x, y, t | no | X | X | X | X | 
 | Latitude U Stag | XLAT_U | °N | x, y, t | yes, u |  | X |  |  | 
 | Latitude V Stag | XLAT_V | °N | x, y, t | yes, v |  | X |  |  | 
@@ -51,11 +52,11 @@
 | Map Factor, V Grid | MAPFAC_V | unitless | x, y, t | yes, v |  | X |  |  |
 | Map Factor, V Grid, X-dir | MAPFAC_VX | unitless | x, y, t | yes, v |  | X |  |  |
 | Map Factor, V Grid, Y-dir | MAPFAC_VY | unitless | x, y, t | yes, v |  | X |  |  |
-| Mixing Ratio (Graupel) | QGRAUPEL | Kg Kg-1 | x, y, z, t | no |  | X |  |  | 
-| Mixing Ratio (Hail) | QHAIL | Kg Kg-1 | x, y, z, t | no |  | X |  |  | 
-| Mixing Ratio (Ice) | QICE | Kg Kg-1 | x, y, t | no |  | X |  |  | 
-| Mixing Ratio (Rain) | QRAIN | Kg Kg-1 | x, y, z, t | no |  | X |  |  | 
-| Mixing Ratio (Snow) | QSNOW | Kg Kg-1 | x, y, z, t | no |  | X |  |  | 
+| Mixing Ratio (Graupel) | QGRAUPEL | Kg Kg<sup>-1</sup> | x, y, z, t | no |  | X |  |  | 
+| Mixing Ratio (Hail) | QHAIL | Kg Kg<sup>-1</sup> | x, y, z, t | no |  | X |  |  | 
+| Mixing Ratio (Ice) | QICE | Kg Kg<sup>-1</sup> | x, y, t | no |  | X |  |  | 
+| Mixing Ratio (Rain) | QRAIN | Kg Kg<sup>-1</sup> | x, y, z, t | no |  | X |  |  | 
+| Mixing Ratio (Snow) | QSNOW | Kg Kg<sup>-1</sup> | x, y, z, t | no |  | X |  |  | 
 | Net Shortwave at Surface | GSW | W m-2 | x, y, t | no | X | X | X | X |
 | Outgoing Longwave Radition (TOA) | OLR | W m-2 | x, y, t | no | X | X | X | X |
 | Planetary Boundary Layer Height | PBLH | m | x, y, t | no | X | X | X | X |
@@ -74,7 +75,7 @@
 | Surface Pressure | PSFC | Pa | x, y, t | no | X | X | X | X |
 | Surface Skin Temperature | TSK | K | x, y, t | no |  | X |  |  |
 | Terrain Height | XLONG | m | x, y, t | no | X | X | X | X | 
-| Mixing Ratio (Rain) | QRAIN | Kg Kg-1 | x, y, z, t | no |  | X |  |  | 
+| Mixing Ratio (Rain) | QRAIN | Kg Kg<sup>-1</sup> | x, y, z, t | no |  | X |  |  | 
 | Total Cloud Fraction | TOTCLDFRAC | unitless | x, y, t | no | X | X | X | X |
 | Total Accumulated Graupel (Liq Eq.) | TOTGRAUPEL | mm | x, y, t | no | X | X |  |  |
 | Total Accumulated Hail (Liq Eq.) | TOTHAIL | mm | x, y, t | no | X | X |  |  |
@@ -83,23 +84,19 @@
 | Total Accumulated Snowfall (Liq Eq.) | TOTSNOW | mm | x, y, t | no | X | X |  |  |
 | Upward Heat Flux at Surface | HFX | W m-2 | x, y, t | no | X | X | X | X |
 | Upward Moisture Flux at Surface | QFX | Kg m-2 s-1 | x, y, t | no | X | X | X | X |
-| Latent Heat Flux at Surface | LH | W m-2 | x, y, t | no | X | X | X | X |
 | Underground Runoff | UDROFF | mm | x, y, t | no |  | X |  |  |
 | Vegetative Fraction | FVEG | unitless | x, y, t | no |  | X |  |  |
 | Vegetation Fraction | VEGFRA | unitless | x, y, t | no |  | X |  |  |
 | Water in Aquifer | WA | mm | x, y, t | no |  | X |  |  |
 | Water Table Depth | ZWT | m | x, y, t | no |  | X |  |  |
-| Water Vapor Mixing Ratio at 2m | Q2 | kg kg-1 | x, y, z, t | no |  | X |  |  |
-| Water Vapor Mixing Ratio | QVAPOR | kg kg-1 | x, y, t | no | X | X | X | X |
-| Wind (Y-dir) at 10 m <sup>2</sup> | V10 | m s-1 | x, y, t | no | X | X | X | X |
-| Wind (Y-dir) <sup>2</sup> | V | m s-1 | x, y, z, t | yes, v |  | X |  |  |
-| Wind (Vertical) | W | m s-1 | x, y, z, t | yes, z |  | X |  |  |
-| Wind (X-dir) at 10 m <sup>2</sup> | U10 | m s-1 | x, y, t | no | X | X | X | X |
-| Wind (X-dir) <sup>2</sup> | U | m s-1 | x, y, z, t | yes, u |  | X |  |  |
+| Water Vapor Mixing Ratio at 2m | Q2 | Kg Kg<sup>-1</sup> | x, y, z, t | no |  | X |  |  |
+| Water Vapor Mixing Ratio | QVAPOR | Kg Kg<sup>-1</sup> | x, y, t | no | X | X | X | X |
+| <sup>2</sup> Wind (Y-dir) at 10 m | V10 | m s<sup>-1</sup> | x, y, t | no | X | X | X | X |
+| <sup>2</sup> Wind (Y-dir) | V |m s<sup>-1</sup> | x, y, z, t | yes, v |  | X |  |  |
+| Wind (Vertical) | W | m s<sup>-1</sup> | x, y, z, t | yes, z |  | X |  |  |
+| <sup>2</sup> Wind (X-dir) at 10 m | U10 | m s<sup>-1</sup> | x, y, t | no | X | X | X | X |
+| <sup>2</sup> Wind (X-dir) | U | m s<sup>-1</sup> | x, y, z, t | yes, u |  | X |  |  |
 
 <sup>2</sup> All total accumulations are relative to the model simulation initalization time (see COAWST readme for date)
 
 <sup>2</sup> Winds stored in WRF output are grid-relative. To calculate Earth-relative winds apply the following conversion formula: Uearth = Umodel x COSALPHA + Vmodel x SINALPHA; Vearth = Vmodel x COSALPHA + Umodel x SINAPLHA 
-
-*
-

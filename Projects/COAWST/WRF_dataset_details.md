@@ -71,7 +71,7 @@
 | Outgoing Longwave Radition (TOA) | OLR | W m<sup>-2</sup> | x, y, t | no | X | X | X | X |
 | Planetary Boundary Layer Height | PBLH | m | x, y, t | no | X | X | X | X |
 | Potential Temperature at 2m | TH2 | K | x, y, t | no |  | X |  |  |
-| Pressure at Model Top | P_TOP | Pa | x, y, t | no | X | X | X | X |
+| Pressure at Model Top | P_TOP | Pa | x, y, t | no |  | X |  |  |
 | Relative Humidity at 2m | RH2 | % | x, y, t | no | X | X | X | X | 
 | Sea Ice Flag | SEAICE | unitless | x, y, t | no |  | X |  |  |
 | Sea Surface Temperature | SST | K | x, y, t | no |  | X |  |  |

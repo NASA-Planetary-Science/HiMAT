@@ -20,7 +20,7 @@
 | Composite Radar Reflectivity | COMDBZ | dBZ | x, y, t | no | X | X |  |  |
 | Canopy Fraction Wetted or Snowed | FWET | unitless | x, y, t | no |  | X |  |  |
 | Coriolis Cosine Latitude Term | E | s-1 | x, y, t | no |  | X |  |  |
-| Coriolis Sine latitude Term | F | s-1 | x, y, t | no |  | X |  |  |
+| Coriolis Sine Latitude Term | F | s-1 | x, y, t | no |  | X |  |  |
 | Cosine of Local Map Rotation | COSALPHA | unitless | x, y, t | no |  | X |  |  |
 | Cosine of Local Solar zenith Angle | COSZEN | unitless | x, y, t | no |  | X |  |  |
 | Depth Centers of Soil Levels | ZS | m | z, t | no |  | X |  |  |

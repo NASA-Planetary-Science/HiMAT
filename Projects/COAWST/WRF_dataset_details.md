@@ -9,7 +9,7 @@
 ## Variable Descriptions and Time Frequencies
 
 | | | | | | | | | |
-|:-----|:-----|:-----|:-----|:-----|:-----|:-----|:-----|:-----|
+|:-----:|:-----:|:-----:|:-----:|:-----:|:-----:|:-----:|:-----:|:-----:|
 | **Variable Name** | **WRF Variable Name** | **Units** | **Dims** | **Staggered** | **1 hr** | **6 hr** | **Daily** | **Monthly** 
 | Accumulated Graupel (Liq Eq.) | ACCGRAUPEL | mm | x, y, t | no |  |  | X | X |
 | Accumulated Hail (Liq Eq.) | ACCHAIL | mm | x, y, t | no |  |  | X | X |

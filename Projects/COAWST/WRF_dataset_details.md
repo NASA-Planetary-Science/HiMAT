@@ -99,5 +99,5 @@
 
 *NOTE 1: All total accumulations are relative to the model simulation initalization time (see COAWST readme for date)
 
-**NOTE 2: Please note that all winds are grid relative, Uearth = Umodel*COSALPHA + Vmodel*SINALPHA, Vearth = Vmodel*COSALPHA + Umodel*SINAPLHA 
+**NOTE 2: Please note that all winds are grid relative, Uearth = Umodel x COSALPHA + Vmodel x SINALPHA, Vearth = Vmodel x COSALPHA + Umodel x SINAPLHA 
 

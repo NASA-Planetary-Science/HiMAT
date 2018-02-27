@@ -5,13 +5,12 @@
 | Purpose of this file | Detail available WRF model output from COAWST simulations and its temporal availability |
 | Dataset generation status | Please see "coawst_readme.md" for details |
 | Output data format | NetCDF |
-| Data notes | 1-hr and 6-hr data are instantaneous, daily and monthly data are averages or accumulations during the indicated period |
 
 ## Variable Descriptions and Time Frequencies
 
 | | | | | | | | | |
 |:-----:|:-----:|:-----:|:-----:|:-----:|:-----:|:-----:|:-----:|:-----:|
-| **Variable Name** | **WRF Variable Name** | **Units** | **Dims** | **Staggered** | **1 hr** | **6 hr** | **Day** | **Month** 
+| **Variable Name** | **WRF Variable Name** | **Units** | **Dims** | **Staggered** | **1 hr** | **6 hr** | **Daily** | **Monthly** 
 | <sup>1</sup> Accumulated Graupel (Liq Eq.) | ACCGRAUPEL | mm | x, y, t | no |  |  | X | X |
 | <sup>1</sup> Accumulated Hail (Liq Eq.) | ACCHAIL | mm | x, y, t | no |  |  | X | X |
 | <sup>1</sup> Accumulated Precipitation (Liq Eq.) | ACCPRECIP | mm | x, y, t | no |  |  | X | X |

@@ -8,7 +8,7 @@
 
 ## Time Invariant Variable Descriptions
 | | | | |
-|:-----|:-----|:-----|:-----|
+|:-----:|:-----:|:-----:|:-----:|
 | **ROMS Name** | **Description** | **Units** | **Stagger** |
 | bathymetry | h | m | no |
 | Coriolis Parameter | f | s<sup>-1</sup>| no | 
@@ -32,7 +32,7 @@
 
 ## Time Varying Variable Descriptions and Time Frequencies
 | | | | | | | | |
-|:-----|:-----|:-----|:-----|:-----|:-----|:-----|:-----|
+|:-----:|:-----:|:-----:|:-----:|:-----:|:-----:|:-----:|:-----:|
 | **Variable Name** | **ROMS Variable Name** | **Units** | **Dims** | **Staggered** | **6 hr** | **Daily** | **Monthly** |
 | Ocean Water Velocity (Meridional) | v | m s<sup>-1</sup> | x, y, z, t | yes, v | X | X | X |
 | Ocean Water Velocity (Vertical) | w | m s<sup>-1</sup> | x, y, z, t | yes, z | X | X | X |

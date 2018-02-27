@@ -7,11 +7,11 @@ HiMAT Point of Contact: stephen.d.nicholls@nasa.gov
 
 | | | | | |
 |:-----|:-----|:-----|:-----|:-----|
-| **Last Status Update** | **26 February 2018 17:44 EST** | | | |
+| **Last Status Update** | **26 February 2018 19:24 EST** | | | |
 | Model Simulation Name | Model Run Period | Run Status | Latest completed time | Latest file uploaded to ADAPT |
 | Water Year (2008) | 1 Oct. 2007 - 1 Oct. 2008 | FINISHED | 00 UTC 1 Oct. 2007 | 00 UTC 1 Oct. 2008 |
 | Water Year (2015) | 1 Oct. 2014 - 1 Oct. 2015 | FINISHED | 00 UTC 1 Oct. 2015 | 00 UTC 1 Oct. 2015 |
-| Historical Simulation (1999 - 2015) | 1 Oct. 1999 - 1 Oct. 2015 | RUNNING | 00 UTC 18 Nov. 1999 | N/A |
+| Historical Simulation (1999 - 2015) | 1 Oct. 1999 - 1 Oct. 2015 | RUNNING | 06 UTC 21 Nov. 1999 | N/A |
 | Future Climate Simulation (~2050 - 2065) | TBD | Awaiting GCM input data | N/A | N/A |
 
 ## HiMAT COAWST Configuration

@@ -42,15 +42,15 @@
 | Longitude | XLONG | °E | x, y, t | no | X | X | X | X | 
 | Longitude U Stag | XLONG_U | °E | x, y, t | yes, u |  | X |  |  | 
 | Longitude V Stag | XLONG_V | °E | x, y, t | yes, v |  | X |  |  | 
-| Map factor, mass grid | MAPFAC_M | unitless | x, y, t | no |  | X |  |  |
-| Map factor, mass grid, x-dir | MAPFAC_MX | unitless | x, y, t | no |  | X |  |  |
-| Map factor, mass grid, y-dir | MAPFAC_MY | unitless | x, y, t | no |  | X |  |  |
-| Map factor, U grid | MAPFAC_U | unitless | x, y, t | yes, u |  | X |  |  |
-| Map factor, U grid, x-dir | MAPFAC_UX | unitless | x, y, t | yes, u |  | X |  |  |
-| Map factor, U grid, y-dir | MAPFAC_UY | unitless | x, y, t | yes, u |  | X |  |  |
-| Map factor, V grid | MAPFAC_V | unitless | x, y, t | yes, v |  | X |  |  |
-| Map factor, V grid, x-dir | MAPFAC_VX | unitless | x, y, t | yes, v |  | X |  |  |
-| Map factor, V grid, y-dir | MAPFAC_VY | unitless | x, y, t | yes, v |  | X |  |  |
+| Map Factor, Mass Grid | MAPFAC_M | unitless | x, y, t | no |  | X |  |  |
+| Map Factor, Mass Grid, X-dir | MAPFAC_MX | unitless | x, y, t | no |  | X |  |  |
+| Map Factor, Mass Grid, Y-dir | MAPFAC_MY | unitless | x, y, t | no |  | X |  |  |
+| Map Factor, U Grid | MAPFAC_U | unitless | x, y, t | yes, u |  | X |  |  |
+| Map Factor, U Grid, X-dir | MAPFAC_UX | unitless | x, y, t | yes, u |  | X |  |  |
+| Map Factor, U Grid, Y-dir | MAPFAC_UY | unitless | x, y, t | yes, u |  | X |  |  |
+| Map Factor, V Grid | MAPFAC_V | unitless | x, y, t | yes, v |  | X |  |  |
+| Map Factor, V Grid, X-dir | MAPFAC_VX | unitless | x, y, t | yes, v |  | X |  |  |
+| Map Factor, V Grid, Y-dir | MAPFAC_VY | unitless | x, y, t | yes, v |  | X |  |  |
 | Mixing Ratio (Graupel) | QGRAUPEL | Kg Kg-1 | x, y, z, t | no |  | X |  |  | 
 | Mixing Ratio (Hail) | QHAIL | Kg Kg-1 | x, y, z, t | no |  | X |  |  | 
 | Mixing Ratio (Ice) | QICE | Kg Kg-1 | x, y, t | no |  | X |  |  | 

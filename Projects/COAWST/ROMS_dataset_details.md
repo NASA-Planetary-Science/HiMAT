@@ -11,8 +11,7 @@
 
 | | | | | | | | |
 |:-----|:-----|:-----|:-----|:-----|:-----|:-----|:-----|
-| **Variable Name** | **WRF Variable Name** | **Units** | **Dims** | **Staggered** | **6 hr** | **Daily** | **Monthly** 
-
+| **Variable Name** | **WRF Variable Name** | **Units** | **Dims** | **Staggered** | **6 hr** | **Daily** | **Monthly** |
 | Ocean Water Velocity (Meridional) | v | m s-1 | x, y, z, t | yes, v | X | X | X |
 | Ocean Water Velocity (Vertical) | w | m s-1 | x, y, z, t | yes, z | X | X | X |
 | Ocean Water Velocity (Zonal) | u | m s-1 | x, y, z, t | yes, u | X | X | X |

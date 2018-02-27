@@ -76,12 +76,12 @@
 | Surface Skin Temperature | TSK | K | x, y, t | no |  | X |  |  |
 | Terrain Height | XLONG | m | x, y, t | no | X | X | X | X | 
 | Mixing Ratio (Rain) | QRAIN | kg kg<sup>-1</sup> | x, y, z, t | no |  | X |  |  | 
-| Total Cloud Fraction | TOTCLDFRAC | unitless | x, y, t | no | X | X | X | X |
-| Total Accumulated Graupel (Liq Eq.) | TOTGRAUPEL | mm | x, y, t | no | X | X |  |  |
-| Total Accumulated Hail (Liq Eq.) | TOTHAIL | mm | x, y, t | no | X | X |  |  |
-| Total Accumulated Precipitation (Liq Eq.) | TOTPRECIP | mm | x, y, t | no | X | X |  |  |
-| Total Accumulated Rainfall | TOTRAIN | mm | x, y, t | no | X | X |  |  |
-| Total Accumulated Snowfall (Liq Eq.) | TOTSNOW | mm | x, y, t | no | X | X |  |  |
+| <sup>1</sup> Total Cloud Fraction | TOTCLDFRAC | unitless | x, y, t | no | X | X | X | X |
+| <sup>1</sup> Total Accumulated Graupel (Liq Eq.) | TOTGRAUPEL | mm | x, y, t | no | X | X |  |  |
+| <sup>1</sup> Total Accumulated Hail (Liq Eq.) | TOTHAIL | mm | x, y, t | no | X | X |  |  |
+| <sup>1</sup> Total Accumulated Precipitation (Liq Eq.) | TOTPRECIP | mm | x, y, t | no | X | X |  |  |
+| <sup>1</sup> Total Accumulated Rainfall | TOTRAIN | mm | x, y, t | no | X | X |  |  |
+| <sup>1</sup> Total Accumulated Snowfall (Liq Eq.) | TOTSNOW | mm | x, y, t | no | X | X |  |  |
 | Upward Heat Flux at Surface | HFX | W m<sup>-2</sup> | x, y, t | no | X | X | X | X |
 | Upward Moisture Flux at Surface | QFX | kg m<sup>-2</sup> s<sup>-1</sup> | x, y, t | no | X | X | X | X |
 | Underground Runoff | UDROFF | mm | x, y, t | no |  | X |  |  |
@@ -97,6 +97,6 @@
 | <sup>2</sup> Wind (X-dir) at 10 m | U10 | m s<sup>-1</sup> | x, y, t | no | X | X | X | X |
 | <sup>2</sup> Wind (X-dir) | U | m s<sup>-1</sup> | x, y, z, t | yes, u |  | X |  |  |
 
-<sup>2</sup> All total accumulations are relative to the model simulation initalization time (see COAWST readme for date)
+<sup>1</sup> All total accumulations are relative to the model simulation initalization time (see COAWST readme for date)
 
 <sup>2</sup> Winds stored in WRF output are grid-relative. To calculate Earth-relative winds apply the following conversion formula: Uearth = Umodel x COSALPHA + Vmodel x SINALPHA; Vearth = Vmodel x COSALPHA + Umodel x SINAPLHA 

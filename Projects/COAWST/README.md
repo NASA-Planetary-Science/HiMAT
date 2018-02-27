@@ -2,13 +2,12 @@
 
 HiMAT Point of Contact: stephen.d.nicholls@nasa.gov
 
-
 ## HiMAT COAWST Simulation Status
 **Last Update: 27 February 2018 16:15 EST**
 
 | | | | | |
 |:-----:|:-----:|:-----:|:-----:|:-----:|
-| Model Simulation Name | Model Run Period | Run Status | Latest completed time | Latest file uploaded to ADAPT |
+| Model Simulation Name | Model Run Period | Run Status | Current Model Run Date | Latest Date Available on ADAPT |
 | Water Year (2008) | 00 UTC 1 Oct. 2007 - 00 UTC 1 Oct. 2008 | FINISHED | 00 UTC 1 Oct. 2007 | 00 UTC 1 Oct. 2008 |
 | Water Year (2015) | 00 UTC 1 Oct. 2014 - 00 UTC 1 Oct. 2015 | FINISHED | 00 UTC 1 Oct. 2015 | 00 UTC 1 Oct. 2015 |
 | Historical Simulation (1999 - 2015) | 00 UTC 1 Oct. 1999 - 00 UTC 1 Oct. 2015 | RUNNING | 00 UTC 28 Nov. 1999 | N/A |

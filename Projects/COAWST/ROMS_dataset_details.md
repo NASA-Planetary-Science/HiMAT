@@ -9,7 +9,7 @@
 ## Time Invariant Variable Descriptions
 | | | | |
 |:-----:|:-----:|:-----:|:-----:|
-| **ROMS Name** | **Description** | **Units** | **Stagger** |
+| **Variable Name** | **ROMS Variable Name**  | **Units** | **Stagger** |
 | bathymetry | h | m | no |
 | Coriolis Parameter | f | s<sup>-1</sup>| no | 
 | Latitude for cross-staggered grid | lat_psi | °N | yes, psi |  

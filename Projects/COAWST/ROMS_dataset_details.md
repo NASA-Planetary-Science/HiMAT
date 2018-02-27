@@ -45,4 +45,4 @@
 | Vertically Integrated Water Velocity (Meridional) | vbar | m s<sup>-1</sup> | x, y, t | no | X | X | X |
 | Vertically Integrated Water Velocity (Zonal) | ubar | m s<sup>-1</sup> | x, y, t | no | X | X | X |
 
-<sup>1</sup> Time is defines in seconds since model initialization, please see COAWST readme for initialization date.
+<sup>1</sup> Time is defined in seconds since model initialization, please see COAWST readme for initialization date.

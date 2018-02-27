@@ -52,13 +52,13 @@
 | Map Factor, V Grid | MAPFAC_V | unitless | x, y, t | yes, v |  | X |  |  |
 | Map Factor, V Grid, X-dir | MAPFAC_VX | unitless | x, y, t | yes, v |  | X |  |  |
 | Map Factor, V Grid, Y-dir | MAPFAC_VY | unitless | x, y, t | yes, v |  | X |  |  |
-| Mixing Ratio (Graupel) | QGRAUPEL | Kg Kg<sup>-1</sup> | x, y, z, t | no |  | X |  |  | 
-| Mixing Ratio (Hail) | QHAIL | Kg Kg<sup>-1</sup> | x, y, z, t | no |  | X |  |  | 
-| Mixing Ratio (Ice) | QICE | Kg Kg<sup>-1</sup> | x, y, t | no |  | X |  |  | 
-| Mixing Ratio (Rain) | QRAIN | Kg Kg<sup>-1</sup> | x, y, z, t | no |  | X |  |  | 
-| Mixing Ratio (Snow) | QSNOW | Kg Kg<sup>-1</sup> | x, y, z, t | no |  | X |  |  | 
-| Net Shortwave at Surface | GSW | W m-2 | x, y, t | no | X | X | X | X |
-| Outgoing Longwave Radition (TOA) | OLR | W m-2 | x, y, t | no | X | X | X | X |
+| Mixing Ratio (Graupel) | QGRAUPEL | kg kg<sup>-1</sup> | x, y, z, t | no |  | X |  |  | 
+| Mixing Ratio (Hail) | QHAIL | kg kg<sup>-1</sup> | x, y, z, t | no |  | X |  |  | 
+| Mixing Ratio (Ice) | QICE | kg kg<sup>-1</sup> | x, y, t | no |  | X |  |  | 
+| Mixing Ratio (Rain) | QRAIN | kg kg<sup>-1</sup> | x, y, z, t | no |  | X |  |  | 
+| Mixing Ratio (Snow) | QSNOW | kg kg<sup>-1</sup> | x, y, z, t | no |  | X |  |  | 
+| Net Shortwave at Surface | GSW | W m<sup>-2</sup> | x, y, t | no | X | X | X | X |
+| Outgoing Longwave Radition (TOA) | OLR | W m<sup>-2</sup> | x, y, t | no | X | X | X | X |
 | Planetary Boundary Layer Height | PBLH | m | x, y, t | no | X | X | X | X |
 | Potential Temperature at 2m | TH2 | K | x, y, t | no |  | X |  |  |
 | Pressure at Model Top | P_TOP | Pa | x, y, t | no | X | X | X | X |
@@ -75,22 +75,22 @@
 | Surface Pressure | PSFC | Pa | x, y, t | no | X | X | X | X |
 | Surface Skin Temperature | TSK | K | x, y, t | no |  | X |  |  |
 | Terrain Height | XLONG | m | x, y, t | no | X | X | X | X | 
-| Mixing Ratio (Rain) | QRAIN | Kg Kg<sup>-1</sup> | x, y, z, t | no |  | X |  |  | 
+| Mixing Ratio (Rain) | QRAIN | kg kg<sup>-1</sup> | x, y, z, t | no |  | X |  |  | 
 | Total Cloud Fraction | TOTCLDFRAC | unitless | x, y, t | no | X | X | X | X |
 | Total Accumulated Graupel (Liq Eq.) | TOTGRAUPEL | mm | x, y, t | no | X | X |  |  |
 | Total Accumulated Hail (Liq Eq.) | TOTHAIL | mm | x, y, t | no | X | X |  |  |
 | Total Accumulated Precipitation (Liq Eq.) | TOTPRECIP | mm | x, y, t | no | X | X |  |  |
 | Total Accumulated Rainfall | TOTRAIN | mm | x, y, t | no | X | X |  |  |
 | Total Accumulated Snowfall (Liq Eq.) | TOTSNOW | mm | x, y, t | no | X | X |  |  |
-| Upward Heat Flux at Surface | HFX | W m-2 | x, y, t | no | X | X | X | X |
-| Upward Moisture Flux at Surface | QFX | Kg m-2 s-1 | x, y, t | no | X | X | X | X |
+| Upward Heat Flux at Surface | HFX | W m<sup>-2</sup> | x, y, t | no | X | X | X | X |
+| Upward Moisture Flux at Surface | QFX | kg m<sup>-2</sup> s<sup>-1</sup> | x, y, t | no | X | X | X | X |
 | Underground Runoff | UDROFF | mm | x, y, t | no |  | X |  |  |
 | Vegetative Fraction | FVEG | unitless | x, y, t | no |  | X |  |  |
 | Vegetation Fraction | VEGFRA | unitless | x, y, t | no |  | X |  |  |
 | Water in Aquifer | WA | mm | x, y, t | no |  | X |  |  |
 | Water Table Depth | ZWT | m | x, y, t | no |  | X |  |  |
-| Water Vapor Mixing Ratio at 2m | Q2 | Kg Kg<sup>-1</sup> | x, y, z, t | no |  | X |  |  |
-| Water Vapor Mixing Ratio | QVAPOR | Kg Kg<sup>-1</sup> | x, y, t | no | X | X | X | X |
+| Water Vapor Mixing Ratio at 2m | Q2 | kg kg<sup>-1</sup> | x, y, z, t | no |  | X |  |  |
+| Water Vapor Mixing Ratio | QVAPOR | kg kg<sup>-1</sup> | x, y, t | no | X | X | X | X |
 | <sup>2</sup> Wind (Y-dir) at 10 m | V10 | m s<sup>-1</sup> | x, y, t | no | X | X | X | X |
 | <sup>2</sup> Wind (Y-dir) | V |m s<sup>-1</sup> | x, y, z, t | yes, v |  | X |  |  |
 | Wind (Vertical) | W | m s<sup>-1</sup> | x, y, z, t | yes, z |  | X |  |  |

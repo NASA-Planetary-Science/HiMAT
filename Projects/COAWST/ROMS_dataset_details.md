@@ -33,7 +33,7 @@
 ## Time Varying Variable Descriptions and Time Frequencies
 | | | | | | | | |
 |:-----:|:-----:|:-----:|:-----:|:-----:|:-----:|:-----:|:-----:|
-| **Variable Name** | **ROMS Variable Name** | **Units** | **Dims** | **Staggered** | **6 hr** | **Daily** | **Monthly** |
+| **Variable Name** | **ROMS Variable Name** | **Units** | **Dims** | **Stagger** | **6 hr** | **Daily** | **Monthly** |
 | <sup>1</sup> Ocean Water Velocity (X-Dir) | u | m s<sup>-1</sup> | x, y, z, t | yes, u | X | X | X |
 | <sup>1</sup> Ocean Water Velocity (Y-Dir) | v | m s<sup>-1</sup> | x, y, z, t | yes, v | X | X | X |
 | Ocean Water Velocity (Z-Dir) | w | m s<sup>-1</sup> | x, y, z, t | yes, z | X | X | X |

@@ -14,7 +14,7 @@
 |:-----|:-----|:-----|:-----|
 | **ROMS Name** | **Description** | **Units** | **Staggered** |
 | bathymetry | h | m | no |
-| Coriolis Parameter | f | s-1| no | 
+| Coriolis Parameter | f | s<sup>-1</sup>| no | 
 | Latitude for cross-staggered grid | lat_psi | °N | yes, psi |  
 | Latitude for unstaggered grid | lat_rho | °N | no | 
 | Latitude for u-staggered grid | lat_u | °N | yes, u | 
@@ -38,15 +38,15 @@
 | | | | | | | | |
 |:-----|:-----|:-----|:-----|:-----|:-----|:-----|:-----|
 | **Variable Name** | **ROMS Variable Name** | **Units** | **Dims** | **Staggered** | **6 hr** | **Daily** | **Monthly** |
-| Ocean Water Velocity (Meridional) | v | m s-1 | x, y, z, t | yes, v | X | X | X |
-| Ocean Water Velocity (Vertical) | w | m s-1 | x, y, z, t | yes, z | X | X | X |
-| Ocean Water Velocity (Zonal) | u | m s-1 | x, y, z, t | yes, u | X | X | X |
-| S-coordinate Vertical Momentum Component | omega | m s-1 | x, y, z, t | yes, z | X | X | X |
+| Ocean Water Velocity (Meridional) | v | m s<sup>-1</sup> | x, y, z, t | yes, v | X | X | X |
+| Ocean Water Velocity (Vertical) | w | m s<sup>-1</sup> | x, y, z, t | yes, z | X | X | X |
+| Ocean Water Velocity (Zonal) | u | m s<sup>-1</sup> | x, y, z, t | yes, u | X | X | X |
+| S-coordinate Vertical Momentum Component | omega | m s<sup>-1</sup> | x, y, z, t | yes, z | X | X | X |
 | Salinity | salt | PSU | x, y, z, t | no | X | X | X |
 | Sea Surface Height | zeta | m | x, y, t | no | X | X | X |
 | Temperature | temp | Celsius | x, y, z, t | no | X | X | X |
 | Time Since ROMS Model Initialization | ocean_time | s | t | no | X | X | X | 
-| Vertically Integrated Water Velocity (Meridional) | vbar | m s-1 | x, y, t | no | X | X | X |
-| Vertically Integrated Water Velocity (Zonal) | ubar | m s-1 | x, y, t | no | X | X | X |
+| Vertically Integrated Water Velocity (Meridional) | vbar | m s<sup>-1</sup> | x, y, t | no | X | X | X |
+| Vertically Integrated Water Velocity (Zonal) | ubar | m s<sup>-1</sup> | x, y, t | no | X | X | X |
 
 *NOTE1: Time variables in ROMS are in seconds after model initialization, please see COAWST readme for initialization date.

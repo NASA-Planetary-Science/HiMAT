@@ -69,7 +69,7 @@
 | Snow Coverage | SNOWC | unitless | x, y, t | no | X | X | X | X | 
 | Snow Height | SNOWH | m | x, y, t | no | X | X | X | X |
 | Soil Temperature | TSLB | K | x, y, z, t | no |  | X |  |  |
-| Soil Moisture | SMOIS | m3 m-3 | x, y, z, t | no |  | X |  |  |
+| Soil Moisture | SMOIS | m<sup>3</sup> m<sup>-3</sup> | x, y, z, t | no |  | X |  |  |
 | Surface Emissivity | EMISS | unitless | x, y, t | no |  | X |  |  |
 | Surface Runoff | SFROFF | mm | x, y, t | no |  | X |  |  |
 | Surface Pressure | PSFC | Pa | x, y, t | no | X | X | X | X |

@@ -6,13 +6,10 @@
 | Dataset generation status | Please see "coawst_readme.md" for details |
 | Output data format | NetCDF |
 
-
-
 ## Time Invariant Variable Descriptions
-
 | | | | |
 |:-----|:-----|:-----|:-----|
-| **ROMS Name** | **Description** | **Units** | **Staggered** |
+| **ROMS Name** | **Description** | **Units** | **Stagger** |
 | bathymetry | h | m | no |
 | Coriolis Parameter | f | s<sup>-1</sup>| no | 
 | Latitude for cross-staggered grid | lat_psi | °N | yes, psi |  
@@ -34,7 +31,6 @@
 
 
 ## Time Varying Variable Descriptions and Time Frequencies
-
 | | | | | | | | |
 |:-----|:-----|:-----|:-----|:-----|:-----|:-----|:-----|
 | **Variable Name** | **ROMS Variable Name** | **Units** | **Dims** | **Staggered** | **6 hr** | **Daily** | **Monthly** |

@@ -11,11 +11,11 @@
 | | | | | | | | | |
 |:-----:|:-----:|:-----:|:-----:|:-----:|:-----:|:-----:|:-----:|:-----:|
 | **Variable Name** | **WRF Variable Name** | **Units** | **Dims** | **Staggered** | **1 hr** | **6 hr** | **Daily** | **Monthly** 
-| Accumulated Graupel (Liq Eq.) | ACCGRAUPEL | mm | x, y, t | no |  |  | X | X |
-| Accumulated Hail (Liq Eq.) | ACCHAIL | mm | x, y, t | no |  |  | X | X |
-| Accumulated Precipitation (Liq Eq.) | ACCPRECIP | mm | x, y, t | no |  |  | X | X |
-| Accumulated Rainfall | ACCRAIN | mm | x, y, t | no |  |  | X | X |
-| Accumulated Snowfall (Liq Eq.) | ACCSNOW | mm | x, y, t | no |  |  | X | X |
+| <sup>1</sup> Accumulated Graupel (Liq Eq.) | ACCGRAUPEL | mm | x, y, t | no |  |  | X | X |
+| <sup>1</sup> Accumulated Hail (Liq Eq.) | ACCHAIL | mm | x, y, t | no |  |  | X | X |
+| <sup>1</sup> Accumulated Precipitation (Liq Eq.) | ACCPRECIP | mm | x, y, t | no |  |  | X | X |
+| <sup>1</sup> Accumulated Rainfall | ACCRAIN | mm | x, y, t | no |  |  | X | X |
+| <sup>1</sup> Accumulated Snowfall (Liq Eq.) | ACCSNOW | mm | x, y, t | no |  |  | X | X |
 | Air Temperature | T | K | x, y, z, t | no |  | X |  |  |
 | Air Temperature at 2m | T2 | K | x, y, t | no | X | X | X | X |
 | Air Pressure | P | Pa | x, y, z, t | no |  | X |  |  |

@@ -62,9 +62,6 @@
 | Mixing Ratio (Ice) | QICE | kg kg<sup>-1</sup> | x, y, t | no |  | X |  |  | 
 | Mixing Ratio (Rain) | QRAIN | kg kg<sup>-1</sup> | x, y, z, t | no |  | X |  |  | 
 | Mixing Ratio (Snow) | QSNOW | kg kg<sup>-1</sup> | x, y, z, t | no |  | X |  |  | 
-| <sup>2</sup> Monthly Averaged Winds (X-dir) at 10m | MONU10 | m s<sup>-1</sup> | x, y, t | no |  |  |  | X |
-| <sup>2</sup> Monthly Averaged Winds (Y-dir) at 10m | MONV10 | m s<sup>-1</sup> | x, y, t | no |  |  |  | X |
-| Monthly Averaged Water Vapor Mixing Ratio at 2m | MONQ2 | K | x, y, t | no |  |  |  | X |
 | Net Shortwave at Surface | GSW | W m<sup>-2</sup> | x, y, t | no | X | X | X | X |
 | Outgoing Longwave Radition (TOA) | OLR | W m<sup>-2</sup> | x, y, t | no | X | X | X | X |
 | Planetary Boundary Layer Height | PBLH | m | x, y, t | no | X | X | X | X |

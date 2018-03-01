@@ -17,9 +17,12 @@ import h5py
 import numpy as np
 import pandas as pd
 import pyepsg
+from PyAstronomy import pyasl
 import regionmask
 import scipy.optimize
 from shapely.geometry import (Point, Polygon, box)
+
+import xarray as xr
 
 
 CRS = pyepsg.get(4326).as_proj4()
@@ -211,3 +214,39 @@ def build_mask(dsbbox, mascon_gdf, dacoords, serialize=False, datadir=None):
         else:
             print('Need datadir to be specified.')
     return gracemsk, gpd_intersect
+
+
+def make_lis_by_mascondf(lis_ds, fmask=None, fintersect=None):
+    # getting the max/min lat/lon from the LIS dataset
+    minLong = lis_ds.coords['longitude'].min().values
+    maxLong = lis_ds.coords['longitude'].max().values
+    minLat = lis_ds.coords['latitude'].min().values
+    maxLat = lis_ds.coords['latitude'].max().values
+    bbox = [minLong, minLat, maxLong, maxLat]
+    
+    if fmask:
+        m = xr.open_dataset(fmask)
+    if fintersect:
+        gpd_intersect = gpd.GeoDataFrame.from_file(fintersect)
+        
+    ds_masked = lis_ds.groupby(m.mask).mean('stacked_north_south_east_west')
+    ds_masked.coords['mascon'] = ('mask', gpd_intersect['mascon'].values[ds_masked.coords['mask'].values.astype('int')])
+    
+    
+    with ProgressBar():
+        mdf = ds_masked.to_dataframe()
+    
+    mdf['waterbal'] = mdf['Rainf_tavg'] + mdf['Snowf_tavg'] - (mdf['Qsb_tavg'] + mdf['Qsm_tavg'] + mdf['Evap_tavg'])
+    
+    return mdf
+
+
+def export_lis_by_mascondf(fulldf, outpth):
+    if not os.path.exists(outpth):
+        os.mkdir(outpth)
+    for mascon in fulldf.index.unique():
+        masc = fulldf[fulldf.index == mascon]
+        masc_rounded = masc.round({'waterbal_cumulative': 3})
+        # masc_rounded.loc[:, 'time'] = masc_rounded.apply(lambda x: pyasl.decimalYear(x['time']), axis=1)
+
+        masc_rounded.to_csv(os.path.join(outpth, '{}.txt'.format(mascon)), sep=' ', index=False)

@@ -83,7 +83,7 @@ def get_mascon_gdf(mascon_ds):
         poly_geom.append(polygeom(m))
 
     mascon_gdf = GeoDataFrame(mascon_df, crs=CRS, geometry=poly_geom)
-
+    mascon_gdf.index = mascon_gdf.index + 1
     print('There are {} Mascons in this dataset.'.format(len(mascon_gdf)))
 
     return mascon_gdf
@@ -134,11 +134,10 @@ def polygeom(mascon_s):
     Shapely Polygon
         Polygon contructed from mascon bounding coordinates.
     """
-    minx = mascon_s['lon_center'] - (mascon_s['lon_span'] / 2)
-    maxx = mascon_s['lon_center'] + (mascon_s['lon_span'] / 2)
-    miny = mascon_s['lat_center'] - (mascon_s['lat_span'] / 2)
-    maxy = mascon_s['lat_center'] + (mascon_s['lat_span'] / 2)
-    return box(minx, miny, maxx, maxy)
+    x = np.array([-1,1,1,-1]) * mascon_s['lon_span'] / 2 + mascon_s['lon_center']
+    y = np.array([-1,-1,1,1]) * mascon_s['lat_span'] / 2 + mascon_s['lat_center']
+    
+    return Polygon(list(zip(x, y)))
 
 def trend_analysis(dec_year, series=None, optimization=False, pvalues = None):
     """

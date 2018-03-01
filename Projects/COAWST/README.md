@@ -2,24 +2,26 @@
 
 HiMAT Point of Contact: stephen.d.nicholls@nasa.gov
 
-## HiMAT COAWST Simulation Status 
+## HiMAT COAWST Simulation Status
+**Last Update: 28 February 2018 21:18 EST**
 
-| | |
-|:-----|:-----|
-| Last Status Update | 30 November 2017 |
-| Water Year (2008) | Complete |
-| Water Year (2015) | Complete |
-| Historical Simulation (2000 - 2015) | Input data generation and testing |
-| Future Climate Simulation (2050 - 2065) | Not yet started |
+| | | | | |
+|:-----:|:-----:|:-----:|:-----:|:-----:|
+| Model Simulation Name | Model Run Period | Run Status | Current Model Run Date | Latest Date Available on ADAPT |
+| Water Year (2008) | 00 UTC 1 Oct. 2007 - 00 UTC 1 Oct. 2008 | FINISHED | 00 UTC 1 Oct. 2007 | 00 UTC 1 Oct. 2008 |
+| Water Year (2015) | 00 UTC 1 Oct. 2014 - 00 UTC 1 Oct. 2015 | FINISHED | 00 UTC 1 Oct. 2015 | 00 UTC 1 Oct. 2015 |
+| Historical Simulation (1999 - 2015) | 00 UTC 1 Oct. 1999 - 00 UTC 1 Oct. 2015 | RUNNING | 02 UTC 23 Dec. 1999 | N/A |
+| Future Climate Simulation (~2050 - 2065) | TBD | Awaiting GCM input data | N/A | N/A |
 
 ## HiMAT COAWST Configuration
-![alt text](https://github.com/NASA-Planetary-Science/HiMAT/blob/master/Projects/COAWST/WRF_1-2_Model_Domain_Map.png)
+![alt text](https://github.com/NASA-Planetary-Science/HiMAT/blob/master/Projects/COAWST/WRF_1-2_Model_Domain_Map.png_HiMAT_HMA_Final.png)
 **COAWST domain configration used for ocean-atmosphere coupled simulations. WRF (atmosphere) and ROMS (ocean) are run over the entire region at 20-km grid spacing, but WRF also contains a nested grid (black box) with 4-km grid spacing. Elevation data is in meters above mean sea level.**
 
 
 | | |
-|:-----|:-----|
-| **COAWST SETTINGS** | 
+|:-----:|:-----:|
+| **COUPLED OCEAN-ATMOSPHERE-WAVE-SEDIMENTION-TRANSPORT (COAWST) MODELLING SYSTEM SPECFIC SETTINGS** | 
+| Model Version | Version 3.2, Revision 1147 (March 2017) |
 | Coupling Option | WRF-ROMS | 
 | Coupling Interval | 1800 seconds (30 minutes) | 
 | Coupler | Model Coupling Toolkit (MCT) Version 2.6.0 |
@@ -27,16 +29,16 @@ HiMAT Point of Contact: stephen.d.nicholls@nasa.gov
 | COAWST Citation | Warner, J. C., B. Armstrong, R. He, and J. B. Zambon, 2010: Development of a Coupled Ocean-Atmosphere-Wave-Sediment Transport (COAWST) modeling system. Ocean Modelling, 35, 230–244 | 
 
 | | |
-|:-----|:-----|
-| **WRF SPECIFIC SETTINGS** | 
+|:-----:|:-----:|
+| **WEATHER RESEARCH AND FORECASTING (WRF) MODEL SPECIFIC SETTINGS** | 
 | Model Version | Version 3.7.1 |
 | Model Description | Atmosphere model applying fully-compressible, non-hydrostatic, Eulerian equations in terrain following (sigma) coordinates |
 | Map Projection | Lambert Conical Conformial | 
 | Model Domains | 2 |
 | Grid Resolution (domain) | 20 km, 4 km | 
 | Vertical Levels | 61 | 
-| Model top pressure | 1,000 Pa |
-| Time step | 40 seconds |
+| Model top pressure | 1,000 Pa (10 hPa) |
+| Time step | 40 seconds (20 km), 8 seconds (4 km) |
 | Historical Input Data | Modern Era Retrospective-analysis for Research and Applications, 2nd Version (MERRA-2) | 
 | Future Input Data | Global Climate Model (TBD) | 
 | Data input interval | 180 minutes |
@@ -51,8 +53,8 @@ HiMAT Point of Contact: stephen.d.nicholls@nasa.gov
 || Surface Scheme: Revised MM5 Monin-Obukhov |
 
 | | |
-|:-----|:-----|
-| **ROMS SPECIFIC SETTINGS** | 
+|:-----:|:-----:|
+| **REGIONAL OCEAN MODELING SYSTEM (ROMS) SPECIFIC SETTINGS** | 
 | Model Version | Subversion 797 |
 | Model Desciption | Ocean model applying 3D Reynolds-averaged Navier–Stokes equations using hydrostatic and Boussinesq approximations in terrain following (sigma) coordinates|
 | Map Projection | Lambert Conical Conformial | 

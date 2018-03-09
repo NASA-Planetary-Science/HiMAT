@@ -104,7 +104,7 @@
 
 <sup>1</sup> Data is in daily or monthly accumulations
 
-<sup>2</sup> Hourly skin temperature (TSK) and albedo (ALBEDO) data were added post model initialization. For the historical run, these data only exist after 01UTC 2 April 2000.
+<sup>2</sup> Hourly skin temperature (TSK) and albedo (ALBEDO) data were added post model initialization. For the historical run, these data are not present in model data prior to 01UTC 2 April 2000.
 
 <sup>3</sup> All total accumulations are relative to the model simulation initalization time (see COAWST readme for date).
 

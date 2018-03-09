@@ -102,7 +102,7 @@
 | <sup>4</sup> Wind (Y-dir) | V |m s<sup>-1</sup> | x, y, z, t | yes, v |  | X |  |  |
 | Wind (Vertical) | W | m s<sup>-1</sup> | x, y, z, t | yes, z |  | X |  |  |
 
-<sup>1</sup> Data consists of daily or monthly accumulations
+<sup>1</sup> Data is in daily or monthly accumulations
 
 <sup>2</sup> Hourly skin temperature (TSK) and albedo (ALBEDO) data were added post model initialization. For the historical run, these data only exist after 01UTC 2 April 2000.
 

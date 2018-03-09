@@ -26,7 +26,7 @@
 | Canopy Fraction Wetted or Snowed | FWET | unitless | x, y, t | no |  | X |  |  |
 | Coriolis Cosine Latitude Term | E | s<sup>-1</sup> | x, y, t | no |  | X |  |  |
 | Coriolis Sine Latitude Term | F | s<sup>-1</sup> | x, y, t | no |  | X |  |  |
-| Cosine of Local Map Rotation | COSALPHA | unitless | x, y, t | no |  | X |  |  |
+| Cosine of Local Map Rotation | COSALPHA | unitless | x, y, t | no | X | X | X | X |
 | Cosine of Local Solar zenith Angle | COSZEN | unitless | x, y, t | no |  | X |  |  |
 | Depth Centers of Soil Levels | ZS | m | z, t | no |  | X |  |  |
 | Downward Longwave Flux at Ground | SWDOWN | W m<sup>-2</sup> | x, y, t | no | X | X | X | X |
@@ -70,7 +70,7 @@
 | Relative Humidity at 2m | RH2 | % | x, y, t | no | X | X | X | X | 
 | Sea Ice Flag | SEAICE | unitless | x, y, t | no |  | X |  |  |
 | Sea Surface Temperature | SST | K | x, y, t | no |  | X |  |  |
-| Sine of local map rotation | SINALPHA | unitless | x, y, t | no |  | X |  |  |
+| Sine of local map rotation | SINALPHA | unitless | x, y, t | no | X | X | X | X |
 | Snow Coverage | SNOWC | unitless | x, y, t | no | X | X | X | X | 
 | Snow Height | SNOWH | m | x, y, t | no | X | X | X | X |
 | Soil Temperature | TSLB | K | x, y, z, t | no |  | X |  |  |

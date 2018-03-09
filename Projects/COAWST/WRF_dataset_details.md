@@ -79,7 +79,7 @@
 | Surface Runoff | SFROFF | mm | x, y, t | no |  | X |  |  |
 | Surface Pressure | PSFC | Pa | x, y, t | no | X | X | X | X |
 | <sup>2</sup> Surface Skin Temperature | TSK | K | x, y, t | no | X | X |  |  |
-| Terrain Height | XLONG | m | x, y, t | no | X | X | X | X | 
+| Terrain Height | HGT | m | x, y, t | no | X | X | X | X | 
 | Mixing Ratio (Rain) | QRAIN | kg kg<sup>-1</sup> | x, y, z, t | no |  | X |  |  | 
 | Total Cloud Fraction | TOTCLDFRAC | unitless | x, y, t | no | X | X | X | X |
 | <sup>3</sup> Total Accumulated Graupel (Liq Eq.) | TOTGRAUPEL | mm | x, y, t | no | X | X |  |  |

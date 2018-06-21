@@ -14,6 +14,7 @@ HiMAT Point of Contact: stephen.d.nicholls@nasa.gov
 | Future Climate Simulation (15-year period) | TBD | Awaiting GCM input data | N/A | N/A | 0% |
 
 ADAPT Data Location: /att/pubrepo/hma_data/HiMAT_COAWST_Output
+
 <sup>1</sup> Data stored on ADAPT includes 1-hr, daily, and monthly data only. 6-hr data subsets available upon request.
 
 ## HiMAT COAWST Configuration

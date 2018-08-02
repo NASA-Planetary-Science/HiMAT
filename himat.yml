@@ -13,11 +13,13 @@ dependencies:
 - mplleaflet
 - folium
 - cartopy
-- rasterio=1.0a9
+- rasterio
 - xarray
 - sqlalchemy
 - psycopg2
 - progressbar2
+- zarr
+- s3fs
 - pip:
   - regionmask
   - pyastronomy

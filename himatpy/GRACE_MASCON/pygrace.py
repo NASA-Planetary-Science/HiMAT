@@ -20,6 +20,7 @@ import pyepsg
 import regionmask
 import scipy.optimize
 from shapely.geometry import (Point, Polygon, box)
+from dask import compute
 
 
 CRS = pyepsg.get(4326).as_proj4()
@@ -210,3 +211,36 @@ def build_mask(dsbbox, mascon_gdf, dacoords, serialize=False, datadir=None):
         else:
             print('Need datadir to be specified.')
     return gracemsk, gpd_intersect
+
+def __aggregate_mascon(ds, geo, product):
+    sel = ds[product].sel(long=slice(geo[0], geo[2]), lat=slice(geo[1], geo[3]))
+    agg_data = sel.mean(axis=(1,2)).data
+    return agg_data
+
+def select_mascons(ds, mascon_gdf):
+    x_min, x_max, y_min, y_max = ds.long[0].values, ds.long[-1].values, ds.lat[0].values, ds.lat[-1].values
+    masked_gdf = mascon_gdf.cx[x_min:x_max,y_min:y_max].copy()
+    return masked_gdf
+
+def aggregate_mascons(ds, masked_gdf, scale_factor = 1):
+    # Array coordinates
+    products = [x for x in ds.data_vars]
+    time_coords = ds['time'].values
+    mascon_coords = masked_gdf['mascon']
+    # Get mascon geometries
+    mascon_geos = [x.bounds for x in masked_gdf['geometry']]
+    # Compute aggregation
+    agg_list = compute(*[[__aggregate_mascon(ds, geo, product) for geo in mascon_geos] for product in products])
+    # Reshape aggregations and scale
+    agg_flat = np.concatenate([np.concatenate(x) for x in agg_list])
+    agg_arr = agg_flat.reshape(len(products), len(mascon_coords), len(time_coords))
+    agg_arr *= scale_factor
+    # Add coordinate data
+    agg_data = {
+        'data':  agg_arr,
+        'time': np.asarray(time_coords),
+        'mascons' : np.asarray(mascon_coords),
+        'products': np.asarray(products)
+    }
+    
+    return agg_data

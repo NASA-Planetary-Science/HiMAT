@@ -213,6 +213,13 @@ def build_mask(dsbbox, mascon_gdf, dacoords, serialize=False, datadir=None):
     return gracemsk, gpd_intersect
 
 def __aggregate_mascon(ds, geo, product):
+    """
+    ds: XArray Dataframe
+    geo: List or Tuple
+        minx, miny, maxx, maxy
+    product:
+    
+    """
     sel = ds[product].sel(long=slice(geo[0], geo[2]), lat=slice(geo[1], geo[3]))
     agg_data = sel.mean(axis=(1,2)).data
     return agg_data

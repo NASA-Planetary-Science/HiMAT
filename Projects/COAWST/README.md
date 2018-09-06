@@ -10,7 +10,7 @@ HiMAT Point of Contact: stephen.d.nicholls@nasa.gov
 | Model Simulation Name | Model Run Period | Run Status | Current Model Run Date | <sup>1</sup>Latest Date Available on ADAPT | % Complete |
 | Water Year (2008) | 00 UTC 1 Oct. 2007 - 00 UTC 1 Oct. 2008 | FINISHED | 00 UTC 1 Oct. 2007 | 00 UTC 1 Oct. 2008 | 100.0% |
 | Water Year (2015) | 00 UTC 1 Oct. 2014 - 00 UTC 1 Oct. 2015 | FINISHED | 00 UTC 1 Oct. 2015 | 00 UTC 1 Oct. 2015 | 100.0% |
-| Historical Simulation (1999 - 2015) | 00 UTC 1 Oct. 1999 - 00 UTC 1 Oct. 2015 | RUNNING | 00 UTC 20 May 2006 | 23 UTC 31 Dec 2005 | 41.3% |
+| Historical Simulation (1999 - 2015) | 00 UTC 1 Oct. 1999 - 00 UTC 1 Oct. 2015 | RUNNING | 00 UTC 17 Aug 2006 | 23 UTC 31 Dec 2005 | 42.9% |
 | Future Climate Simulation (15-year period) | TBD | Awaiting GCM input data | N/A | N/A | 0% |
 
 ADAPT Data Location: /att/pubrepo/hma_data/HiMAT_COAWST_Output

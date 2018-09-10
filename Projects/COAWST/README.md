@@ -15,7 +15,7 @@ HiMAT Point of Contact: stephen.d.nicholls@nasa.gov
 
 ADAPT Data Location: /att/pubrepo/hma_data/HiMAT_COAWST_Output
 
-<sup>1</sup> Data Available on ADAPT >> WRF: 1-hr, Daily, Monthly || ROMS: Daily, Monthly || WRF and ROMS 6-hourly data are generated, but are too large to fit on ADAPT
+<sup>1</sup> Data Available on ADAPT >> WRF: 1-hr, Daily, Monthly || ROMS: Daily, Monthly || WRF and ROMS 6-hr data are generated, but are too large to fit on ADAPT
 
 ## HiMAT COAWST Configuration
 ![alt text](https://github.com/NASA-Planetary-Science/HiMAT/blob/master/Projects/COAWST/WRF_1-2_Model_Domain_Map.png_HiMAT_HMA_Final.png)

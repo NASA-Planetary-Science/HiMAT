@@ -70,7 +70,7 @@ d021 = d02 data degraded to 20-km grid spacing of d01, atmosphere only <br/>**
 | Model Domains | 1 |
 | Grid Resolution (domain) | 20 km | 
 | Vertical Levels | 16 | 
-| Time step | 10 seconds |
+| Time step | 6 seconds |
 | Historical Input Data | Hybrid Coordinate Ocean Model (HYCOM) |
 | Future Input Data | Global Climate Model (TBD) | 
 | Data input interval | 1440 minutes (1 day) |

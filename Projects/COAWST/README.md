@@ -24,7 +24,7 @@ ADAPT Data Location: /att/pubrepo/hma_data/HiMAT_COAWST_Output
 **Model Datafile Naming Convention <br/>
 d01 = 20-km grid spacing, regional model grid (used for atmosphere "wrfout" and ocean "romsout" files) <br/>
 d02 = 4-km grid spacing, convective resolving model grid focused on HMA region, atmosphere only <br/>
-d021 = d02 data, degraded to 20-km grid spacing of d01, atmosphere only <br/>** 
+d021 = d02 data degraded to 20-km grid spacing of d01, atmosphere only <br/>** 
 
 
 | | |

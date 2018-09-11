@@ -19,7 +19,7 @@ ADAPT Data Location: /att/pubrepo/hma_data/HiMAT_COAWST_Output
 
 ## HiMAT COAWST Configuration
 ![alt text](https://github.com/NASA-Planetary-Science/HiMAT/blob/master/Projects/COAWST/WRF_1-2_Model_Domain_Map.png_HiMAT_HMA_Final.png)
-**COAWST domain configration used for ocean-atmosphere coupled simulations. WRF (atmosphere) and ROMS (ocean) are run over the entire region at 20-km grid spacing, but WRF also contains a nested grid (black box) with 4-km grid spacing. Elevation data is in meters above mean sea level.**
+**COAWST domain configration used for ocean-atmosphere coupled simulations. WRF (atmosphere) and ROMS (ocean) are run over the entire region at 20-km grid spacing (d01), but WRF also contains a nested grid (d02; black box) with 4-km grid spacing. Elevation data is in meters above mean sea level. For the atmospheric dataset there also exists "d021", which takes the 4-km data and degrades these data to 20-km grid spacing**
 
 
 | | |

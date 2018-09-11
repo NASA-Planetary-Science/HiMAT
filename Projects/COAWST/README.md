@@ -47,7 +47,7 @@ d021 = d02 data degraded to 20-km grid spacing of d01, atmosphere only <br/>**
 | Grid Resolution (domain) | 20 km, 4 km | 
 | Vertical Levels | 61 | 
 | Model top pressure | 1,000 Pa (10 hPa) |
-| Time step | 40 seconds (20 km), 8 seconds (4 km) |
+| Time step | 30 seconds (20 km), 6 seconds (4 km) |
 | Historical Input Data | Modern Era Retrospective-analysis for Research and Applications, 2nd Version (MERRA-2) | 
 | Future Input Data | Global Climate Model (TBD) | 
 | Data input interval | 180 minutes |

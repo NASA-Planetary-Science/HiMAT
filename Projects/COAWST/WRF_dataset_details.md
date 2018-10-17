@@ -16,12 +16,12 @@
 | <sup>1</sup> Accumulated Precipitation (Liq Eq.) | ACCPRECIP | mm | x, y, t | no |  |  | X | X |
 | <sup>1</sup> Accumulated Rainfall | ACCRAIN | mm | x, y, t | no |  |  | X | X |
 | <sup>1</sup> Accumulated Snowfall (Liq Eq.) | ACCSNOW | mm | x, y, t | no |  |  | X | X |
-| Air Temperature | TEMP | K | x, y, z, t | no |  | X |  |  |
+| Air Temperature | TEMP | K | x, y, z, t | no |  | X |  | X |
 | Air Temperature at 2m | T2 | K | x, y, t | no | X | X | X | X |
-| Air Pressure | PRES | Pa | x, y, z, t | no |  | X |  |  |
+| Air Pressure | PRES | Pa | x, y, z, t | no |  | X |  | X |
 | <sup>2</sup> Albedo | ALBEDO | unitless | x, y, t | no | X | X |  |  |
 | Background Albedo | ALBBCK | unitless | x, y, t | no |  | X |  |  |
-| Cloud Fraction | CLDFRA | unitless| x, y, z, t | no |  | X |  |  |
+| Cloud Fraction | CLDFRA | unitless| x, y, z, t | no |  | X |  | X |
 | Composite Radar Reflectivity | COMDBZ | dBZ | x, y, t | no | X | X |  |  |
 | Canopy Fraction Wetted or Snowed | FWET | unitless | x, y, t | no |  | X |  |  |
 | Coriolis Cosine Latitude Term | E | s<sup>-1</sup> | x, y, t | no |  | X |  |  |
@@ -36,9 +36,10 @@
 | Eta Model Grid Values on Half Levels | ZNU | unitless | z, t | no |  | X |  |  |
 | Eta Model Grid Values on Full Levels | ZNW | unitless | z, t | yes, z |  | X |  |  |
 | Fraction Frozen Precipitation | SR | unitless | x, y, t | no |  | X |  |  |
-| Geopotential | GEOPOT | m<sup>2 </sup> s<sup>-2</sup> | x, y, z, t | yes, z |  | X |  |  |
+| Geopotential | GEOPOT | m<sup>2 </sup> s<sup>-2</sup> | x, y, z, t | yes, z |  | X |  | X |
+| Geopotential Height | GHGHT | m | x, y, z, t | no |  |  |  | X |
 | Ground Heat Flux | GRDFLX | W m<sup>-2</sup> | x, y, t | no |  | X |  |  |
-| Ground Water Storage | WT | mm | x, y, t | no |  | X |  |  |
+| Ground Water Storage | WT | mm | x, y, t | no |  | X |  | X |
 | Landmask | LANDMASK | unitless | x, y, t | no | X | X | X | X |
 | Landuse Use Category | LU_INDEX | unitless | x, y, t | no |  | X |  |  |
 | Latent Heat Flux at Surface | LH | W m<sup>-2</sup> | x, y, t | no | X | X | X | X |
@@ -73,12 +74,12 @@
 | Sine of local map rotation | SINALPHA | unitless | x, y, t | no | X | X | X | X |
 | Snow Coverage | SNOWC | unitless | x, y, t | no | X | X | X | X | 
 | Snow Height | SNOWH | m | x, y, t | no | X | X | X | X |
-| Soil Temperature | TSLB | K | x, y, z, t | no |  | X |  |  |
-| Soil Moisture | SMOIS | m<sup>3</sup> m<sup>-3</sup> | x, y, z, t | no |  | X |  |  |
+| Soil Temperature | TSLB | K | x, y, z, t | no |  | X |  | X |
+| Soil Moisture | SMOIS | m<sup>3</sup> m<sup>-3</sup> | x, y, z, t | no |  | X |  | X |
 | Surface Emissivity | EMISS | unitless | x, y, t | no |  | X |  |  |
-| Surface Runoff | SFROFF | mm | x, y, t | no |  | X |  |  |
+| Surface Runoff | SFROFF | mm | x, y, t | no |  | X |  | X |
 | Surface Pressure | PSFC | Pa | x, y, t | no | X | X | X | X |
-| <sup>2</sup> Surface Skin Temperature | TSK | K | x, y, t | no | X | X |  |  |
+| <sup>2</sup> Surface Skin Temperature | TSK | K | x, y, t | no | X | X |  | X |
 | Terrain Height | HGT | m | x, y, t | no | X | X | X | X | 
 | Mixing Ratio (Rain) | QRAIN | kg kg<sup>-1</sup> | x, y, z, t | no |  | X |  |  | 
 | Total Cloud Fraction | TOTCLDFRAC | unitless | x, y, t | no | X | X | X | X |
@@ -89,18 +90,18 @@
 | <sup>3</sup> Total Accumulated Snowfall (Liq Eq.) | TOTSNOW | mm | x, y, t | no | X | X |  |  |
 | Upward Heat Flux at Surface | HFX | W m<sup>-2</sup> | x, y, t | no | X | X | X | X |
 | Upward Moisture Flux at Surface | QFX | kg m<sup>-2</sup> s<sup>-1</sup> | x, y, t | no | X | X | X | X |
-| Underground Runoff | UDROFF | mm | x, y, t | no |  | X |  |  |
-| Vegetative Fraction | FVEG | unitless | x, y, t | no |  | X |  |  |
+| Underground Runoff | UDROFF | mm | x, y, t | no |  | X |  | X |
+| Vegetative Fraction | FVEG | unitless | x, y, t | no |  | X |  | X |
 | Vegetation Fraction | VEGFRA | unitless | x, y, t | no |  | X |  |  |
 | Water in Aquifer | WA | mm | x, y, t | no |  | X |  |  |
 | Water Table Depth | ZWT | m | x, y, t | no |  | X |  |  |
 | Water Vapor Mixing Ratio at 2m | Q2 | kg kg<sup>-1</sup> | x, y, z, t | no | X | X | X | X |
-| Water Vapor Mixing Ratio | QVAPOR | kg kg<sup>-1</sup> | x, y, t | no |  | X |  |  |
+| Water Vapor Mixing Ratio | QVAPOR | kg kg<sup>-1</sup> | x, y, t | no |  | X |  | X |
 | <sup>4</sup> Wind (X-dir) at 10 m | U10 | m s<sup>-1</sup> | x, y, t | no | X | X | X | X |
-| <sup>4</sup> Wind (X-dir) | U | m s<sup>-1</sup> | x, y, z, t | yes, u |  | X |  |  |
+| <sup>4</sup> Wind (X-dir) | U | m s<sup>-1</sup> | x, y, z, t | yes, u |  | X |  | X |
 | <sup>4</sup> Wind (Y-dir) at 10 m | V10 | m s<sup>-1</sup> | x, y, t | no | X | X | X | X |
-| <sup>4</sup> Wind (Y-dir) | V |m s<sup>-1</sup> | x, y, z, t | yes, v |  | X |  |  |
-| Wind (Vertical) | W | m s<sup>-1</sup> | x, y, z, t | yes, z |  | X |  |  |
+| <sup>4</sup> Wind (Y-dir) | V |m s<sup>-1</sup> | x, y, z, t | yes, v |  | X |  | X |
+| Wind (Vertical) | W | m s<sup>-1</sup> | x, y, z, t | yes, z |  | X |  | X |
 
 <sup>1</sup> Data is in daily or monthly accumulations
 

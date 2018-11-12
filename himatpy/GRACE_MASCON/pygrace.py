@@ -214,7 +214,7 @@ def build_mask(dsbbox, mascon_gdf, dacoords, serialize=False, datadir=None):
 
 def __aggregate_mascon(ds, geo, product):
     """
-    ds: XArray Dataframe
+    ds: xarray dataset
     geo: List or Tuple
         minx, miny, maxx, maxy
     product:
@@ -230,6 +230,23 @@ def select_mascons(ds, mascon_gdf):
     return masked_gdf
 
 def aggregate_mascons(ds, masked_gdf, scale_factor = 1):
+    """
+    Performs a mean spatial aggregation over a provided mask geometry.
+
+    Parameters
+    ----------
+    ds: xarray dataset
+    masked_gdf: geodataframe
+        the geodataframe that defines the units over which the spatial aggregation occurs
+    scale_factor: scalar 
+        used to convert units as needed
+
+    Returns
+    -------
+    xarray dataset 
+
+    """
+
     # Array coordinates
     products = [x for x in ds.data_vars]
     time_coords = ds['time'].values

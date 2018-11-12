@@ -187,7 +187,7 @@ def build_mask(dsbbox, mascon_gdf, dacoords, serialize=False, datadir=None):
         minx, miny, maxx, maxy
 
     This function currently not being called and should probably be decomissioned soon.
-    
+
     """
     # Build a polygon around the extent of the LIS output so we can subset the GRACE data
     coords = [(dsbbox[0],dsbbox[1]), (dsbbox[0],dsbbox[3]), (dsbbox[2],dsbbox[3]), (dsbbox[2], dsbbox[1])]
@@ -232,6 +232,20 @@ def __aggregate_mascon(ds, geo, product):
     return agg_data
 
 def select_mascons(ds, mascon_gdf):
+        """
+    Clips the mascon grid to the spatial extent of the underlying data over which aggregation is occurring.
+
+    Parameters
+    ----------
+    ds: xarray dataset
+    mascon_gdf: geodataframe
+        the geodataframe that contains the GRACE mascon boundaries
+
+    Returns
+    -------
+    geodataframe  
+
+    """
     x_min, x_max, y_min, y_max = ds.long[0].values, ds.long[-1].values, ds.lat[0].values, ds.lat[-1].values
     masked_gdf = mascon_gdf.cx[x_min:x_max,y_min:y_max].copy()
     return masked_gdf

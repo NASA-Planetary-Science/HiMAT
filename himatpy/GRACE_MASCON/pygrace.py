@@ -179,8 +179,15 @@ def trend_analysis(dec_year, series=None, optimization=False, pvalues = None):
 
 def build_mask(dsbbox, mascon_gdf, dacoords, serialize=False, datadir=None):
     """
-    dsbbox: List or Tuple 
+    Builds a mask defining the spatial units over which aggregation will occur. Clips the boundaries of the mask to the spatial domain of the underlying dataset.
+
+    Parameters
+    ----------
+    dsbbox: List or Tuple representing the 
         minx, miny, maxx, maxy
+
+    This function currently not being called and should probably be decomissioned soon.
+    
     """
     # Build a polygon around the extent of the LIS output so we can subset the GRACE data
     coords = [(dsbbox[0],dsbbox[1]), (dsbbox[0],dsbbox[3]), (dsbbox[2],dsbbox[3]), (dsbbox[2], dsbbox[1])]

@@ -179,8 +179,15 @@ def trend_analysis(dec_year, series=None, optimization=False, pvalues = None):
 
 def build_mask(dsbbox, mascon_gdf, dacoords, serialize=False, datadir=None):
     """
-    dsbbox: List or Tuple 
+    Builds a mask defining the spatial units over which aggregation will occur. Clips the boundaries of the mask to the spatial domain of the underlying dataset.
+
+    Parameters
+    ----------
+    dsbbox: List or Tuple representing the 
         minx, miny, maxx, maxy
+
+    This function currently not being called and should probably be decomissioned soon.
+
     """
     # Build a polygon around the extent of the LIS output so we can subset the GRACE data
     coords = [(dsbbox[0],dsbbox[1]), (dsbbox[0],dsbbox[3]), (dsbbox[2],dsbbox[3]), (dsbbox[2], dsbbox[1])]
@@ -214,7 +221,7 @@ def build_mask(dsbbox, mascon_gdf, dacoords, serialize=False, datadir=None):
 
 def __aggregate_mascon(ds, geo, product):
     """
-    ds: XArray Dataframe
+    ds: xarray dataset
     geo: List or Tuple
         minx, miny, maxx, maxy
     product:
@@ -225,11 +232,42 @@ def __aggregate_mascon(ds, geo, product):
     return agg_data
 
 def select_mascons(ds, mascon_gdf):
+        """
+    Clips the mascon grid to the spatial extent of the underlying data over which aggregation is occurring.
+
+    Parameters
+    ----------
+    ds: xarray dataset
+    mascon_gdf: geodataframe
+        the geodataframe that contains the GRACE mascon boundaries
+
+    Returns
+    -------
+    geodataframe  
+
+    """
     x_min, x_max, y_min, y_max = ds.long[0].values, ds.long[-1].values, ds.lat[0].values, ds.lat[-1].values
     masked_gdf = mascon_gdf.cx[x_min:x_max,y_min:y_max].copy()
     return masked_gdf
 
 def aggregate_mascons(ds, masked_gdf, scale_factor = 1):
+    """
+    Performs a mean spatial aggregation over a provided mask geometry.
+
+    Parameters
+    ----------
+    ds: xarray dataset
+    masked_gdf: geodataframe
+        the geodataframe that defines the units over which the spatial aggregation occurs
+    scale_factor: scalar 
+        used to convert units as needed
+
+    Returns
+    -------
+    xarray dataset 
+
+    """
+
     # Array coordinates
     products = [x for x in ds.data_vars]
     time_coords = ds['time'].values

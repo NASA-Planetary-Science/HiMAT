@@ -10,5 +10,4 @@ This folder contains additional information on each of individual HiMAT projects
 * [ MODIS Snow Covered-Area and Grain size retrieval algorithm](https://github.com/NASA-Planetary-Science/HiMAT/tree/master/Projects/MODSCAG)
 * [Precipitation Intercomparison](https://github.com/NASA-Planetary-Science/HiMAT/tree/master/Projects/Precip_Intercompare)
 * [SWE Reanalysis](https://github.com/NASA-Planetary-Science/HiMAT/tree/master/Projects/SWE_reanalysis)
-* [WBM] (https://github.com/NASA-Planetary-Science/HiMAT/tree/master/Projects/WBM)
 * [WRF 3.8.1 (PI Rupper)](https://github.com/NASA-Planetary-Science/HiMAT/tree/master/Projects/WRF3.8.1)

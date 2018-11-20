@@ -232,7 +232,7 @@ def __aggregate_mascon(ds, geo, product):
     return agg_data
 
 def select_mascons(ds, mascon_gdf):
-        """
+    """
     Clips the mascon grid to the spatial extent of the underlying data over which aggregation is occurring.
 
     Parameters

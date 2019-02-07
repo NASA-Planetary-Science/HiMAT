@@ -14,7 +14,7 @@
 | Static geographic fields | standard geog 3.8.1 input |
 | | |
 | TIMING | |
-| Simulation period | 2000, 2001, 2002, 2008 |
+| Simulation period | 2000-2015 |
 | Time step | 120s / 60s (for summer months with strong convection) |
 | | |
 | NESTING STRATEGY |  | 

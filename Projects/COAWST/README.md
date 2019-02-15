@@ -3,7 +3,7 @@
 HiMAT Point of Contact: stephen.d.nicholls@nasa.gov
 
 ## HiMAT COAWST Simulation Status
-**Last Update: 8 Feb. 2019 2:00 PM EST**
+**Last Update: 15 Feb. 2019 4:54 PM EST**
 
 | | | | | | |
 |:-----:|:-----:|:-----:|:-----:|:-----:|:-----:|

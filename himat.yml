@@ -7,6 +7,8 @@ dependencies:
 - jupyter
 - geopandas
 - geojson
+- gdal
+- dask
 - pysal
 - rasterstats
 - seaborn
@@ -23,3 +25,4 @@ dependencies:
 - pip:
   - regionmask
   - pyastronomy
+  - salem

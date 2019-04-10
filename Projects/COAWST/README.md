@@ -3,14 +3,14 @@
 HiMAT Point of Contact: stephen.d.nicholls@nasa.gov
 
 ## HiMAT COAWST Simulation Status
-**Last Update: 15 Feb. 2019 4:54 PM EST**
+**Last Update: 5 Apr. 2019 12:41 PM EDT**
 
 | | | | | | |
 |:-----:|:-----:|:-----:|:-----:|:-----:|:-----:|
 | Model Simulation Name | Model Run Period | Run Status | Current Model Run Date | <sup>1</sup>Latest Date Available on ADAPT | % Complete |
 | Water Year (2008) | 00 UTC 1 Oct. 2007 - 00 UTC 1 Oct. 2008 | FINISHED | 00 UTC 1 Oct. 2007 | 00 UTC 1 Oct. 2008 | 100.0% |
 | Water Year (2015) | 00 UTC 1 Oct. 2014 - 00 UTC 1 Oct. 2015 | FINISHED | 00 UTC 1 Oct. 2015 | 00 UTC 1 Oct. 2015 | 100.0% |
-| Historical Simulation (1999 - 2014) | 00 UTC 1 Oct. 1999 - 00 UTC 1 Oct. 2014 | RUNNING | 06 UTC 17 Nov. 2009 | 23 UTC 31 Oct. 2009 | 67.5% |
+| Historical Simulation (1999 - 2014) | 00 UTC 1 Oct. 1999 - 00 UTC 1 Oct. 2014 | RUNNING | 00 UTC 25 Jan. 2011 | 23 UTC 31 Dec. 2010 | 75.4% |
 | Sentinel-1 Comparison | 00 UTC 15 Dec. 2017 - 00 UTC 1 Apr. 2018 | FINISHED | 00 UTC 1 Apr. 2018 | 00 UTC 1 Apr. 2018 | 100.0% |
 
 ADAPT Data Location: /att/pubrepo/hma_data/HiMAT_COAWST_Output
@@ -47,7 +47,7 @@ d021 = d02 data degraded to 20-km grid spacing of d01, atmosphere only <br/>**
 | Grid Resolution (domain) | 20 km, 4 km | 
 | Vertical Levels | 61 | 
 | Model top pressure | 1,000 Pa (10 hPa) |
-| Time step | 30 seconds (20 km), 6 seconds (4 km) |
+| Time step | 25 seconds (20 km), 5 seconds (4 km) |
 | Historical Input Data | Modern Era Retrospective-analysis for Research and Applications, 2nd Version (MERRA-2) | 
 | Future Input Data | Global Climate Model (TBD) | 
 | Data input interval | 180 minutes |

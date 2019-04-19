@@ -22,6 +22,8 @@ dependencies:
 - progressbar2
 - zarr
 - s3fs
+- jupyterlab 
+- h5py  
 - pip:
   - regionmask
   - pyastronomy

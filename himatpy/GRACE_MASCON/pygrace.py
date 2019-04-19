@@ -25,7 +25,7 @@ from dask import compute
 
 CRS = pyepsg.get(4326).as_proj4()
 
-def extract_grace(fpath):
+def extract_grace(fpath, printGroups=False):
     """
     Creates a file object for extracting GRACE data from NASA GSFC mascon product.
 
@@ -33,6 +33,7 @@ def extract_grace(fpath):
     ----------
     fpath : string
        path to the GRACE hdf5 file
+    printGroups : logical
     Returns
     -------
     f : file object
@@ -47,11 +48,12 @@ def extract_grace(fpath):
     print('Data extracted: ')
     for g in groups:
         group = f[g]
-        print('---')
-        print('Group: {}'.format(g))
-        print('---')
-        for d in group.keys():
-            print(group[d])
+        if printGroups:
+            print('---')
+            print('Group: {}'.format(g))
+            print('---')
+            for d in group.keys():
+                print(group[d])
 
     return f
 

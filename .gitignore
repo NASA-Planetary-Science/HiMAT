@@ -7,3 +7,5 @@ __pycache__/
 *.h5
 *.pkl
 files/
+MANIFEST
+dist/

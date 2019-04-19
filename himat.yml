@@ -23,7 +23,8 @@ dependencies:
 - zarr
 - s3fs
 - jupyterlab 
-- h5py  
+- h5py
+- netcdf4  
 - pip:
   - regionmask
   - pyastronomy

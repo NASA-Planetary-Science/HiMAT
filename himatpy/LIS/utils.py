@@ -14,7 +14,7 @@ from dask.diagnostics import ProgressBar
 __author__ = ['Anthony Arendt', 'Landung Setiawan']
 
 
-def get_xr_dataset(datadir=None, fname=None, multiple_nc=False, files=[], **kwargs):
+def get_xr_dataset(datadir=None, fname=None, multiple_nc=False, twoDcoords=False, files=[], keepVars=[], **kwargs):
     """
     Reads in output from the NASA Land Information System (LIS) model.
     Returns a "cleaned" xarray dataset. Users can read a single or multiple NetCDF file(s). 
@@ -22,6 +22,8 @@ def get_xr_dataset(datadir=None, fname=None, multiple_nc=False, files=[], **kwar
     :param datadir: path to directory containing the data, e.g. '/Users/lsetiawan/Downloads/200101/' or r'C:\work\datadrive\LIS\'
     :param fname: file name if only opening one NetCDF file
     :param multiple_nc: True if using to read multiple NetCDF Files
+    :param twoDcoords: True if you want multidimensional coordinates
+    :param delVars: list of variables to be retained 
      **kwargs
         Arbitrary keyword arguments related to xarray open_dataset or open_mfdataset.
     :return: xarray dataset
@@ -41,6 +43,19 @@ def get_xr_dataset(datadir=None, fname=None, multiple_nc=False, files=[], **kwar
             print('Need either datadir or files for opening multiple netCDF')
 
     # some reformatting is necessary since LIS output does not follow CF conventions
+
+    # first, optional selection of user-specified variables. This has to occur before the coordinate
+    # manipulations below
+    
+    if keepVars:
+        try:
+            products = [x for x in ds]
+            deleted_vars = [y for y in products if y not in keepVars]
+            ds = ds.drop(deleted_vars)
+        except:
+            print("List of variables to keep does not match variable names in the dataset.")
+            sys.exit("Exiting...")
+        
     xmn = ds.attrs['SOUTH_WEST_CORNER_LON']
     ymn = ds.attrs['SOUTH_WEST_CORNER_LAT']
     dx = ds.attrs['DX']
@@ -49,11 +64,18 @@ def get_xr_dataset(datadir=None, fname=None, multiple_nc=False, files=[], **kwar
     ny = ds.dims['north_south']
     x = np.arange(xmn, xmn + dx * nx, dx)
     y = np.arange(ymn, ymn + dy * ny, dy)
-    # create tile from x, y
-    data = np.tile(x, (ny, 1))
-    ds.coords['longitude'] = (('north_south', 'east_west'), data)
-    data = np.tile(y, (nx, 1))
-    ds.coords['latitude'] = (('north_south', 'east_west'), np.swapaxes(data, 0, 1))
+    if twoDcoords:
+        # create tile from x, y
+        data = np.tile(x, (ny, 1))
+        ds.coords['long'] = (('north_south', 'east_west'), data)
+        data = np.tile(y, (nx, 1))
+        ds.coords['lat'] = (('north_south', 'east_west'), np.swapaxes(data, 0, 1))
+    else:     
+        ds.coords['long'] = (('east_west'), x)
+        ds.coords['lat'] = (('north_south'), y)
+
+    # rename the dimensions to be lat/long so that other himatpy utilities are consistent with this
+    ds.rename({'east_west':'long', 'north_south':'lat'}, inplace = True)
 
     return ds
 

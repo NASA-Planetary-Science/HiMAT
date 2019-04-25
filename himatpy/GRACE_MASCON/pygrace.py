@@ -248,7 +248,7 @@ def select_mascons(ds, mascon_gdf):
     geodataframe  
 
     """
-    x_min, x_max, y_min, y_max = test.long.min(), test.long[-1].max(), test.lat.min(), test.lat.max().values
+    x_min, x_max, y_min, y_max = ds.long.min(), ds.long[-1].max(), ds.lat.min(), ds.lat.max().values
     masked_gdf = mascon_gdf.cx[x_min:x_max,y_min:y_max].copy()
     return masked_gdf
 

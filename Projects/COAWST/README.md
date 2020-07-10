@@ -3,14 +3,14 @@
 HiMAT Point of Contact: stephen.d.nicholls@nasa.gov
 
 ## HiMAT COAWST Simulation Status
-**Last Update: 01 July 2020 05:49 PM EDT**
+**Last Update: 10 July 2020 04:46 PM EDT**
 
 | | | | | | |
 |:-----:|:-----:|:-----:|:-----:|:-----:|:-----:|
 | Model Simulation Name | Model Run Period | Run Status | Current Model Run Date | <sup>1</sup>Latest Date Available on ADAPT | % Complete |
 | Water Year (2008) | 00 UTC 1 Oct. 2007 - 00 UTC 1 Oct. 2008 | FINISHED | 00 UTC 1 Oct. 2007 | 00 UTC 1 Oct. 2008 | 100.0% |
 | Water Year (2015) | 00 UTC 1 Oct. 2014 - 00 UTC 1 Oct. 2015 | FINISHED | 00 UTC 1 Oct. 2015 | 00 UTC 1 Oct. 2015 | 100.0% |
-| Historical Simulation (1999 - 2014) | 00 UTC 1 Oct. 1999 - 00 UTC 1 Oct. 2014 | RUNNING | 19 UTC 21 Apr. 2014 | 23 UTC 31 Mar. 2014 | 96.8% |
+| Historical Simulation (1999 - 2014) | 00 UTC 1 Oct. 1999 - 00 UTC 1 Oct. 2014 | RUNNING | 00 UTC 19 May 2014 | 23 UTC 31 Mar. 2014 | 97.5% |
 | Sentinel-1 Comparison | 00 UTC 15 Dec. 2017 - 00 UTC 1 Apr. 2018 | FINISHED | 00 UTC 1 Apr. 2018 | 00 UTC 1 Apr. 2018 | 100.0% |
 
 ADAPT Data Location: /att/pubrepo/hma_data/HiMAT_COAWST_Output
